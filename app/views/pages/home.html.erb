@@ -1,2 +1,32 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+
+<div class="pages-links" style="display: flex; justify-content: space-around;">
+  <div class="clicky">
+    <%= link_to pages_how_it_path do %>
+      <div class="image-links">
+        <%= image_tag "how.jpeg" %>
+        <p>How it works</p>
+      </div>
+      <% end %>
+  </div>
+
+
+  <div class="clicky">
+    <%= link_to pages_mission_path do %>
+      <div class="image-links">
+        <%= image_tag "vision.jpeg" %>
+        <p>Vision and Mission</p>
+      </div>
+    <% end %>
+  </div>
+
+
+  <div class="clicky">
+    <%= link_to pages_staff_path do %>
+      <div class="image-links">
+        <%= image_tag "staff.jpeg" %>
+        <p>Our Staff</p>
+      </div>
+      <% end %>
+  </div>
+
+</div>

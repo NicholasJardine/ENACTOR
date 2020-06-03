@@ -10,4 +10,7 @@ class PagesController < ApplicationController
   def mission
   end
 
+  def how_it
+  end
+
 end
