@@ -1,1 +1,50 @@
-new.html.erb
+<div class="container">
+
+  <%= simple_form_for [@brief] do |f| %>
+
+  <div class="form_inputs">
+    <div class="new-form-inputs">
+        <%= f.input :name, collection: ["Xbox One", "Playstation 4"], label: "Name of character" %>
+        <%= f.input :age, label: "Age"  %>
+
+        <div class="accordion" id="accordionExample">
+          <div class="card">
+            <div class="card-header" id="headingOne">
+              <h2 class="mb-0">
+                <button class="btn btn-link " type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                   <strong> Custom rules</strong>
+               </button>
+              </h2>
+            </div>
+
+            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+              <div class="card-body">
+                <%= f.input :gender, collection:["Male", "Female", "Non-Binary"], label: "Gender"%>
+                <%= f.input :ethnicty, collection:["Black", "White","Mixed", "Asian", "Indian" ], label: "Race/Ethnicity"%>
+                <%= f.input :language, collection:["Single", "Married"], label: " Marital Status"%>
+                <%= f.input :marital_status, collection:["Allowed", "Not allowed"], label: "Legacy defending? "%>
+                <%= f.input :profession, label: "Profession "%>
+
+                <%= f.input :hometown, label: "Home-town."%>
+                <%= f.input :current_home, label: "Current Home-town."%>
+                <%= f.input :wants, label: "Wants."%>
+                <%= f.input :needs, label: "Needs."%>
+                <%= f.input :traits, label: "Traits."%>
+                <%= f.input :flaws, label: "Flaws."%>
+                <%= f.input :arc_summary, label: "Arc Summary" %>
+            </div>
+          </div>
+        </div>
+
+        <%= f.button :submit, class: "btn btn-flat-orange", value: "Create Brief" %>
+
+
+    </div>
+  </div>
+
+
+  <% end %>
+</div>
+
+
+ :ethnicty, :language, :marital_status, :profession, :hometown, :current_home, :wants, :needs, :flaws, :traits, :arc_summary)

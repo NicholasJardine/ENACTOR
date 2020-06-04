@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_28_145143) do
+ActiveRecord::Schema.define(version: 2020_06_04_100939) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,6 +47,20 @@ ActiveRecord::Schema.define(version: 2020_05_28_145143) do
     t.bigint "production_company_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
+    t.string "age"
+    t.string "gender"
+    t.string "ethnicty"
+    t.string "language"
+    t.string "marital_status"
+    t.string "profession"
+    t.string "hometown"
+    t.string "current_home"
+    t.text "wants"
+    t.text "needs"
+    t.text "flaws"
+    t.text "traits"
+    t.text "arc_summary"
     t.index ["production_company_id"], name: "index_briefs_on_production_company_id"
   end
 
