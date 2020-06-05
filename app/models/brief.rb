@@ -1,3 +1,7 @@
 class Brief < ApplicationRecord
-  belongs_to :company
+
+  validates :name, :age, :ethnicty, :gender, presence: true
+
+   mount_uploader :attachment, AttachmentUploader # Tells rails to use this uploader for this model.
+
 end
