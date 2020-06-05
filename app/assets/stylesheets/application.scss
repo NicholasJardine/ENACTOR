@@ -10,8 +10,13 @@
 
 // Your CSS partials
 @import "components/index";
-@import "pages/index";
+@import "components/btn-flat-orange";
 
+
+@import "pages/index";
+@import "pages/mission";
+
+@import "components/form";
 
 .main-container{
   height: calc(100vh - 80px);
@@ -44,3 +49,4 @@
 .footer-links a:hover {
   opacity: 1;
 }
+

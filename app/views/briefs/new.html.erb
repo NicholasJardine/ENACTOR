@@ -1,1 +1,49 @@
-new.html.erb
+<div class="container">
+
+
+        <div class="accordion" id="accordionExample">
+          <div class="card">
+            <div class="card-header" id="headingOne">
+              <h2 class="mb-0">
+                <button class="btn btn-link " type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                   <strong> Click here to customise the acting brief</strong>
+               </button>
+              </h2>
+            </div>
+
+            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+              <div class="card-body">
+              <%= simple_form_for [@brief] do |f| %>
+
+              <div class="form_inputs">
+                <div class="new-form-inputs">
+                    <%= f.input :name, label: "Name of character" %>
+                    <%= f.input :age, label: "Age"  %>
+                <%= f.input :gender, collection:["Male", "Female", "Non-Binary"], label: "Gender"%>
+                <%= f.input :ethnicty, collection:["Black", "White","Mixed", "Asian", "Indian", "Racially Ambiguos" ], label: "Race/Ethnicity"%>
+                <%= f.input :marital_status, collection:["Single", "Married"], label: " Marital Status"%>
+                <%= f.input :language, collection:["isiZulu", "isiXhosa", "Venda", "Tswana", "Sotho", "Pedi", "Tsonga", "Swati", "English", "Afrikaans"], label: "Language "%>
+                <%= f.input :profession, label: "Profession "%>
+
+                <%= f.input :hometown, label: "Home-town."%>
+                <%= f.input :current_home, label: "Current Home-town."%>
+                <%= f.input :wants, label: "Wants."%>
+                <%= f.input :needs, label: "Needs."%>
+                <%= f.input :traits, label: "Traits."%>
+                <%= f.input :flaws, label: "Flaws."%>
+                <%= f.input :arc_summary, label: "Arc Summary" %>
+                <%= f.input :attachment, as: :file, label:"Click here to attach scripts." %>
+
+            </div>
+          </div>
+        </div>
+
+        <%= f.button :submit, class: "btn btn-flat-orange", value: "Create Brief" %>
+
+
+    </div>
+  </div>
+
+
+  <% end %>
+</div>

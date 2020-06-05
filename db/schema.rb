@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_28_145143) do
+ActiveRecord::Schema.define(version: 2020_06_05_145202) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,10 +44,24 @@ ActiveRecord::Schema.define(version: 2020_05_28_145143) do
 
   create_table "briefs", force: :cascade do |t|
     t.string "docs"
-    t.bigint "production_company_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["production_company_id"], name: "index_briefs_on_production_company_id"
+    t.string "name"
+    t.string "age"
+    t.string "gender"
+    t.string "ethnicty"
+    t.string "language"
+    t.string "marital_status"
+    t.string "profession"
+    t.string "hometown"
+    t.string "current_home"
+    t.text "wants"
+    t.text "needs"
+    t.text "flaws"
+    t.text "traits"
+    t.text "arc_summary"
+    t.string "attachment"
+    t.string "race"
   end
 
   create_table "dashboards", force: :cascade do |t|
@@ -81,6 +95,15 @@ ActiveRecord::Schema.define(version: 2020_05_28_145143) do
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
+  create_table "scripts", force: :cascade do |t|
+    t.string "title"
+    t.string "attachment"
+    t.bigint "brief_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["brief_id"], name: "index_scripts_on_brief_id"
+  end
+
   create_table "submissions", force: :cascade do |t|
     t.string "title"
     t.string "vid"
@@ -105,8 +128,8 @@ ActiveRecord::Schema.define(version: 2020_05_28_145143) do
   add_foreign_key "auditions", "actors"
   add_foreign_key "auditions", "briefs"
   add_foreign_key "auditions", "dashboards"
-  add_foreign_key "briefs", "production_companies"
   add_foreign_key "dashboards", "users"
   add_foreign_key "production_companies", "users"
   add_foreign_key "profiles", "users"
+  add_foreign_key "scripts", "briefs"
 end
