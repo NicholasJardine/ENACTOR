@@ -17,7 +17,7 @@
 
               <div class="form_inputs">
                 <div class="new-form-inputs">
-                    <%= f.input :name, collection: ["Xbox One", "Playstation 4"], label: "Name of character" %>
+                    <%= f.input :name, label: "Name of character" %>
                     <%= f.input :age, label: "Age"  %>
                 <%= f.input :gender, collection:["Male", "Female", "Non-Binary"], label: "Gender"%>
                 <%= f.input :ethnicty, collection:["Black", "White","Mixed", "Asian", "Indian", "Racially Ambiguos" ], label: "Race/Ethnicity"%>
@@ -32,7 +32,7 @@
                 <%= f.input :traits, label: "Traits."%>
                 <%= f.input :flaws, label: "Flaws."%>
                 <%= f.input :arc_summary, label: "Arc Summary" %>
-                <%= f.file_field :attachment, label:"Click here to attach scripts." %>
+                <%= f.input :attachment, as: :file, label:"Click here to attach scripts." %>
 
             </div>
           </div>
@@ -47,4 +47,3 @@
 
   <% end %>
 </div>
-
