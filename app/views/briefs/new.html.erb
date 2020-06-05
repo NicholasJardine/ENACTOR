@@ -1,28 +1,28 @@
 <div class="container">
 
-  <%= simple_form_for [@brief] do |f| %>
-
-  <div class="form_inputs">
-    <div class="new-form-inputs">
-        <%= f.input :name, collection: ["Xbox One", "Playstation 4"], label: "Name of character" %>
-        <%= f.input :age, label: "Age"  %>
 
         <div class="accordion" id="accordionExample">
           <div class="card">
             <div class="card-header" id="headingOne">
               <h2 class="mb-0">
                 <button class="btn btn-link " type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                   <strong> Custom rules</strong>
+                   <strong> Click here to customise the acting brief</strong>
                </button>
               </h2>
             </div>
 
             <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
               <div class="card-body">
+              <%= simple_form_for [@brief] do |f| %>
+
+              <div class="form_inputs">
+                <div class="new-form-inputs">
+                    <%= f.input :name, collection: ["Xbox One", "Playstation 4"], label: "Name of character" %>
+                    <%= f.input :age, label: "Age"  %>
                 <%= f.input :gender, collection:["Male", "Female", "Non-Binary"], label: "Gender"%>
-                <%= f.input :ethnicty, collection:["Black", "White","Mixed", "Asian", "Indian" ], label: "Race/Ethnicity"%>
-                <%= f.input :language, collection:["Single", "Married"], label: " Marital Status"%>
-                <%= f.input :marital_status, collection:["Allowed", "Not allowed"], label: "Legacy defending? "%>
+                <%= f.input :ethnicty, collection:["Black", "White","Mixed", "Asian", "Indian", "Racially Ambiguos" ], label: "Race/Ethnicity"%>
+                <%= f.input :marital_status, collection:["Single", "Married"], label: " Marital Status"%>
+                <%= f.input :language, collection:["isiZulu", "isiXhosa", "Venda", "Tswana", "Sotho", "Pedi", "Tsonga", "Swati", "English", "Afrikaans"], label: "Language "%>
                 <%= f.input :profession, label: "Profession "%>
 
                 <%= f.input :hometown, label: "Home-town."%>

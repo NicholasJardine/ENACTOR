@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_04_100939) do
+ActiveRecord::Schema.define(version: 2020_06_05_102812) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(version: 2020_06_04_100939) do
     t.text "flaws"
     t.text "traits"
     t.text "arc_summary"
+    t.string "attachment"
     t.index ["production_company_id"], name: "index_briefs_on_production_company_id"
   end
 
