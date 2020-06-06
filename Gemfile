@@ -72,3 +72,4 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'carrierwave', '~> 1.0'
 gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
+gem 'cloudinary', '~> 1.12.0'
