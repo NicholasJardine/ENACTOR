@@ -1,2 +1,9 @@
 <h1>Profiles#show</h1>
 <p>Find me in app/views/profiles/show.html.erb</p>
+
+ <h1 style="color: white;">You haven't made a profile yet, click the link to create your profile</h1>
+
+      <%= link_to "Create your profile", new_profile_path %>
+
+      <%= cl_image_tag @profile.photo.key, height: 300, width: 400, crop: :fill %>
+
