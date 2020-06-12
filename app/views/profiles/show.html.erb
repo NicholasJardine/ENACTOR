@@ -1,14 +1,14 @@
 
 
 
-    <% if @user.name == nil %>
-    <h1 style="color: white;">You haven't made a profile yet, click the link to create your profile</h1>
+    <% if @user.name == nil%>
+    <h1 style="color: white;">some dtails are missing in your profile, click the button to create your profile</h1>
         <%= link_to  "Create Profile", edit_user_registration_path, class: "btn btn-flat-orange" %>
     <% else %>
 
-    <p> Name: <%= @user.name %></p>
-  <p> Age: <%= @user.age %></p>
-    <p> Gender: <%= @user.gender%></p>
-    <p> Ethnicity: <%= @user.ethnicty %></p>
-<%= cl_image_tag @user.photo.key, height: 300, width: 400, crop: :fill %>
+                    <p> Name: <%= @user.name %></p>
+                  <p>Age: <%= @user.age %></p>
+                    <p> Gender: <%= @user.gender%></p>
+                    <p> Ethnicity: <%= @user.ethnicty %></p>
+                <%= cl_image_tag @user.photo.key, height: 300, width: 400, crop: :fill %>
     <% end %>
