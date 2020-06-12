@@ -21,10 +21,16 @@
                 hint: "we need your current password to confirm your changes",
                 required: true,
                 input_html: { autocomplete: "current-password" } %>
+    <%= f.input :name, label: "Full Name" %>
+    <%= f.input :age, label: "Age"  %>
+    <%= f.input :gender, collection:["Male", "Female", "Non-Binary"], label: "Gender"%>
+    <%= f.input :ethnicty, collection:["Black", "White","Mixed", "Asian", "Indian", "Racially Ambiguos" ], label: "Race/Ethnicity"%>
+    <%= f.input :language, collection:["isiZulu", "isiXhosa", "Venda", "Tswana", "Sotho", "Pedi", "Tsonga", "Swati", "English", "Afrikaans"], label: "Language "%>
+    <%= f.input :photo, as: :file, label:"Click here to upload your profile picture." %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Update" %>
+    <%= f.button :submit, "Update", class: 'btn-flat-orange' %>
   </div>
 <% end %>
 

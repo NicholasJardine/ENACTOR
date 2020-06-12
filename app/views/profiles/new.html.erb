@@ -1,2 +1,20 @@
-<h1>Profiles#new</h1>
-<p>Find me in app/views/profiles/new.html.erb</p>
+
+<h1>WELCOME, CREATE YOUR PERSONAL PROFILE BELOW</h1>
+
+
+              <%= simple_form_for [@profile] do |f| %>
+
+              <div class="form_inputs">
+                <div class="new-form-inputs">
+                <%= f.input :name, label: "Name of character" %>
+                <%= f.input :age, label: "Age"  %>
+                <%= f.input :gender, collection:["Male", "Female", "Non-Binary"], label: "Gender"%>
+                <%= f.input :ethnicty, collection:["Black", "White","Mixed", "Asian", "Indian", "Racially Ambiguos" ], label: "Race/Ethnicity"%>
+                <%= f.input :language, collection:["isiZulu", "isiXhosa", "Venda", "Tswana", "Sotho", "Pedi", "Tsonga", "Swati", "English", "Afrikaans"], label: "Language "%>
+                <%= f.input :photo, as: :file, label:"Click here to upload your profile picture." %>
+
+            </div>
+          </div>
+        <%= f.button :submit, class: "btn btn-flat-orange", value: "Create Profile" %>
+
+<% end %>
