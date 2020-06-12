@@ -7,6 +7,7 @@ class BriefsController < ApplicationController
 
 
   def new
+    @user = current_user
     @brief = Brief.new
     # @production_company = ProductionCompany.where(:id == current_user.id)
   end
