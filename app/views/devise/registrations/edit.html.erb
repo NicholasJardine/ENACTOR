@@ -1,4 +1,31 @@
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
+<% langs = ["ISIZULU",
+"ISIXHOSA",
+"SEPEDI (NORTH SOTHO)",
+"SETSWANA",
+"NDEBELE",
+"SESOTHO (SOUTH SOTHO)",
+"TSHIVENDA",
+"TSONGA",
+"SWAZI",
+"ENGLISH",
+"AFRIKAANS",
+"SASL",
+"KHOEKHOE",
+"FRENCH",
+"KISWAHILI",
+"PORTUGUESE",
+"SHONA",
+"ARABIC",
+"DUTCH",
+"GERMAN",
+"SOMALI",
+"AMHARIC",
+"HEBREW",
+"YORUBA",
+"OROMO",
+"HAUSA",
+"IGBO"].sort %>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_notification %>
@@ -25,7 +52,7 @@
     <%= f.input :age, label: "Age"  %>
     <%= f.input :gender, collection:["Male", "Female", "Non-Binary"], label: "Gender"%>
     <%= f.input :ethnicty, collection:["Black", "White","Mixed", "Asian", "Indian", "Racially Ambiguos" ], label: "Race/Ethnicity"%>
-    <%= f.input :language, collection:["isiZulu", "isiXhosa", "Venda", "Tswana", "Sotho", "Pedi", "Tsonga", "Swati", "English", "Afrikaans"], label: "Language "%>
+    <%= f.input :language, collection:langs, label: "Language "%>
     <%= f.input :photo, as: :file, label:"Click here to upload your profile picture." %>
   </div>
 
@@ -39,3 +66,6 @@
 <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
 <%= link_to "Back", :back %>
+
+
+<!-- ["isiZulu", "isiXhosa", "Venda", "Tswana", "Sotho", "Pedi", "Tsonga", "Swati", "English", "Afrikaans"] -->
