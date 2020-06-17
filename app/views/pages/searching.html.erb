@@ -12,10 +12,12 @@
     <div class="col-sm-8 offset-sm-2">
       <div id="movies">
         <% @users.each do |user| %>
-          <h4  style="color:white;"><%= user.name %></h4>
-          <p><%= user.age %></p>
+      <%= render 'shared/searchcard', user: user %>
+
         <% end %>
       </div>
     </div>
   </div>
 </div>
+
+
