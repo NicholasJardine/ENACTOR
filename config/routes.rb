@@ -17,6 +17,10 @@ Rails.application.routes.draw do
   get 'pages/mission'
   get 'pages/how_it'
   get 'pages/staff'
+  get 'pages/searching'
+  post 'pages/searching'
+
+
 
   devise_for :users
   root to: 'pages#home'
