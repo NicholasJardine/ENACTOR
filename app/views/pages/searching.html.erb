@@ -1,0 +1,21 @@
+<%= form_tag pages_searching_path method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Search Actors"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8 offset-sm-2">
+      <div id="movies">
+        <% @users.each do |user| %>
+          <h4  style="color:white;"><%= user.name %></h4>
+          <p><%= user.age %></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

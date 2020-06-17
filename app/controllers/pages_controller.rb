@@ -20,4 +20,26 @@ class PagesController < ApplicationController
 
   end
 
+
+  def searching
+    @user = current_user
+
+    if params[:query].present?
+      sql_query = " \
+        users.name @@ :query "
+      @users = User.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @users = User.all
+    end
+
+    #   if params[:query].present?
+    #   sql_query = "name ILIKE :query"
+    #   @users = User.where(sql_query, query: "%#{params[:query]}%")
+    # else
+    #   @users = User.all
+    # end
+  end
 end
+
+
+
