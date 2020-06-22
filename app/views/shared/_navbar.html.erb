@@ -35,7 +35,7 @@
             <%= cl_image_tag @user.photo.key, height: 40, width: 40, crop: :fill, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
               <%= link_to "Edit profile", "#", class: "dropdown-item" %>
-              <%= link_to "My Dashboard", "#", class: "dropdown-item" %>
+              <%= link_to "My Dashboard", dashboards_show_path, class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
           </li>

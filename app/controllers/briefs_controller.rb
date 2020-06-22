@@ -1,6 +1,8 @@
 class BriefsController < ApplicationController
 
   def show
+
+    @user = current_user
     # @production_company = ProductionCompany.find(params[:production_company_id])
     @brief = Brief.find(params[:id])
   end
@@ -38,7 +40,7 @@ class BriefsController < ApplicationController
   private
 
   def brief_params
-    params.require(:brief).permit(:name, :race, :age, :gender, :ethnicty, :language, :marital_status, :profession, :hometown, :current_home, :wants, :needs, :flaws, :traits, :arc_summary, :attachment)
+    params.require(:brief).permit(:title, :name, :race, :age, :gender, :ethnicty, :language, :marital_status, :profession, :hometown, :current_home, :wants, :needs, :flaws, :traits, :arc_summary, :attachment)
   end
 
 end
