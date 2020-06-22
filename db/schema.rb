@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_12_161109) do
+ActiveRecord::Schema.define(version: 2020_06_22_142226) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -83,13 +83,12 @@ ActiveRecord::Schema.define(version: 2020_06_12_161109) do
     t.text "arc_summary"
     t.string "attachment"
     t.string "race"
+    t.string "title"
   end
 
   create_table "dashboards", force: :cascade do |t|
-    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_dashboards_on_user_id"
   end
 
   create_table "production_companies", force: :cascade do |t|
@@ -169,7 +168,6 @@ ActiveRecord::Schema.define(version: 2020_06_12_161109) do
   add_foreign_key "auditions", "actors"
   add_foreign_key "auditions", "briefs"
   add_foreign_key "auditions", "dashboards"
-  add_foreign_key "dashboards", "users"
   add_foreign_key "production_companies", "users"
   add_foreign_key "scripts", "briefs"
 end

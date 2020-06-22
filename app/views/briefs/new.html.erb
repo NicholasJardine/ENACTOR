@@ -1,5 +1,31 @@
 <div class="container">
-
+<% langs = ["ISIZULU",
+"ISIXHOSA",
+"SEPEDI (NORTH SOTHO)",
+"SETSWANA",
+"NDEBELE",
+"SESOTHO (SOUTH SOTHO)",
+"TSHIVENDA",
+"TSONGA",
+"SWAZI",
+"ENGLISH",
+"AFRIKAANS",
+"SASL",
+"KHOEKHOE",
+"FRENCH",
+"KISWAHILI",
+"PORTUGUESE",
+"SHONA",
+"ARABIC",
+"DUTCH",
+"GERMAN",
+"SOMALI",
+"AMHARIC",
+"HEBREW",
+"YORUBA",
+"OROMO",
+"HAUSA",
+"IGBO"].sort %>
 
         <div class="accordion" id="accordionExample">
           <div class="card">
@@ -17,12 +43,13 @@
 
               <div class="form_inputs">
                 <div class="new-form-inputs">
+                <%= f.input :title, label: "your company name and title of show" %>
                     <%= f.input :name, label: "Name of character" %>
                     <%= f.input :age, label: "Age"  %>
                 <%= f.input :gender, collection:["Male", "Female", "Non-Binary"], label: "Gender"%>
                 <%= f.input :ethnicty, collection:["Black", "White","Mixed", "Asian", "Indian", "Racially Ambiguos" ], label: "Race/Ethnicity"%>
                 <%= f.input :marital_status, collection:["Single", "Married"], label: " Marital Status"%>
-                <%= f.input :language, collection:["isiZulu", "isiXhosa", "Venda", "Tswana", "Sotho", "Pedi", "Tsonga", "Swati", "English", "Afrikaans"], label: "Language "%>
+                <%= f.input :language, collection:langs, label: "Language "%>
                 <%= f.input :profession, label: "Profession "%>
 
                 <%= f.input :hometown, label: "Home-town."%>

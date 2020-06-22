@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+  get 'dashboards/show'
   get 'users/show'
   get 'production_companies/show'
   get 'production_companies/create'
@@ -29,10 +30,13 @@ Rails.application.routes.draw do
   resources :actors, only: [:show, :new, :create, :update, :delete]
   resources :production_companies, only: [:show, :new, :create, :update, :delete]
   resources :users, path: '/', param: :id, only: %i[show]
+  resources :dashboards, only: [:show]
+
 
 
   resources :profiles, only: [:show, :new, :create, :uppdate, :delete]
   resources :briefs, only: [:show, :new, :create, :update, :delete]
+  resources :briefs, path: '/', param: :id, only: %i[show]
   resources :auditions, only: [:index, :show, :new, :create, :update, :delete]
 
 
