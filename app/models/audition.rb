@@ -1,6 +1,5 @@
 class Audition < ApplicationRecord
-  belongs_to :actor
+  has_many :users, through: :user_auditions
   belongs_to :brief
-  belongs_to :dashboard
   has_one_attached :vids
 end

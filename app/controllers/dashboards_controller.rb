@@ -1,13 +1,16 @@
 class DashboardsController < ApplicationController
   def show
     @user = current_user
+    @brief = Brief.find(params[:id])
+    @auditions = Audition.where(brief_id: @brief.id)
     @matching_briefs = Brief.where(ethnicty: @user.ethnicty).where(gender: @user.gender).where(age: @user.age)
+    @myauditions = Audition.where(user: current_user)
+    @my_pendings = Audition.where(user: current_user).where(status: "Pending")
 
-  #   @myauditions = Session.where(user: current_user)
-  #   @sessions = UserInvite.where(user: current_user).where(status: "Pending").map { |ui| ui.session }
-  #   @accepted_sessions = UserInvite.where(user: current_user).where(status: "accepted").map { |ui| ui.session }
-  #   @alls = @mysessions + @accepted_sessions
-  #   @inprogresssessions = @alls.select { |session| session.status == "in progress" || session.status == "finished" }
-  #   @finished_sessions = @alls.select { |session| session.status == "agreed" }
+     # @auditions = UserInvite.where(user: current_user).where(status: "Pending").map { |ui| ui.audition }
+     # @accepted_auditions= UserInvite.where(user: current_user).where(status: "accepted").map { |ui| ui.session }
+     # @alls = @myauditions + @accepted_auditions
+     # @inprogress_auditions = @alls.select { |audition| audition.status == "in progress" || audition.status == "finished" }
+     # @finished_auditions = @alls.select { |audition| audition.status == "agreed" }
    end
 end

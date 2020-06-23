@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_22_142226) do
+ActiveRecord::Schema.define(version: 2020_06_23_214057) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -134,6 +134,25 @@ ActiveRecord::Schema.define(version: 2020_06_22_142226) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "user_auditions", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "audition_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "status", default: "Pending"
+    t.index ["audition_id"], name: "index_user_auditions_on_audition_id"
+    t.index ["user_id"], name: "index_user_auditions_on_user_id"
+  end
+
+  create_table "user_briefs", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "brief_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["brief_id"], name: "index_user_briefs_on_brief_id"
+    t.index ["user_id"], name: "index_user_briefs_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -170,4 +189,8 @@ ActiveRecord::Schema.define(version: 2020_06_22_142226) do
   add_foreign_key "auditions", "dashboards"
   add_foreign_key "production_companies", "users"
   add_foreign_key "scripts", "briefs"
+  add_foreign_key "user_auditions", "auditions"
+  add_foreign_key "user_auditions", "users"
+  add_foreign_key "user_briefs", "briefs"
+  add_foreign_key "user_briefs", "users"
 end
