@@ -1,6 +1,5 @@
 class AuditionsController < ApplicationController
 
-class SessionsController < ApplicationController
   def show
     @brief = Brief.find(params[:brief_id])
     @audition = Audition.find(params[:id])
@@ -83,10 +82,8 @@ class SessionsController < ApplicationController
   private
 
   def audition_params
-    params.require(:audition).permit(:vids, :title)
+    params.require(:audition).permit(:vids, :title, :brief_id)
   end
-end
-
-
 
 end
+

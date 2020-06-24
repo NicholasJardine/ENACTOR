@@ -1,5 +1,6 @@
 class Brief < ApplicationRecord
   has_many :auditions
+  has_many :user_briefs
   has_many :users, through: :user_briefs
   validates :name, :age, :ethnicty, :gender, presence: true
 

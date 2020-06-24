@@ -5,6 +5,7 @@ class BriefsController < ApplicationController
     @user = current_user
     # @production_company = ProductionCompany.find(params[:production_company_id])
     @brief = Brief.find(params[:id])
+    @audition = Audition.new
     @auditions = Audition.where(brief_id: @brief.id)
   end
 
