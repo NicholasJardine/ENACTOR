@@ -1,11 +1,16 @@
 class AuditionsController < ApplicationController
 
   def show
-    @brief = Brief.find(params[:brief_id])
+    @user = current_user
+    # @brief = Brief.find(params[:brief_id])
     @audition = Audition.find(params[:id])
-    @user_invite = UserInvite.new
+    # video = Cloudinary::Uploader.upload(params[:video], :resource_type => :video)
+    # @item = Audition.create!(video: video["url"], title: @audition.title, brief_id: @audition.brief_id)
+
+    # @user_invite = UserInvite.new
     @users = User.all
-    @message = Message.new
+
+    # @message = Message.new
   end
 
   def new
@@ -14,12 +19,15 @@ class AuditionsController < ApplicationController
   end
 
   def create
+    @user = current_user
     @audition = Audition.new(audition_params)
-    @lobby = Lobby.find(params[:lobby_id])
-    @audition.user = current_user
-    @audition.lobby = @lobby
+    # video = Cloudinary::Uploader.upload(params[:video], :resource_type => :video)
+    # @item = Audition.create!(video: video["url"], title: @audition.title, brief_id: @audition.brief_id)
+    @audition.user_id = current_user.id
+
     if @audition.save
-      redirect_to brief_audition_path(@brief, @audition)
+      redirect_to audition_path(@audition)
+      # render json: item
     else
       render :new
     end
@@ -82,8 +90,7 @@ class AuditionsController < ApplicationController
   private
 
   def audition_params
-    params.require(:audition).permit(:vids, :title, :brief_id)
+    params.require(:audition).permit(:video, :title, :brief_id)
   end
 
 end
-

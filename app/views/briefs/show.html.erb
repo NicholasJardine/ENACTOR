@@ -80,13 +80,15 @@
               <div class="form_inputs">
                 <div class="new-form-inputs">
                 <%= f.input :title, label: "the title of your audition" %>
-                <%= f.input :attachment, as: :file, label:"Click here to attach scripts." %>
+                <%= f.input :video, as: :file, :resource_type => :video%>
                 <%= f.input :brief_id, :as => :hidden, :input_html => { :value => @brief.id } %>
             </div>
           </div>
         </div>
 
         <%= f.button :submit, class: "btn btn-flat-orange", value: "Submit Audition" %>
-
 </div>
 <% end %>
+
+
+
