@@ -1,1 +1,6 @@
-show.html.erb
+<p>uploads will be here</p>
+
+<%= cl_video_tag(url_for(@audition.video),:width => 300, :height => 300,
+  :crop => :pad, :background => "blue",
+  :preload => "none", :controls => true,
+  :fallback_content => "Your browser does not support HTML5 video tags" )%>

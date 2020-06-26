@@ -55,3 +55,40 @@
 </table>
 
        <%= link_to "Download script", @brief.attachment_url, class: "btn-flat-orange" %>
+       <br>
+       <br>
+       <h2 style="color:white;">When you are ready, please attach your audition video here </h2>
+
+        <br>
+        <br>
+        <div class="accordion" id="accordionExample">
+          <div class="card">
+            <div class="card-header" id="headingOne">
+              <h2 class="mb-0">
+                <button class="btn btn-link " type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                   <strong> Upload Audition</strong>
+               </button>
+              </h2>
+            </div>
+
+            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+              <div class="card-body">
+              <div class="form_inputs">
+                <div class="new-form-inputs">
+              <%= simple_form_for [@audition] do |f| %>
+
+              <div class="form_inputs">
+                <div class="new-form-inputs">
+                <%= f.input :title, label: "the title of your audition" %>
+                <%= f.input :video, as: :file, :resource_type => :video%>
+                <%= f.input :brief_id, :as => :hidden, :input_html => { :value => @brief.id } %>
+            </div>
+          </div>
+        </div>
+
+        <%= f.button :submit, class: "btn btn-flat-orange", value: "Submit Audition" %>
+</div>
+<% end %>
+
+
+

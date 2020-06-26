@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
 
+  get 'user_auditions/create'
+  get 'user_auditions/destroy'
+  get 'user_auditions/accept'
+  get 'user_auditions/decline'
   get 'dashboards/show'
   get 'users/show'
   get 'production_companies/show'
