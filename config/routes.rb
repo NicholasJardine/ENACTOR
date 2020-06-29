@@ -42,6 +42,7 @@ Rails.application.routes.draw do
   resources :briefs, only: [:show, :new, :create, :update, :delete]
   resources :briefs, path: '/', param: :id, only: %i[show]
   resources :auditions, only: [:index, :show, :new, :create, :update, :delete]
+  resources :auditions, path: '/', param: :id, only: %i[show]
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
