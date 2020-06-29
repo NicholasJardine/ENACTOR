@@ -1,6 +1,7 @@
 <h1>Users#show</h1>
 <p>Find me in app/views/users/show.html.erb</p>
-<p>whagwaan</p>
+                <%= cl_image_tag @u.photo.key, height: 300, width: 400, crop: :fill %>
+
 
                     <p> Name: <%= @u.name %></p>
                   <p>Age: <%= @u.age %></p>
