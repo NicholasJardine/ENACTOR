@@ -1,15 +1,21 @@
+<div class="container">
+
+<div class="my-search" style="margin-top: 48px;">
+  <h3 style="color:white;">Find an actor BY NAME in the field below!</h3>
+    <div class="row">
+    <div class="col-3">
 <%= form_tag pages_searching_path method: :get do %>
   <%= text_field_tag :query,
     params[:query],
     class: "form-control",
     placeholder: "Search Actors"
   %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
+  <%= submit_tag "Search", class: "btn btn-flat-orange" %>
 <% end %>
-
+</div>
 <div class="container">
   <div class="row">
-    <div class="col-sm-8 offset-sm-2">
+    <div class="col-4">
       <div id="movies">
         <% @users.each do |user| %>
       <%= render 'shared/searchcard', user: user %>
@@ -19,3 +25,17 @@
     </div>
   </div>
 </div>
+</div>
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+

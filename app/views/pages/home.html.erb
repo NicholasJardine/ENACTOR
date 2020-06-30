@@ -1,12 +1,21 @@
 
-
+<% if user_signed_in? %>
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path "header.jpg" %>);">
   <div class="container">
     <h1>Enactor connects <strong>talented people</strong> with <strong>the world</strong>!</h1>
     <p>Connect with production companies and audition from anywhere.</p>
-    <a class="btn btn-flat-orange" href="#">Get Started</a>
+<!--     <a class="nav-item"><%= link_to "Get Started", new_user_registration_path, class: "btn btn-flat-orange" %></a>
+ -->  </div>
+</div>
+<% else %>
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path "header.jpg" %>);">
+  <div class="container">
+    <h1>Enactor connects <strong>talented people</strong> with <strong>the world</strong>!</h1>
+    <p>Connect with production companies and audition from anywhere.</p>
+    <a class="nav-item"><%= link_to "Get Started", new_user_registration_path, class: "btn btn-flat-orange" %></a>
   </div>
 </div>
+<% end %>
 
 <div style="display: flex; justify-content:space-around;">
 
