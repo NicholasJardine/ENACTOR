@@ -51,7 +51,7 @@ end
   private
 
   def profile_params
-    params.require(:profile).permit(:name, :race, :age, :gender, :ethnicty, :language, :photo)
+    params.require(:profile).permit(:name, :race, :age, :gender, :ethnicty, :language, :photo, :bio)
   end
 
 end

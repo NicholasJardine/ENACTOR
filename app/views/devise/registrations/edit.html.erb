@@ -53,7 +53,9 @@
     <%= f.input :gender, collection:["Male", "Female", "Non-Binary"], label: "Gender"%>
     <%= f.input :ethnicty, collection:["Black", "White","Mixed", "Asian", "Indian", "Racially Ambiguos" ], label: "Race/Ethnicity"%>
     <%= f.input :language, collection:langs, label: "Language "%>
+    <%= f.input :bio, label: "Tell us about yourself?"%>
     <%= f.input :photo, as: :file, label:"Click here to upload your profile picture." %>
+
   </div>
 
   <div class="form-actions">
