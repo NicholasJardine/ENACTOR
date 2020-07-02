@@ -2,13 +2,39 @@
 
 
     <% if @user.name == nil%>
-    <h1 style="color: white;">some dtails are missing in your profile, click the button to create your profile</h1>
+    <h1 style="color: white;">some details are missing in your profile, click the button to create your profile</h1>
         <%= link_to  "Create Profile", edit_user_registration_path, class: "btn btn-flat-orange" %>
     <% else %>
 
-                    <p> Name: <%= @user.name %></p>
-                  <p>Age: <%= @user.age %></p>
-                    <p> Gender: <%= @user.gender%></p>
-                    <p> Ethnicity: <%= @user.ethnicty %></p>
-                <%= cl_image_tag @user.photo.key, height: 300, width: 400, crop: :fill %>
+    <div class="mt-3">
+
+          <table class="mt-3" style="width:50%; color: white">
+            <%= cl_image_tag @user.photo.key, height: 400, width: 500, crop: :fill %>
+            <tr>
+              <th><h3>My Details</h3></th>
+            </tr>
+
+            <tr>
+              <td>Name:  <%= @user.name %> </td>
+            </tr>
+            <tr>
+              <td>Age:  <%= @user.age %> </td>
+            </tr>
+            <tr>
+              <td>Ethnicity: <%= @user.ethnicty %> </td>
+            </tr>
+          </table>
+            <div>
+              <h3 style="color: white;">About me: </h3>
+            </div>
+             <p> <%= @user.bio %>  </p>
+
     <% end %>
+
+
+    </div>
+
+
+
+
+

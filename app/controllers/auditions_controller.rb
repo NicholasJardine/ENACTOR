@@ -2,8 +2,12 @@ class AuditionsController < ApplicationController
 
   def show
     @user = current_user
-    # @brief = Brief.find(params[:brief_id])
     @audition = Audition.find(params[:id])
+    @submitter= User.where(id: @audition.user_id)
+    @submitter2= User.where(id: @submitter.ids[0])
+
+    @submitter.ids[0]
+    # @brief = Brief.find(params[:brief_id])
     # video = Cloudinary::Uploader.upload(params[:video], :resource_type => :video)
     # @item = Audition.create!(video: video["url"], title: @audition.title, brief_id: @audition.brief_id)
 
@@ -90,7 +94,7 @@ class AuditionsController < ApplicationController
   private
 
   def audition_params
-    params.require(:audition).permit(:video, :title, :brief_id)
+    params.require(:audition).permit(:video, :title, :brief_id, :user_id)
   end
 
 end

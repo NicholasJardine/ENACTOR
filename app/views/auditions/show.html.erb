@@ -1,6 +1,15 @@
 <p>uploads will be here</p>
 
-<%= cl_video_tag(url_for(@audition.video),:width => 300, :height => 300,
+<p><%=@audition.title  %></p>
+<p><%= @submitter2.name %></p>
+
+<div class="screen" style="display: flex; align-items: center; justify-content: center;">
+
+
+<%= cl_video_tag(url_for(@audition.video),:width => 1000, :height => 500,
   :crop => :pad, :background => "blue",
   :preload => "none", :controls => true,
   :fallback_content => "Your browser does not support HTML5 video tags" )%>
+
+
+</div>
