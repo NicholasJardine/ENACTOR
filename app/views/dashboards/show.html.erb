@@ -29,3 +29,12 @@
 <div> <p> <%= brief.title %></p> </div>
 <% end %>
 <% end %>
+<h2 style="color: white;"> Requests </h2>
+
+<% @my_private_briefs.each do |brief| %>
+<%= link_to private_brief_path(brief) do %>
+<div> <p> <%= brief.title %></p> </div>
+<% end %>
+<% end %>
+
+

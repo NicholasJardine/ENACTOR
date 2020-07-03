@@ -3,10 +3,11 @@ class AuditionsController < ApplicationController
   def show
     @user = current_user
     @audition = Audition.find(params[:id])
-    @submitter= User.where(id: @audition.user_id)
-    @submitter2= User.where(id: @submitter.ids[0])
+    @u = @audition.user
+    # @submitter= User.where(id: @audition.user_id)
+    # @submitter2= User.where(id: @submitter.ids[0])
 
-    @submitter.ids[0]
+    # @submitter.ids[0]
     # @brief = Brief.find(params[:brief_id])
     # video = Cloudinary::Uploader.upload(params[:video], :resource_type => :video)
     # @item = Audition.create!(video: video["url"], title: @audition.title, brief_id: @audition.brief_id)
@@ -27,7 +28,7 @@ class AuditionsController < ApplicationController
     @audition = Audition.new(audition_params)
     # video = Cloudinary::Uploader.upload(params[:video], :resource_type => :video)
     # @item = Audition.create!(video: video["url"], title: @audition.title, brief_id: @audition.brief_id)
-    @audition.user_id = current_user.id
+    # @audition.user_id = current_user.id
 
     if @audition.save
       redirect_to audition_path(@audition)
