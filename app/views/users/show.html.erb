@@ -1,4 +1,32 @@
 <h1>Users#show</h1>
+
+<% langs = ["ISIZULU",
+"ISIXHOSA",
+"SEPEDI (NORTH SOTHO)",
+"SETSWANA",
+"NDEBELE",
+"SESOTHO (SOUTH SOTHO)",
+"TSHIVENDA",
+"TSONGA",
+"SWAZI",
+"ENGLISH",
+"AFRIKAANS",
+"SASL",
+"KHOEKHOE",
+"FRENCH",
+"KISWAHILI",
+"PORTUGUESE",
+"SHONA",
+"ARABIC",
+"DUTCH",
+"GERMAN",
+"SOMALI",
+"AMHARIC",
+"HEBREW",
+"YORUBA",
+"OROMO",
+"HAUSA",
+"IGBO"].sort %>
 <p>Find me in app/views/users/show.html.erb</p>
                 <%= cl_image_tag @u.photo.key, height: 300, width: 400, crop: :fill %>
 
@@ -7,3 +35,55 @@
                   <p>Age: <%= @u.age %></p>
                     <p> Gender: <%= @u.gender%></p>
                     <p> Ethnicity: <%= @u.ethnicty %></p>
+
+
+<% if @user.occupation == "Actor" %>
+<br>
+<% else %>
+
+<% end %>
+        <div class="row">
+
+          <div class="col-2">
+
+        <div class="accordion" id="accordionExample" style="background: #b5076b;">
+          <div class="card">
+            <div class="card-header" id="headingOne" style="background: #b5076b;">
+              <h2 class="mb-0">
+                <button class="btn btn-link " style="background: #b5076b;" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                   <strong> Send a private brief</strong>
+               </button>
+              </h2>
+            </div>
+
+            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+              <div class="card-body">
+              <div class="form_inputs">
+                <div class="new-form-inputs">
+              <%= simple_form_for [@private_brief] do |f| %>
+
+              <div class="form_inputs">
+                <div class="new-form-inputs">
+                <%= f.input :title, label: "Name of this brief" %>
+                <%= f.input :name, label: "Name of character" %>
+                <%= f.input :age, label: "Age"  %>
+                <%= f.input :gender, collection:["Male", "Female", "Non-Binary"], label: "Gender"%>
+                <%= f.input :ethnicty, collection:["Black", "White","Mixed", "Asian", "Indian", "Racially Ambiguos" ], label: "Race/Ethnicity"%>
+                <%= f.input :marital_status, collection:["Single", "Married"], label: " Marital Status"%>
+                <%= f.input :language, collection:langs, label: "Language "%>
+
+                <%= f.input :attachment, as: :file, label:"Click here to attach scripts." %>
+                <%= f.input :user_id, :as => :hidden, :input_html => { :value => current_user.id } %>
+                <%= f.input :user_id, :as => :hidden, :input_html => { :value => @u.id } %>
+                <%= f.input :sender_id, :as => :hidden, :input_html => { :value => @user.id.to_i } %>
+
+            </div>
+          </div>
+        </div>
+
+        <%= f.button :submit, class: "btn btn-flat-orange", value: "Send" %>
+
+          </div>
+        </div>
+</div>
+<% end %>

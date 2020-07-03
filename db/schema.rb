@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_02_122819) do
+ActiveRecord::Schema.define(version: 2020_07_03_113630) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -96,6 +96,22 @@ ActiveRecord::Schema.define(version: 2020_07_02_122819) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "private_briefs", force: :cascade do |t|
+    t.string "name"
+    t.integer "age"
+    t.string "gender"
+    t.string "ethnicty"
+    t.string "language"
+    t.string "marital_status"
+    t.string "attachment"
+    t.bigint "user_id"
+    t.integer "sender_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "title"
+    t.index ["user_id"], name: "index_private_briefs_on_user_id"
+  end
+
   create_table "production_companies", force: :cascade do |t|
     t.string "title"
     t.bigint "user_id"
@@ -130,6 +146,11 @@ ActiveRecord::Schema.define(version: 2020_07_02_122819) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["brief_id"], name: "index_scripts_on_brief_id"
+  end
+
+  create_table "senders", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "submissions", force: :cascade do |t|
@@ -195,6 +216,7 @@ ActiveRecord::Schema.define(version: 2020_07_02_122819) do
   add_foreign_key "auditions", "dashboards"
   add_foreign_key "auditions", "users"
   add_foreign_key "briefs", "users"
+  add_foreign_key "private_briefs", "users"
   add_foreign_key "production_companies", "users"
   add_foreign_key "scripts", "briefs"
   add_foreign_key "user_auditions", "auditions"
