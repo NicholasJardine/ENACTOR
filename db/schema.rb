@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_29_102303) do
+ActiveRecord::Schema.define(version: 2020_07_02_122819) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -87,6 +87,8 @@ ActiveRecord::Schema.define(version: 2020_06_29_102303) do
     t.string "attachment"
     t.string "race"
     t.string "title"
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_briefs_on_user_id"
   end
 
   create_table "dashboards", force: :cascade do |t|
@@ -192,6 +194,7 @@ ActiveRecord::Schema.define(version: 2020_06_29_102303) do
   add_foreign_key "auditions", "briefs"
   add_foreign_key "auditions", "dashboards"
   add_foreign_key "auditions", "users"
+  add_foreign_key "briefs", "users"
   add_foreign_key "production_companies", "users"
   add_foreign_key "scripts", "briefs"
   add_foreign_key "user_auditions", "auditions"

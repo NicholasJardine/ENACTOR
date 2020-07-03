@@ -4,6 +4,7 @@ class DashboardsController < ApplicationController
     # @brief = Brief.find(params[:id])
     # @auditions = Audition.where(brief_id: @brief.id)
     @matching_briefs = Brief.where(ethnicty: @user.ethnicty).where(gender: @user.gender).where(age: @user.age)
+    @my_briefs = Brief.where(user_id: @user.id)
     @myauditions = Audition.where(user_id: current_user.id)
     @my_pendings = Audition.where(user_id: current_user.id).where(status: "Pending")
 
