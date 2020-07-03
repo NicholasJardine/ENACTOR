@@ -22,5 +22,10 @@
 <p>You have no auditions being reviewed at the moment</p>
 <% end%>
 
+<h3 style="color: white;">Briefs I've sent out</h3>
 
-
+<% @my_briefs.each do |brief| %>
+<%= link_to brief_path(brief) do %>
+<div> <p> <%= brief.title %></p> </div>
+<% end %>
+<% end %>

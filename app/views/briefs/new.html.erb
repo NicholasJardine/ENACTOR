@@ -59,6 +59,7 @@
                 <%= f.input :flaws, label: "Flaws."%>
                 <%= f.input :arc_summary, label: "Arc Summary" %>
                 <%= f.input :attachment, as: :file, label:"Click here to attach scripts." %>
+                <%= f.input :user_id, :as => :hidden, :input_html => { :value => current_user.id } %>
 
             </div>
           </div>

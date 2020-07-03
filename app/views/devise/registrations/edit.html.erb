@@ -27,6 +27,8 @@
 "HAUSA",
 "IGBO"].sort %>
 
+<h1 style="color:white;">Fill in the fields below to change your profile!</h1>
+
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_notification %>
 
@@ -37,17 +39,18 @@
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>
 
-    <%= f.input :password,
+<!--     <%= f.input :password,
                 hint: "leave it blank if you don't want to change it",
                 required: false,
                 input_html: { autocomplete: "new-password" } %>
     <%= f.input :password_confirmation,
                 required: false,
-                input_html: { autocomplete: "new-password" } %>
+                input_html: { autocomplete: "new-password" } %> -->
     <%= f.input :current_password,
                 hint: "we need your current password to confirm your changes",
                 required: true,
                 input_html: { autocomplete: "current-password" } %>
+                <% if current_user.occupation == "Actor" %>
     <%= f.input :name, label: "Full Name" %>
     <%= f.input :age, label: "Age"  %>
     <%= f.input :gender, collection:["Male", "Female", "Non-Binary"], label: "Gender"%>
@@ -56,16 +59,24 @@
     <%= f.input :bio, label: "Tell us about yourself?"%>
     <%= f.input :photo, as: :file, label:"Click here to upload your profile picture." %>
 
+                <% else %>
+    <%= f.input :name, label: "Company Name" %>
+    <%= f.input :age, label: "Years of Experience"  %>
+    <%= f.input :address, label: "Your Company Address"%>
+    <%= f.input :bio, label: "Tell us about your Organisation?"%>
+    <%= f.input :photo, as: :file, label:"Upload your company logo here." %>
+                <% end %>
+
   </div>
 
   <div class="form-actions">
     <%= f.button :submit, "Update", class: 'btn-flat-orange' %>
   </div>
 <% end %>
-
+<!--
 <h3>Cancel my account</h3>
 
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p> -->
 
 <%= link_to "Back", :back %>
 
