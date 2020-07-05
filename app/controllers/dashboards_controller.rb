@@ -8,7 +8,7 @@ class DashboardsController < ApplicationController
     @myauditions = Audition.where(user_id: current_user.id)
     @my_private_briefs = PrivateBrief.where(user_id: @user.id)
     @my_pendings = Audition.where(user_id: current_user.id).where(status: "Pending")
-
+    @invite_briefs = PrivateBrief.where(sender_id: @user.id.to_i)
      # @auditions = UserInvite.where(user: current_user).where(status: "Pending").map { |ui| ui.audition }
      # @accepted_auditions= UserInvite.where(user: current_user).where(status: "accepted").map { |ui| ui.session }
      # @alls = @myauditions + @accepted_auditions
