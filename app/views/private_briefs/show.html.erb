@@ -76,7 +76,7 @@
        <h3 style="color: white;"> the following videos have been submitted for this brief</h3>
        <p> currently there are <%= "#{@auditions.length}" %> auditions to watch</p>
         <% @auditions.each do |audition|%>
-        <%= link_to audition_path(audition) do %>
+        <%= link_to private_audition_path(audition) do %>
 
        <div class="brief-links">
 
