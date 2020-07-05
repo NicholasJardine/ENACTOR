@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
 
+  get 'private_auditions/show'
+  get 'private_auditions/new'
+  get 'private_auditions/create'
   get 'private_briefs/show'
   get 'private_briefs/new'
   get 'private_briefs/create'
@@ -49,6 +52,8 @@ Rails.application.routes.draw do
 
   resources :auditions, only: [:index, :show, :new, :create, :update, :delete]
   resources :auditions, path: '/', param: :id, only: %i[show]
+  resources :private_auditions, only: [:show, :new, :create, :update, :delete]
+  resources :private_auditions, path: '/', param: :id, only: %i[show]
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

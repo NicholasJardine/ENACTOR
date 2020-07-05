@@ -1,9 +1,8 @@
-class AuditionsController < ApplicationController
-
+class PrivateAuditionsController < ApplicationController
   def show
     @user = current_user
-    @audition = Audition.find(params[:id])
-    @u = @audition.user
+    @private_audition = PrivateAudition.find(params[:id])
+    @u = @private_audition.user
     # @submitter= User.where(id: @audition.user_id)
     # @submitter2= User.where(id: @submitter.ids[0])
 
@@ -19,40 +18,40 @@ class AuditionsController < ApplicationController
   end
 
   def new
-    @audition = Audition.new
-    @brief = Brief.find(params[:brief_id])
+    @audition = PrivateAudition.new
+    @private_brief = PrivateBrief.find(params[:private_brief_id])
     # @private_brief = PrivateBrief.find(params[:private_brief_id])
   end
 
   def create
     @user = current_user
-    @audition = Audition.new(audition_params)
+    @private_audition = PrivateAudition.new(private_audition_params)
     # video = Cloudinary::Uploader.upload(params[:video], :resource_type => :video)
     # @item = Audition.create!(video: video["url"], title: @audition.title, brief_id: @audition.brief_id)
     # @audition.user_id = current_user.id
 
-    if @audition.save
-      redirect_to audition_path(@audition)
+    if @private_audition.save
+      redirect_to private_audition_path(@private_audition)
       # render json: item
     else
       render :new
     end
   end
 
-  def destroy
-    @audition = Audition.find(params[:id])
-    @audition.destroy
-    redirect_to brief_path(@audition.brief)
-  end
+  # def destroy
+  #   @audition = Audition.find(params[:id])
+  #   @audition.destroy
+  #   redirect_to brief_path(@audition.brief)
+  # end
 
-  def review_audition
-    @audition = Audition.find(params[:audition_id])
-    @brief = Brief.find(@audition.brief_id)
-    @user_audition = UserAudition.new
-    @user_audition.user = current_user
-    @user_audition.audition = @audition
-    @user_audition.save
-  end
+  # def review_audition
+  #   @audition = Audition.find(params[:audition_id])
+  #   @brief = Brief.find(@audition.brief_id)
+  #   @user_audition = UserAudition.new
+  #   @user_audition.user = current_user
+  #   @user_audition.audition = @audition
+  #   @user_audition.save
+  # end
   # def agreed
   #   @lobby = Lobby.find(params["lobby_id"])
   #   @session = Session.find(params["session_id"])
@@ -95,8 +94,8 @@ class AuditionsController < ApplicationController
 
   private
 
-  def audition_params
-    params.require(:audition).permit(:video, :title, :brief_id, :user_id, :private_brief_id)
+  def private_audition_params
+    params.require(:private_audition).permit(:video, :title, :user_id, :private_brief_id)
   end
 
 end

@@ -1,0 +1,18 @@
+
+<div class="mt-3">
+
+<h3 style="color: white;"> Audition Title: <%=@private_audition.title  %></h3>
+
+<h3 style="color: white;"> Submitted by: <%= @u.name %></h3> <br>
+</div>
+
+<div class="screen" style="display: flex; align-items: center; justify-content: center;">
+
+
+<%= cl_video_tag(url_for(@private_audition.video),:width => 1000, :height => 500,
+  :crop => :pad, :background => "blue",
+  :preload => "none", :controls => true,
+  :fallback_content => "Your browser does not support HTML5 video tags" )%>
+
+
+</div>

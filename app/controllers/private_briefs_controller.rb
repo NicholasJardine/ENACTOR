@@ -1,7 +1,9 @@
 class PrivateBriefsController < ApplicationController
   def show
     @user = current_user
-    @brief = PrivateBrief.find(params[:id])
+    @private_brief = PrivateBrief.find(params[:id])
+    @private_audition = PrivateAudition.new
+    @auditions = PrivateAudition.where(private_brief_id: @private_brief.id)
   end
 
   def new

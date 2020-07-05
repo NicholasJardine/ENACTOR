@@ -38,3 +38,9 @@
 <% end %>
 
 
+<h3 style="color: white;">Briefs I've sent privately</h3>
+<% @invite_briefs.each do |brief| %>
+<%= link_to private_brief_path(brief) do %>
+<div> <p> <%= brief.title %></p> </div>
+<% end %>
+<% end %>

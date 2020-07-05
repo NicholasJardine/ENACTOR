@@ -4,6 +4,10 @@
   <div class="container">
     <h1>Enactor connects <strong>talented people</strong> with <strong>the world</strong>!</h1>
     <p>Connect with production companies and audition from anywhere.</p>
+      <% if @user.name == nil %>
+      <br><br><br>
+    <p style= 'opacity: .7; font-weight: bold;'> We noticed you haven't created your profile yet. To do so, click <%= link_to "here", edit_user_registration_path %> </p> <p style= 'opacity: .7; font-weight: bold;'> to add your personal touches!</p>
+      <% end %>
 <!--     <a class="nav-item"><%= link_to "Get Started", new_user_registration_path, class: "btn btn-flat-orange" %></a>
  -->  </div>
 </div>

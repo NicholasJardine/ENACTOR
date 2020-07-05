@@ -7,26 +7,16 @@
     <th>Character Information</th>
   </tr>
   <tr>
-    <td>Age:  <%= @brief.age %> </td>
+    <td>Age:  <%= @private_brief.age %> </td>
   </tr>
 
   <tr>
-    <td>Name:  <%= @brief.name %> </td>
+    <td>Name:  <%= @private_brief.name %> </td>
   </tr>
   <tr>
-    <td>Ethnicity:  <%= @brief.ethnicty %> </td>
+    <td>Ethnicity:  <%= @private_brief.ethnicty %> </td>
   </tr>
   <tr>
-
-<!--     <td>Age  <%= @brief.age %> </td>
-  </tr>
-  <tr>
-    <td>Age  <%= @brief.age %> </td>
-  </tr>
-  <tr>
-    <td>Age  <%= @brief.age %> </td>
-  </tr>
- -->
 
 
 
@@ -36,3 +26,65 @@
        <%= link_to "Download script", "#", class: "btn-flat-orange" %>
 
 </div>
+       <br>
+       <br>
+       <% if @user.occupation == "Actor" %>
+
+       <h2 style="color:white;">When you are ready, please attach your audition video here </h2>
+
+        <br>
+        <br>
+        <div class="row">
+
+          <div class="col-6">
+
+        <div class="accordion" id="accordionExample" style="background: #b5076b;">
+          <div class="card">
+            <div class="card-header" id="headingOne" style="background: #b5076b;">
+              <h2 class="mb-0">
+                <button class="btn btn-link " style="background: #b5076b;" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                   <strong> Upload Audition</strong>
+               </button>
+              </h2>
+            </div>
+
+            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+              <div class="card-body">
+              <div class="form_inputs">
+                <div class="new-form-inputs">
+              <%= simple_form_for [@private_audition] do |f| %>
+
+              <div class="form_inputs">
+                <div class="new-form-inputs">
+                <%= f.input :title, label: "the title of your audition" %>
+                <%= f.input :video, as: :file, :resource_type => :video%>
+                <%= f.input :private_brief_id, :as => :hidden, :input_html => { :value => @private_brief.id } %>
+                <%= f.input :user_id, :as => :hidden, :input_html => { :value => current_user.id } %>
+
+            </div>
+          </div>
+        </div>
+
+        <%= f.button :submit, class: "btn btn-flat-orange", value: "Submit Audition" %>
+
+          </div>
+        </div>
+</div>
+      <% end %>
+
+       <% else %>
+       <h3 style="color: white;"> the following videos have been submitted for this brief</h3>
+       <p> currently there are <%= "#{@auditions.length}" %> auditions to watch</p>
+        <% @auditions.each do |audition|%>
+        <%= link_to audition_path(audition) do %>
+
+       <div class="brief-links">
+
+<!--               <p> <%= audition.title %></p>
+ -->              <p> <%= audition.user.name %> </p>
+              <% end %>
+       </div>
+<% end %>
+
+<% end %>
+
