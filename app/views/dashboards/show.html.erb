@@ -1,3 +1,4 @@
+<% if @user.occupation == "Actor" %>
 <h3 style="color:white;">New Opportunities</h3>
 <% if @matching_briefs == []  %>
       <p>currently, there are no briefs that match your profile</p>
@@ -16,23 +17,23 @@
 <% end %>
 <% end %>
 <br>
-
 <h3 style="color:white;">Pending Auditions</h3>
 <% if @myauditions ==[] %>
 <p>You have no auditions being reviewed at the moment</p>
 <% end%>
+<h2 style="color: white;"> You have been requested for the following: </h2>
 
+<% @my_private_briefs.each do |brief| %>
+<%= link_to private_brief_path(brief) do %>
+<div> <p> <%= brief.title %></p> </div>
+<% end %>
+<% end %>
+
+<% else %>
 <h3 style="color: white;">Briefs I've sent out</h3>
 
 <% @my_briefs.each do |brief| %>
 <%= link_to brief_path(brief) do %>
-<div> <p> <%= brief.title %></p> </div>
-<% end %>
-<% end %>
-<h2 style="color: white;"> Requests </h2>
-
-<% @my_private_briefs.each do |brief| %>
-<%= link_to private_brief_path(brief) do %>
 <div> <p> <%= brief.title %></p> </div>
 <% end %>
 <% end %>
@@ -44,3 +45,9 @@
 <div> <p> <%= brief.title %></p> </div>
 <% end %>
 <% end %>
+
+<% end %>
+
+
+
+
