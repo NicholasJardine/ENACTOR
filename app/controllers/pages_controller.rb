@@ -27,9 +27,29 @@ class PagesController < ApplicationController
     if params[:query].present?
       sql_query = " \
         users.name @@ :query "
-      @users = User.where(sql_query, query: "%#{params[:query]}%")
+      @users = User.where(sql_query, query: "%#{params[:query]}%").where(occupation: "Actor")
     else
-      @users = User.all
+      @users = User.where(occupation: "Actor")
+    end
+
+    #   if params[:query].present?
+    #   sql_query = "name ILIKE :query"
+    #   @users = User.where(sql_query, query: "%#{params[:query]}%")
+    # else
+    #   @users = User.all
+    # end
+  end
+
+
+  def searching_companies
+    @user = current_user
+
+    if params[:query].present?
+      sql_query = " \
+        users.name @@ :query "
+      @users = User.where(sql_query, query: "%#{params[:query]}%").where(occupation: "Production Company")
+    else
+      @users = User.where(occupation: "Production Company")
     end
 
     #   if params[:query].present?

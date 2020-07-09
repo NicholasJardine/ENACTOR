@@ -19,6 +19,9 @@
             <li class="nav-item active">
               <%= link_to "Search Actors", pages_searching_path, class: "nav-link" %>
             </li>
+            <li class="nav-item active">
+              <%= link_to "Production Companies", pages_searching_companies_path, class: "nav-link" %>
+            </li>
             <% if @user.occupation == "Actor" %>
             <li class="nav-item active">
               <%= link_to "Briefs & Auditions", "#", class: "nav-link" %>
@@ -49,6 +52,9 @@
             </li>
             <li class="nav-item active">
               <%= link_to "Search Actors", pages_searching_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item active">
+              <%= link_to "Production Companies", pages_searching_companies_path, class: "nav-link" %>
             </li>
               <% if @user.occupation == "Actor" %>
             <li class="nav-item active">
@@ -83,6 +89,9 @@
         </li>
         <li class="nav-item active">
         <%= link_to "Search Actors", pages_searching_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item active">
+              <%= link_to "Production Companies", pages_searching_companies_path, class: "nav-link" %>
         </li>
         <li class="nav-item"><%= link_to "Login", new_user_session_path, class: "nav-link" %></li>
         </li>

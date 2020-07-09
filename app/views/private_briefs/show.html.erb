@@ -31,6 +31,11 @@
        <% if @user.occupation == "Actor" %>
 
        <h2 style="color:white;">When you are ready, please attach your audition video here </h2>
+             <div>
+        <%= link_to decline_path(@private_brief), method: :patch, class:"d-flex justify-content-end" do %>
+          <i class="fas fa-times" style="font-size: 20px; color: red;"></i>
+        <% end %>
+      </div>
 
         <br>
         <br>

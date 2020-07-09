@@ -31,7 +31,11 @@ Rails.application.routes.draw do
   get 'pages/staff'
   get 'pages/searching'
   post 'pages/searching'
+  get 'pages/searching_companies'
+  post 'pages/searching_companies'
 
+  patch "/accept", to: "private_briefs#accept"
+  patch "/decline", to: "private_briefs#decline"
 
 
   devise_for :users
