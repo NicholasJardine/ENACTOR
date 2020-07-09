@@ -26,6 +26,8 @@
 "HAUSA",
 "IGBO"].sort %>
 
+<% ages =["[0-10]","[9-19]","[20-29]","[30-39]","[40-49]","[50-59]","[60-69]","[70-179","[80 + ]"] %>
+
         <div class="accordion" id="accordionExample">
           <div class="card">
             <div class="card-header" id="headingOne">
@@ -44,8 +46,10 @@
                 <div class="new-form-inputs">
                 <%= f.input :title, label: "your company name and title of show" %>
                     <%= f.input :name, label: "Name of character" %>
-                    <%= f.input :age, label: "Age"  %>
-                <%= f.input :gender, collection:["Male", "Female", "Non-Binary"], label: "Gender"%>
+<!--                     <%= f.input :age, label: "Age"  %>
+   -->                <%= f.input :age_range, collection:ages, label: "Age"%>
+
+ -->                <%= f.input :gender, collection:["Male", "Female", "Non-Binary"], label: "Gender"%>
                 <%= f.input :ethnicty, collection:["Black", "White","Mixed", "Asian", "Indian", "Racially Ambiguos" ], label: "Race/Ethnicity"%>
                 <%= f.input :marital_status, collection:["Single", "Married"], label: " Marital Status"%>
                 <%= f.input :language, collection:langs, label: "Language "%>

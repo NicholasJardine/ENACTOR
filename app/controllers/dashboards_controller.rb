@@ -14,5 +14,33 @@ class DashboardsController < ApplicationController
      # @alls = @myauditions + @accepted_auditions
      # @inprogress_auditions = @alls.select { |audition| audition.status == "in progress" || audition.status == "finished" }
      # @finished_auditions = @alls.select { |audition| audition.status == "agreed" }
+         @my_private_briefs_accepted = PrivateBrief.where(user_id: @user.id).where(status: 'accepted')
+
    end
+
+    def request_decision
+     @private_brief = PrivateBrief.find(params[:private_brief_id])
+
+     if params['button_action'] == 'accept'
+     @private_brief.status = 'accepted'
+     @private_brief.save
+    else
+     @private_brief.status = 'declined'
+     @private_brief.save
+    end
+    # @session.status = 'in progress'
+    # @session.save
+    # @user_invite.user.wallet -= @session.price
+    # @user_invite.user.save
+
+    redirect_to dashboard_path(current_user)
+  end
+
+  def decline
+    # @session = Session.find(params[:session_id])
+    # @user_invite = UserInvite.find(params[:user_invite_id])
+    # @user_invite.status = "declined"
+    # @user_invite.save
+    # redirect_to dashboard_path(current_user)
+  end
 end

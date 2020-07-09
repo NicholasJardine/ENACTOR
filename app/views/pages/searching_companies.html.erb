@@ -1,0 +1,36 @@
+
+
+<div class="container-two" style="background-color: black; width:100%">
+
+<div class="container">
+
+<div class="my-search" style="margin-top: 48px;">
+  <h3 style="color:white;">Find a company BY NAME in the field below!</h3>
+    <div class="row">
+    <div class="col-3">
+<%= form_tag pages_searching_path method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Search Companies"
+  %>
+  <%= submit_tag "Search", class: "btn btn-flat-orange" %>
+<% end %>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+      <div id="movies">
+        <% @users.each do |user| %>
+      <%= render 'shared/searchcard', user: user %>
+
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
