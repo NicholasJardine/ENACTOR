@@ -6,6 +6,8 @@ class DashboardsController < ApplicationController
     @matching_briefs = Brief.where(ethnicty: @user.ethnicty).where(gender: @user.gender).where(age: @user.age)
     @my_briefs = Brief.where(user_id: @user.id)
     @myauditions = Audition.where(user_id: current_user.id)
+    @my_private_auditions = PrivateAudition.where(user_id: current_user.id)
+
     @my_private_briefs = PrivateBrief.where(user_id: @user.id)
     @my_pendings = Audition.where(user_id: current_user.id).where(status: "Pending")
     @invite_briefs = PrivateBrief.where(sender_id: @user.id.to_i)
