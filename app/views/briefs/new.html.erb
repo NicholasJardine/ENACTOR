@@ -26,13 +26,16 @@
 "HAUSA",
 "IGBO"].sort %>
 
-<% ages =["[0-10]","[9-19]","[20-29]","[30-39]","[40-49]","[50-59]","[60-69]","[70-179","[80 + ]"] %>
+<% ages =["[0-10]","[9-19]","[20-29]","[30-39]","[40-49]","[50-59]","[60-69]","[70-79]","[80 + ]"] %>
 
-        <div class="accordion" id="accordionExample">
+<div class="mt-5">
+  <div class="row"><div class="col-6">
+
+        <div class="accordion" id="accordionExample" style="background: #b5076b;">
           <div class="card">
-            <div class="card-header" id="headingOne">
+            <div class="card-header" id="headingOne" style="background: #b5076b;">
               <h2 class="mb-0">
-                <button class="btn btn-link " type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                <button class="btn btn-link " type="button" style="background: #b5076b;" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                    <strong> Click here to customise the acting brief</strong>
                </button>
               </h2>
@@ -62,7 +65,11 @@
                 <%= f.input :traits, label: "Traits."%>
                 <%= f.input :flaws, label: "Flaws."%>
                 <%= f.input :arc_summary, label: "Arc Summary" %>
-                <%= f.input :attachment, as: :file, label:"Click here to attach scripts." %>
+<!--                 <%= f.input :attachment, as: :file, label:"Click here to attach scripts." %>
+                 -->
+
+                <%= f.input :scene, as: :file, :resource_type => :raw %>
+
                 <%= f.input :user_id, :as => :hidden, :input_html => { :value => current_user.id } %>
 
             </div>
@@ -77,4 +84,12 @@
 
 
   <% end %>
+</div>
+
+
+
+
+</div></div>
+
+
 </div>
