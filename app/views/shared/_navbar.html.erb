@@ -12,6 +12,11 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in?%>
+        <% if @user.email == "kayla@gmail.com" %>
+            <li class="nav-item">
+              <%= link_to "New Article", new_article_path , class: "nav-link" %>
+            </li>
+            <% end %>
         <% if @user.photo.attached? %>
             <li class="nav-item active">
               <%= link_to "Home", pages_home_path, class: "nav-link" %>

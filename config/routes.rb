@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
 
 
+  get 'articles/index'
+  get 'articles/show'
+  get 'articles/new'
+  get 'articles/create'
+  get 'articles/edit'
+  get 'articles/update'
   get 'private_auditions/show'
   get 'private_auditions/new'
   get 'private_auditions/create'
@@ -48,11 +54,13 @@ Rails.application.routes.draw do
 
 
 
-  resources :profiles, only: [:show, :new, :create, :uppdate, :delete]
+  resources :profiles, only: [:show, :new, :create, :update, :delete]
   resources :briefs, only: [:show, :new, :create, :update, :delete]
   resources :briefs, path: '/', param: :id, only: %i[show]
   resources :private_briefs, only: [:show, :new, :create, :update, :delete]
   resources :private_briefs, path: '/', param: :id, only: %i[show]
+  resources :articles, only: [:index, :show, :new, :create, :update, :delete]
+
 
   resources :auditions, only: [:index, :show, :new, :create, :update, :delete]
   resources :auditions, path: '/', param: :id, only: %i[show]
