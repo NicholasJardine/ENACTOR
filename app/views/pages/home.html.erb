@@ -19,12 +19,41 @@
     <a class="nav-item"><%= link_to "Get Started", new_user_registration_path, class: "btn btn-flat-orange" %></a>
   </div>
 </div>
-<% end %>
+<% end %> <br>
+<h3 style="text-align: center; color: white;" > What's Happening in the industry?</h3>
+<div class="row"><div class="col-4">
 
-<div style="display: flex; justify-content:space-around;">
+<div class="container">
+  <% @articles.each do |article| %>
 
-<div class="pages-links" style="display: flex; justify-content: space-around; position: absolute; bottom: 0;">
-  <div class="clicky">
+<div class="card-product">
+<%= cl_image_tag article.image.key, height: 250, width: 250, crop: :fill %>
+  <div class="card-product-infos">
+    <h2> <%= article.title %></h2>
+    <p><strong><%= article.description %></strong></p>
+    <p> <%= link_to "Read More", (url_for(article.attachment))%> </p>
+
+  </div>
+</div>
+  <% end %>
+  </div>
+</div>
+<br><br>
+</div></div>
+
+<div class="row" style="background:black;">
+  <div class="col-12" style="background-color: black;">
+
+<!-- <div style="display: flex; justify-content:space-between;background-color:black;">
+ -->
+<!-- <div class="pages-links" style="display: flex; justify-content: space-around; position: absolute; background: black;">
+ -->
+
+
+
+<div class="pages" style="display: flex; justify-content: space-around;position: relative;">
+
+ <div class="clicky" style="background-color: black">
     <%= link_to pages_how_it_path do %>
       <div class="image-links">
         <%= image_tag "how.jpeg" %>
@@ -57,8 +86,17 @@
 </div>
 
 
+</div>
+
+
+
 
 
 </div>
 
+
+
+  </div>
+<!-- </div>
+ -->
 

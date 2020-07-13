@@ -3,6 +3,7 @@ class PagesController < ApplicationController
 
   def home
     @user = current_user
+    @articles = Article.all
   end
 
   def staff

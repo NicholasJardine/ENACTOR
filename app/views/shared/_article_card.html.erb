@@ -1,0 +1,8 @@
+<div class="card-product">
+<%= cl_image_tag article.image.key, height: 250, width: 250, crop: :fill %>
+  <div class="card-product-infos">
+    <h2> <%= article.title %></h2>
+    <p><strong><%= article.description %></strong></p>
+  </div>
+</div>
+
