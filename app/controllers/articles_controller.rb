@@ -1,4 +1,6 @@
 class ArticlesController < ApplicationController
+    skip_before_action :authenticate_user!
+
   def index
   end
 
@@ -33,7 +35,7 @@ class ArticlesController < ApplicationController
     private
 
   def article_params
-    params.require(:article).permit(:title, :image, :attachment, :description)
+    params.require(:article).permit(:title, :image, :attachment, :description, :paragraph_one, :paragraph_two, :paragraph_three, :paragraph_four, :paragraph_five, :paragraph_six)
   end
 
 end
