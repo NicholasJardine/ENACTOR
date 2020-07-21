@@ -22,17 +22,27 @@
 <% end %> <br>
 <h3 class="mt-5" style="text-align: center; color: white;" > What's Happening in the industry?</h3>
 
+<div class="row" style="background:black;"><div class="col-12">
+
+<div class="container">
 
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-    <%= cl_image_tag @last.image.key, height: 500, width: 500, crop: :fill %>
+    <%= cl_image_tag @last.image.key, height: 500, width: 1000, crop: :fill %>
+    <div class="carousel-caption d-none d-md-block">
+    <h5><%= @last.title %></h5>
+    <p><%= link_to "Read More", articles_show_path(@last)%></p>
     </div>
-
+    </div>
     <% @articles.each do |article| %>
 
     <div class="carousel-item">
-    <%= cl_image_tag article.image.key, height: 500, width: 500, crop: :fill %>
+    <%= cl_image_tag article.image.key, height: 500, width: 1000, crop: :fill %>
+    <div class="carousel-caption d-none d-md-block">
+    <h5><%= article.title %></h5>
+    <p><%= link_to "Read More", articles_show_path(article)%></p>
+    </div>
     </div>
     <% end %>
   </div>
@@ -45,6 +55,13 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
+
+</div>
+
+</div>
+
+
+
 
 
 
@@ -69,8 +86,13 @@
 
 </div>
 <br><br>
-</div></div>
+</div>
+<!-- </div> -->
 
+
+
+
+  </div>
 <div class="row" style="background:black;">
   <div class="col-12" style="background-color: black;">
 
@@ -123,10 +145,6 @@
 
 
 </div>
-
-
-
-  </div>
 <!-- </div>
  -->
 
