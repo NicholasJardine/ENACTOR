@@ -20,30 +20,79 @@
   </div>
 </div>
 <% end %> <br>
-<h3 style="text-align: center; color: white;" > What's Happening in the industry?</h3>
-<div class="row"><div class="col-4">
+<h3 class="mt-5" style="text-align: center; color: white;" > What's Happening in the industry?</h3>
 
-
+<div class="row" style="background:black;"><div class="col-12">
 
 <div class="container">
-  <% @articles.each do |article| %>
 
-<div class="card-product">
-<%= cl_image_tag article.image.key, height: 250, width: 250, crop: :fill %>
-  <div class="card-product-infos">
-    <h2> <%= article.title %></h2>
-    <p><strong><%= article.description %></strong></p>
-    <p> <%= link_to "Read More", articles_show_path(article)%> </p>
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+    <%= cl_image_tag @last.image.key, height: 500, width: 1000, crop: :fill %>
+    <div class="carousel-caption d-none d-md-block">
+    <h5><%= @last.title %></h5>
+    <p><%= link_to "Read More", articles_show_path(@last)%></p>
+    </div>
+    </div>
+    <% @articles.each do |article| %>
 
+    <div class="carousel-item">
+    <%= cl_image_tag article.image.key, height: 500, width: 1000, crop: :fill %>
+    <div class="carousel-caption d-none d-md-block">
+    <h5><%= article.title %></h5>
+    <p><%= link_to "Read More", articles_show_path(article)%></p>
+    </div>
+    </div>
+    <% end %>
   </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
 </div>
+
+</div>
+
+</div>
+
+
+
+
+
+
+<div class="row"><div class="col-9">
+
+
+
+<div class="container-3">
+  <% @articles.each do |article| %>
+  <div class="container">
+    <div class="card-product">
+    <%= cl_image_tag article.image.key, height: 250, width: 250, crop: :fill %>
+      <div class="card-product-infos">
+        <h2> <%= article.title %></h2>
+        <p><strong><%= article.description %></strong></p>
+        <p> <%= link_to "Read More", articles_show_path(article)%> </p>
+      </div>
+    </div>
+  </div>
   <% end %>
   </div>
 
 </div>
 <br><br>
-</div></div>
+</div>
+<!-- </div> -->
 
+
+
+
+  </div>
 <div class="row" style="background:black;">
   <div class="col-12" style="background-color: black;">
 
@@ -96,10 +145,6 @@
 
 
 </div>
-
-
-
-  </div>
 <!-- </div>
  -->
 
