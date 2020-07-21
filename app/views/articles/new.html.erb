@@ -6,7 +6,12 @@
                 <div class="new-form-inputs">
                 <%= f.input :title, label: "The title of the article" %>
                 <%= f.input :description, label: "Short article description" %>
-                <%= f.input :attachment, as: :file, :resource_type => :raw, label: "Attach article pdf"%>
+                <%= f.input :paragraph_one, label: "Short article paragraph" %>
+                <%= f.input :paragraph_two, label: "Short article paragraph" %>
+                <%= f.input :paragraph_three, label: "Short article paragraph" %>
+                <%= f.input :paragraph_four, label: "Short article paragraph" %>
+                <%= f.input :paragraph_five, label: "Short article paragraph" %>
+                <%= f.input :paragraph_six, label: "Short article paragraph" %>
                 <%= f.input :image, as: :file, label: "Cover image for article" %>
         <%= f.button :submit, class: "btn btn-flat-orange", value: "Create Article" %>
 <% end %>

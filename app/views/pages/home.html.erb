@@ -23,6 +23,8 @@
 <h3 style="text-align: center; color: white;" > What's Happening in the industry?</h3>
 <div class="row"><div class="col-4">
 
+
+
 <div class="container">
   <% @articles.each do |article| %>
 
@@ -31,12 +33,13 @@
   <div class="card-product-infos">
     <h2> <%= article.title %></h2>
     <p><strong><%= article.description %></strong></p>
-    <p> <%= link_to "Read More", (url_for(article.attachment))%> </p>
+    <p> <%= link_to "Read More", articles_show_path(article)%> </p>
 
   </div>
 </div>
   <% end %>
   </div>
+
 </div>
 <br><br>
 </div></div>
