@@ -20,7 +20,7 @@
   </div>
 </div>
 <% end %> <br>
-<h3 class="mt-5" style="text-align: center; color: white;" > What's Happening in the industry?</h3>
+<h3 class="m-5" style="text-align: center; color: white;" > WHAT'S HAPPENING IN THE INDUSTRY?</h3>
 
 <div class="row" style="background:black;"><div class="col-12">
 
@@ -40,8 +40,11 @@
     <div class="carousel-item">
     <%= cl_image_tag article.image.key, height: 500, width: 1000, crop: :fill %>
     <div class="carousel-caption d-none d-md-block">
-    <h5><%= article.title %></h5>
-    <p><%= link_to "Read More", articles_show_path(article)%></p>
+    <h5><%= article.title.upcase %></h5>
+    <div class="mt-5">
+    <p><%= link_to "Read More", articles_show_path(article), class: "btn-flat-dis" %></p>
+
+    </div>
     </div>
     </div>
     <% end %>
@@ -54,20 +57,24 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
-</div>
+
+  <ol class="carousel-indicators">
+    <% @articles.each do |article| %>
+    <li data-target="#carouselExampleControls" data-slide-to="0" class="active">
+    <div class="card-product">
+    <%= cl_image_tag article.image.key, height: 250, width: 250, crop: :fill %>
+      <div class="card-product-infos">
+        <h2> <%= article.title %></h2>
+        <p><strong><%= article.description %></strong></p>
+        <p> <%= link_to "Read More", articles_show_path(article), class: "btn-ghost"%> </p>
+      </div>
+    </div>
+    </li>
+    <% end %>
+  </ol>
 
 </div>
-
-</div>
-
-
-
-
-
-
-<div class="row"><div class="col-9">
-
-
+<!-- <div class="row"><div class="col-9">
 
 <div class="container-3">
   <% @articles.each do |article| %>
@@ -77,16 +84,28 @@
       <div class="card-product-infos">
         <h2> <%= article.title %></h2>
         <p><strong><%= article.description %></strong></p>
-        <p> <%= link_to "Read More", articles_show_path(article)%> </p>
+        <p> <%= link_to "Read More", articles_show_path(article), class: "btn-ghost"%> </p>
       </div>
     </div>
   </div>
   <% end %>
   </div>
 
+
+
 </div>
 <br><br>
+</div> -->
+
 </div>
+
+</div>
+
+
+
+
+
+
 <!-- </div> -->
 
 

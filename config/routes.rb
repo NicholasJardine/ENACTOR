@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+
   get 'articles/index'
   get 'articles/show'
   get 'articles/new'
@@ -51,6 +52,8 @@ Rails.application.routes.draw do
   resources :production_companies, only: [:show, :new, :create, :update, :delete]
   resources :users, path: '/', param: :id, only: %i[show]
   resources :dashboards, only: [:show]
+  resources :posts
+
 
 
 
