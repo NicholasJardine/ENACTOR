@@ -2,7 +2,7 @@
 
 
     <% if @user.name == nil%>
-    <div class="row"> <div class="col-6">
+    <div class="row"> <div class="col-6" style="background-color:white">
 
     <h1 style="color: white;">some details are missing in your profile, click the button to create your profile</h1>
         <%= link_to  "Create Profile", edit_user_registration_path, class: "btn btn-flat-orange" %>
@@ -17,7 +17,7 @@
 
 
       <% if @user.occupation == "Actor" %>
-      <div class="row"><div class="col-6">
+      <div class="row" style="background:black;"><div class="col-6">
 
           <table class="mt-3" style="width:50%; color: white">
             <%= cl_image_tag @user.photo.key, height: 400, width: 500, crop: :fill %>
@@ -52,8 +52,12 @@
             </div>
 
              <br>
+             <div class="mt-3" style="background: black;">
+
              <h3 style="color:white"> My Agent's Details: </h3>
-              <p>Agent:  <%= @user.agent_details %> </p>
+              <p style="color:white">Agent:  <%= @user.agent_details %> </p>
+
+             </div>
 
 
       </div>
@@ -106,9 +110,13 @@
 
 </div>
 
+<div class="mt-5" style="background-color: black">
+
 <h3 style="color:#b5076b">Cancel my account</h3>
 
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(@user), data: { confirm: "Are you sure?" }, method: :delete %></p>
+<p style="color:white"> Unhappy? <%= link_to "Cancel my account", registration_path(@user), class: "btn-flat-orange", data: { confirm: "Are you sure?" }, method: :delete %></p>
+
+</div>
 
 
 
