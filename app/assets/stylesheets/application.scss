@@ -33,6 +33,7 @@
   justify-content: space-around;
   padding: 0px 50px;
   color: #f88a2b;
+  position: sticky-bottom;
 }
 .footer-links {
   display: flex;
@@ -48,6 +49,9 @@
 }
 .footer-links a:hover {
   opacity: 0.5;
+}
+.info-pages p{
+  color:white;
 }
 
 // banner
@@ -120,6 +124,38 @@
   justify-content: space-between;
   padding:36px;
   width:100%;
-  position:relative;
   margin:0 auto;
+}
+
+.btn-flat-dis {
+  color: #b5076b;
+  font-weight: bold;
+  padding: 12px 24px;
+  background: black;
+  text-align: center;
+  position:relative;
+  border: solid 1px;
+  border-color: #b5076b;
+  bottom:0;
+  left:0;
+  height:50px;
+  margin-top: 10px;
+}
+
+.carousel-indicators li {
+  width: 250px;
+}
+
+.carousel-indicators p {
+  color:black;
+}
+
+.carousel-indicators {
+  display:flex;
+  justify-content: space-between;
+
+}
+
+.how-it-works p{
+color:white;
 }

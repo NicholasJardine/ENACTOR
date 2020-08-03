@@ -15,12 +15,12 @@
   <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path "header.jpg" %>);">
   <div class="container">
     <h1>Enactor connects <strong>talented people</strong> with <strong>the world</strong>!</h1>
-    <p>Connect with production companies and audition from anywhere.</p>
+    <p>Enactor’s mission is to give actors and production companies (marketing agencies, theatre companies, film productions) the ability to easily find the actor they wish to have in their projects, and to simplify the process of auditioning with the aid of online auditions. To help them save both time and money. Click here to find out how! It is also a great tool to use during the Covid 19 pandemic to lessen face to face auditions.</p>
     <a class="nav-item"><%= link_to "Get Started", new_user_registration_path, class: "btn btn-flat-orange" %></a>
   </div>
 </div>
 <% end %> <br>
-<h3 class="mt-5" style="text-align: center; color: white;" > What's Happening in the industry?</h3>
+<h3 class="m-5" style="text-align: center; color: white;" > INDUSTRY NEWS:</h3>
 
 <div class="row" style="background:black;"><div class="col-12">
 
@@ -32,7 +32,7 @@
     <%= cl_image_tag @last.image.key, height: 500, width: 1000, crop: :fill %>
     <div class="carousel-caption d-none d-md-block">
     <h5><%= @last.title %></h5>
-    <p><%= link_to "Read More", articles_show_path(@last)%></p>
+    <p><%= link_to "Read More", articles_path(@last)%></p>
     </div>
     </div>
     <% @articles.each do |article| %>
@@ -40,8 +40,11 @@
     <div class="carousel-item">
     <%= cl_image_tag article.image.key, height: 500, width: 1000, crop: :fill %>
     <div class="carousel-caption d-none d-md-block">
-    <h5><%= article.title %></h5>
-    <p><%= link_to "Read More", articles_show_path(article)%></p>
+    <h5><%= article.title.upcase %></h5>
+    <div class="mt-5">
+    <p><%= link_to "Read More", article_path(article), class: "btn-flat-dis" %></p>
+
+    </div>
     </div>
     </div>
     <% end %>
@@ -54,20 +57,30 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
+
+
+<div>
+
+
 </div>
 
-</div>
+  <ol class="carousel-indicators">
+    <% @articles.each do |article| %>
+    <li data-target="#carouselExampleControls" data-slide-to="0" class="active">
+    <div class="card-product">
+    <%= cl_image_tag article.image.key, height: 250, width: 250, crop: :fill %>
+      <div class="card-product-infos">
+<!--         <h2> <%= article.title %></h2>
+<p><strong><%= article.description %></strong></p> -->
+        <p> <%= link_to "Read More", articles_show_path(article), class: "btn-ghost"%> </p>
+      </div>
+    </div>
+    </li>
+    <% end %>
+  </ol>
 
 </div>
-
-
-
-
-
-
-<div class="row"><div class="col-9">
-
-
+<!-- <div class="row"><div class="col-9">
 
 <div class="container-3">
   <% @articles.each do |article| %>
@@ -77,20 +90,32 @@
       <div class="card-product-infos">
         <h2> <%= article.title %></h2>
         <p><strong><%= article.description %></strong></p>
-        <p> <%= link_to "Read More", articles_show_path(article)%> </p>
+        <p> <%= link_to "Read More", articles_show_path(article), class: "btn-ghost"%> </p>
       </div>
     </div>
   </div>
   <% end %>
   </div>
 
+
+
 </div>
 <br><br>
+</div> -->
+
 </div>
+
+</div>
+
+
+
+
+
+
 <!-- </div> -->
 
 
-
+<br><br><br>
 
   </div>
 <div class="row" style="background:black;">
@@ -103,13 +128,13 @@
 
 
 
-<div class="pages" style="display: flex; justify-content: space-around;position: relative;">
+<!-- <div class="pages" style="display: flex; justify-content: space-around;position: relative;">
 
  <div class="clicky" style="background-color: black">
     <%= link_to pages_how_it_path do %>
       <div class="image-links">
         <%= image_tag "how.jpeg" %>
-        <p>How it works</p>
+        <p style="color: white;">How it works</p>
       </div>
       <% end %>
   </div>
@@ -119,7 +144,7 @@
     <%= link_to pages_mission_path do %>
       <div class="image-links">
         <%= image_tag "vision.jpeg" %>
-        <p>Vision and Mission</p>
+        <p style="color: white;">Vision and Mission</p>
       </div>
     <% end %>
   </div>
@@ -129,13 +154,13 @@
     <%= link_to pages_staff_path do %>
       <div class="image-links">
         <%= image_tag "staff.jpeg" %>
-        <p>Our Staff</p>
+        <p style="color: white;">Our Staff</p>
       </div>
       <% end %>
   </div>
 
 
-</div>
+</div> -->
 
 
 </div>

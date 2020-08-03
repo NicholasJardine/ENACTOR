@@ -1,2 +1,52 @@
 <h1>Articles#show</h1>
 <p>Find me in app/views/articles/show.html.erb</p>
+
+
+<div class="container" style="background: black;">
+
+  <div class="row">
+    <div class="col-12">
+     <h2 style="color: white;"> <%= @article.title.upcase %></h2>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+    <%= cl_image_tag @article.image.key, height: 600, width: 1000, crop: :fill %>
+
+    </div>
+  </div>
+  <br><br>
+
+
+
+</div>
+
+  <div class="container" style="background: black;">
+
+  <div class="row">
+
+    <div class="col-8">
+
+        <p style="color: white;"><%= @article.paragraph_one %></p>
+      <br>
+          <p style="color: white;"><%= @article.paragraph_two %></p>
+      <br>
+          <p style="color: white;"><%= @article.paragraph_three %></p>
+      <br>
+          <p style="color: white;"><%= @article.paragraph_four %></p>
+      <br>
+          <p style="color: white;"><%= @article.paragraph_five %></p>
+      <br>
+          <p style="color: white;"><%= @article.paragraph_six %></p>
+      <br>
+
+
+    </div>
+
+    <div class="col-4"> <%=  image_tag('ad.png')%> </div>
+  </div>
+
+
+  </div>
+
