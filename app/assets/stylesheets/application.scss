@@ -33,6 +33,7 @@
   justify-content: space-around;
   padding: 0px 50px;
   color: #f88a2b;
+  position: sticky-bottom;
 }
 .footer-links {
   display: flex;
@@ -48,6 +49,9 @@
 }
 .footer-links a:hover {
   opacity: 0.5;
+}
+.info-pages p{
+  color:white;
 }
 
 // banner
@@ -150,4 +154,8 @@
   display:flex;
   justify-content: space-between;
 
+}
+
+.how-it-works p{
+color:white;
 }
