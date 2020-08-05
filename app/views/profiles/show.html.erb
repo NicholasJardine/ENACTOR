@@ -74,8 +74,10 @@
    <%= cl_image_tag post.image.key, height: 100, width: 100, crop: :fill %>
  </div>
 <% end %>
+
 <% end %>
 
+<%= link_to "NEW POST", new_post_path, class: "btn btn-flat-orange" %>
 
 
 </div>
