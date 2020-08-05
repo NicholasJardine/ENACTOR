@@ -5,5 +5,6 @@ class UsersController < ApplicationController
     @user = current_user
     @u = User.find(params[:id])
     @private_brief = PrivateBrief.new
+    @posts = Post.where(id: @u.id)
   end
 end

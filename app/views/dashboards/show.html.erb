@@ -1,7 +1,7 @@
 <% if @user.occupation == "Actor" %>
   <h3 style="color:white;">New Opportunities</h3>
   <% if @matching_briefs == []  %>
-    <p>currently, there are no briefs that match your profile</p>
+    <p style="color:white;">currently, there are no briefs that match your profile</p>
 
   <% else %>
     <% @matching_briefs.each do |brief| %>
@@ -25,7 +25,7 @@
 <div class="audition-links">
 
 <% if @myauditions ==[] %>
-  <p>You have no auditions being reviewed at the moment</p>
+  <p style="color:white;">You have no auditions being reviewed at the moment.</p>
 <% else %>
   <% @myauditions.each do |audition| %>
     <%= link_to audition_path(audition) do %>
@@ -38,12 +38,12 @@
 
 
 <% if @my_private_auditions ==[] %>
-  <p> You havent been selected for a private audition or have not yet <br> submitted your audition video for your private auditions</p>
+  <p style="color:white;"> You havent been selected for a private audition or have not yet <br> submitted your audition video for your private auditions</p>
 
 <% else %>
   <% @my_private_auditions.each do |audition| %>
     <%= link_to private_audition_path(audition) do %>
-      <div> <p> <%= audition.title %></p></div>
+      <div> <p style="color:white;"> <%= audition.title %></p></div>
       <% end %>
     <% end %>
 <% end%>
@@ -58,7 +58,7 @@
 
 <% @my_private_briefs.each do |brief| %>
   <%= link_to private_brief_path(brief) do %>
-    <div> <p> <%= brief.title %></p></div>
+    <div> <p style="color:white;"> <%= brief.title %></p></div>
   <% end %>
       <div>
         <%= link_to decline_path(brief), method: :patch, class:"d-flex justify-content-end" do %>
@@ -73,7 +73,7 @@
 
 <% @my_briefs.each do |brief| %>
   <%= link_to brief_path(brief) do %>
-    <div> <p> <%= brief.title %></p> </div>
+    <div> <p style="color:white;"> <%= brief.title %></p> </div>
 <% end %>
 <% end %>
 
@@ -81,7 +81,7 @@
 <h3 style="color: white;">Briefs I've sent privately</h3>
   <% @invite_briefs.each do |brief| %>
     <%= link_to private_brief_path(brief) do %>
-      <div> <p> <%= brief.title %></p> </div>
+      <div> <p style="color:white;"> <%= brief.title %></p> </div>
     <% end %>
   <% end %>
 <% end %>

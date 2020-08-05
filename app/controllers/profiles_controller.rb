@@ -9,6 +9,8 @@ class ProfilesController < ApplicationController
 
 def show
   @user = current_user
+  @my_posts = Post.where(user_id: @user.id)
+
 
 end
   def new
