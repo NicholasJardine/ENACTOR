@@ -2,7 +2,7 @@
 
 
     <% if @user.name == nil%>
-    <div class="row"> <div class="col-6" style="background-color:white">
+    <div class="row"> <div class="col-6" style="background-color:black">
 
     <h1 style="color: white;">some details are missing in your profile, click the button to create your profile</h1>
         <%= link_to  "Create Profile", edit_user_registration_path, class: "btn btn-flat-orange" %>
@@ -63,7 +63,18 @@
       </div>
 <div class="col-6">
 
-<h3 style="color: white;"> My Gallery</h3>
+<h3 style="color: white;"> MY GALLERY:</h3>
+<% if @my_posts == [] %>
+<p style="color:white"> You haven't uploaded any pictures to your gallery. Click the button below to add one.</p>
+<%= link_to "NEW POST", new_post_path, class: "btn btn-flat-orange" %>
+<% else %>
+
+ <div class="cards">
+   <% @my_posts.each do |post| %>
+   <%= cl_image_tag post.image.key, height: 100, width: 100, crop: :fill %>
+ </div>
+<% end %>
+<% end %>
 
 
 

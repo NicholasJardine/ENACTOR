@@ -33,7 +33,8 @@
   justify-content: space-around;
   padding: 0px 50px;
   color: #f88a2b;
-  position: sticky-bottom;
+  position: sticky;
+  bottom: 0px;
 }
 .footer-links {
   display: flex;
@@ -158,4 +159,10 @@
 
 .how-it-works p{
 color:white;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
 }
