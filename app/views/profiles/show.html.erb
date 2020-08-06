@@ -69,15 +69,25 @@
 <%= link_to "NEW POST", new_post_path, class: "btn btn-flat-orange" %>
 <% else %>
 
- <div class="cards">
-   <% @my_posts.each do |post| %>
-   <%= cl_image_tag post.image.key, height: 100, width: 100, crop: :fill %>
- </div>
-<% end %>
 
-<% end %>
+<div class="row">
+
+   <% @my_posts.each do |post| %>
+   <div class="row">
+  <div class="col-2">
+   <%= cl_image_tag post.image.key, height: 200, width: 200, crop: :fill %>
+</div>
+</div>
+   <% end %>
+
+</div>
+<div class="mt-5">
 
 <%= link_to "NEW POST", new_post_path, class: "btn btn-flat-orange" %>
+</div>
+
+<% end %>
+
 
 
 </div>
@@ -130,6 +140,3 @@
 <p style="color:white"> Unhappy? <%= link_to "Cancel my account", registration_path(@user), class: "btn-flat-orange", data: { confirm: "Are you sure?" }, method: :delete %></p>
 
 </div>
-
-
-

@@ -71,6 +71,20 @@
 
 
       </div>
+      <div class="col-6">
+
+<h3 style="color: white;"> GALLERY:</h3>
+<% if @posts == [] %>
+<p style="color:white"> This user has not uploaded any pictures to their gallery. Click the button below to add one.</p>
+<% else %>
+
+ <div class="cards">
+   <% @posts.each do |post| %>
+   <%= cl_image_tag post.image.key, height: 100, width: 100, crop: :fill %>
+ </div>
+<% end %>
+
+<% end %>
        </div>
 
 <% if @user.occupation == "Actor" %>
