@@ -93,12 +93,12 @@
 <% end %>
        </div>
 
-<% if @user.occupation == "Actor" %>
+<% if @user.occupation == "Actor"%>
 <br>
 <% else %>
-        <div class="row">
+<!--         <div class="row">
 
-          <div class="col-2">
+  <div class="col-2"> -->
 
         <div class="accordion" id="accordionExample" style="background: #b5076b;">
           <div class="card">
@@ -134,7 +134,8 @@
             </div>
           </div>
         </div>
-
+</div>
+        </div>
         <%= f.button :submit, class: "btn btn-flat-orange", value: "Send" %>
 
           </div>
@@ -143,6 +144,7 @@
 <% end %>
 
 <% end %>
+    <%= render 'shared/footer' %>
 
 
 
