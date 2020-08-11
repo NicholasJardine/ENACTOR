@@ -12,12 +12,35 @@
             </div>
       </div>
         <% end %>
+
+
+              <div class="col-3 d-flex justify-content-between">
+        <%= link_to acceptb_path(user_brief_id: brief.user_briefs.first.id, brief_id: brief.id), method: :patch, class:"d-flex justify-content-end" do %>
+          <i class="fas fa-check" style="font-size: 20px; color: green;"></i>
+        <% end %>
+        <%= link_to declineb_path(user_brief_id: brief.user_briefs.first.id, brief_id: brief.id), method: :patch, class:"d-flex justify-content-end" do %>
+          <i class="fas fa-times" style="font-size: 20px; color: red;"></i>
+        <% end %>
+      </div>
+
+
     <% end %>
+
   <% end %>
 <br>
 
 
+<h3 style="color:white;"> Briefs I've accepted </h3>
 
+    <% @my_accepted_briefs.each do |brief| %>
+      <div class="match">
+        <%= link_to brief_path(brief) do %>
+            <div>
+              <p style="color:white;"><%= brief.title %></p>
+            </div>
+      </div>
+        <% end %>
+        <% end %>
 
 
 <h3 style="color:white;">Pending Auditions</h3>

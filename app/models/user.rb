@@ -2,12 +2,13 @@ class User < ApplicationRecord
   has_one_attached :photo
   has_many_attached :images
 
-  has_many :user_briefs
   has_many :briefs
+  has_many :user_briefs
+
   has_many :private_briefs
   has_many :posts
 
-  # has_many :user_auditions
+  has_many :user_auditions
   has_many :auditions
 
 

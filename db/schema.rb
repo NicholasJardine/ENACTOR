@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_05_125541) do
+ActiveRecord::Schema.define(version: 2020_08_11_122253) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -106,6 +106,7 @@ ActiveRecord::Schema.define(version: 2020_08_05_125541) do
     t.bigint "user_id"
     t.string "age_range"
     t.string "scene"
+    t.string "status", default: "Pending"
     t.index ["user_id"], name: "index_briefs_on_user_id"
   end
 
@@ -214,6 +215,7 @@ ActiveRecord::Schema.define(version: 2020_08_05_125541) do
     t.bigint "brief_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "status", default: "Pending"
     t.index ["brief_id"], name: "index_user_briefs_on_brief_id"
     t.index ["user_id"], name: "index_user_briefs_on_user_id"
   end
