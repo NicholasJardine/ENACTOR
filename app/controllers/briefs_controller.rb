@@ -18,6 +18,8 @@ class BriefsController < ApplicationController
 
   def create
     @brief = Brief.create!(brief_params)
+    @user_brief = UserBrief.create!(user_id: current_user.id, brief_id: @brief.id, status:"Pending")
+
    #  @production_company = ProductionCompany.find(params[:id])
    # # @brief.user = current_user
    #  @brief.production_company = @production_company
@@ -29,6 +31,13 @@ class BriefsController < ApplicationController
     end
   end
 
+  def join_brief_auditions
+    @brief = Brief.find(brief_id)
+    @user_brief = UserBrief.new
+    @user_brief.user = current_user
+    @user_brief.audition = @audition
+    @user_brief.save
+  end
 
   def edit
   end
