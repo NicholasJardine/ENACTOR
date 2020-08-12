@@ -6,8 +6,7 @@ class DashboardsController < ApplicationController
     @matching_briefs = Brief.where(ethnicty: @user.ethnicty).where(gender: @user.gender).where(age_range: @user.age_range).where(status: "Pending")
     @my_briefs = Brief.where(user_id: @user.id)
     @my_accepted_briefs = UserBrief.where(user: current_user).where(status: "accepted").map { |ui| ui.brief }
-
-
+    @accepted = Application.where(user_id: current_user.id).map { |application| application.user_brief.brief }
     @myauditions = Audition.where(user_id: current_user.id)
     @my_private_auditions = PrivateAudition.where(user_id: current_user.id)
 

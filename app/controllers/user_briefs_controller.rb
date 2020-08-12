@@ -2,6 +2,7 @@ class UserBriefsController < ApplicationController
     def accept_brief
     @brief = Brief.find(params[:brief_id])
     @user_brief = UserBrief.find(params[:user_brief_id])
+    @application = Application.create!(user_id: current_user.id, user_brief_id: @user_brief.id)
     @user_brief.status = 'accepted'
     @user_brief.user = current_user
     @user_brief.save
