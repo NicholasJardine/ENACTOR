@@ -14,6 +14,16 @@ class DashboardsController < ApplicationController
 
 
     @accepted = Application.where(user_id: current_user.id).map { |application| application.user_brief.brief }
+
+    @accepted.each do |brief|
+      if @accepted.include?(brief)
+         @matching_briefs = @matching_briefs.reject{ |brief| @accepted.include?(brief) }
+
+      end
+    end
+
+      @matching_briefs.reject{ |brief| @accepted.include?(brief) }
+
     @myauditions = Audition.where(user_id: current_user.id)
     @my_private_auditions = PrivateAudition.where(user_id: current_user.id)
 
