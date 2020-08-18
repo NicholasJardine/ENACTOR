@@ -4,6 +4,8 @@ class User < ApplicationRecord
 
   has_many :briefs
   has_many :user_briefs
+  has_many :private_invites
+
   has_many :applications
   has_many :private_briefs
   has_many :posts

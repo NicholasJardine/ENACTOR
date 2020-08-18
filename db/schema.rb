@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_12_112108) do
+ActiveRecord::Schema.define(version: 2020_08_18_125120) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "acceptances", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "private_invite_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["private_invite_id"], name: "index_acceptances_on_private_invite_id"
+    t.index ["user_id"], name: "index_acceptances_on_user_id"
+  end
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -162,6 +171,16 @@ ActiveRecord::Schema.define(version: 2020_08_12_112108) do
     t.index ["user_id"], name: "index_private_briefs_on_user_id"
   end
 
+  create_table "private_invites", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "private_brief_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "status", default: "Pending"
+    t.index ["private_brief_id"], name: "index_private_invites_on_private_brief_id"
+    t.index ["user_id"], name: "index_private_invites_on_user_id"
+  end
+
   create_table "production_companies", force: :cascade do |t|
     t.string "title"
     t.bigint "user_id"
@@ -226,7 +245,9 @@ ActiveRecord::Schema.define(version: 2020_08_12_112108) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "status", default: "Pending"
+    t.bigint "private_brief_id"
     t.index ["brief_id"], name: "index_user_briefs_on_brief_id"
+    t.index ["private_brief_id"], name: "index_user_briefs_on_private_brief_id"
     t.index ["user_id"], name: "index_user_briefs_on_user_id"
   end
 
@@ -270,6 +291,8 @@ ActiveRecord::Schema.define(version: 2020_08_12_112108) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "acceptances", "private_invites"
+  add_foreign_key "acceptances", "users"
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "actors", "users"
   add_foreign_key "applications", "user_briefs"
@@ -283,10 +306,13 @@ ActiveRecord::Schema.define(version: 2020_08_12_112108) do
   add_foreign_key "private_auditions", "private_briefs"
   add_foreign_key "private_auditions", "users"
   add_foreign_key "private_briefs", "users"
+  add_foreign_key "private_invites", "private_briefs"
+  add_foreign_key "private_invites", "users"
   add_foreign_key "production_companies", "users"
   add_foreign_key "scripts", "briefs"
   add_foreign_key "user_auditions", "auditions"
   add_foreign_key "user_auditions", "users"
   add_foreign_key "user_briefs", "briefs"
+  add_foreign_key "user_briefs", "private_briefs"
   add_foreign_key "user_briefs", "users"
 end

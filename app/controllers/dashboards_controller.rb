@@ -27,7 +27,7 @@ class DashboardsController < ApplicationController
     @myauditions = Audition.where(user_id: current_user.id)
     @my_private_auditions = PrivateAudition.where(user_id: current_user.id)
 
-    @my_private_briefs = PrivateBrief.where(user_id: @user.id)
+    @my_private_briefs = PrivateBrief.where(user_id: @user.id).where(status: "Pending")
     @my_pendings = Audition.where(user_id: current_user.id).where(status: "Pending")
     @invite_briefs = PrivateBrief.where(sender_id: @user.id.to_i)
      # @auditions = UserInvite.where(user: current_user).where(status: "Pending").map { |ui| ui.audition }
@@ -36,6 +36,8 @@ class DashboardsController < ApplicationController
      # @inprogress_auditions = @alls.select { |audition| audition.status == "in progress" || audition.status == "finished" }
      # @finished_auditions = @alls.select { |audition| audition.status == "agreed" }
          @my_private_briefs_accepted = PrivateBrief.where(user_id: @user.id).where(status: 'accepted')
+
+    @accepted_pbs = Acceptance.where(user_id: current_user.id).map { |acceptance| acceptance.private_invite.private_brief }
 
    end
 

@@ -12,6 +12,8 @@ class PrivateBriefsController < ApplicationController
 
   def create
     @brief = PrivateBrief.create!(private_brief_params)
+    @private_invite = PrivateInvite.create!(user_id: current_user.id, private_brief_id: @brief.id, status:"Pending")
+
    #  @production_company = ProductionCompany.find(params[:id])
    # # @brief.user = current_user
    #  @brief.production_company = @production_company
@@ -77,7 +79,7 @@ class PrivateBriefsController < ApplicationController
   private
 
   def private_brief_params
-    params.require(:private_brief).permit(:title, :name, :age, :gender, :ethnicty, :language, :sender_id, :user_id, :status)
+    params.require(:private_brief).permit(:title, :name, :age, :gender, :ethnicty, :language, :sender_id, :user_id, :status, :scene)
   end
 
 
