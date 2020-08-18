@@ -5,7 +5,7 @@ class PagesController < ApplicationController
     @user = current_user
     @last = Article.last
     @articles = Article.all
-    @others = @articles.drop(@articles.length - 1)
+    # @others = @articles.drop(@articles.length - 1)
   end
 
   def staff

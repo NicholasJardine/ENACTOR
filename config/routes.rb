@@ -52,6 +52,8 @@ Rails.application.routes.draw do
   patch '/join_brief', to: "briefs#join_brief_auditions"
   patch "/acceptb", to: "user_briefs#accept_brief"
   patch "/declineb", to: "user_briefs#decline_brief"
+  patch "/acceptinvite", to: "private_invites#accept"
+
 
   devise_for :users
   root to: 'pages#home'

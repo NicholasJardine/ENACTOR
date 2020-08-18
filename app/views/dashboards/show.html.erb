@@ -87,8 +87,24 @@
         <%= link_to decline_path(brief), method: :patch, class:"d-flex justify-content-end" do %>
           <i class="fas fa-times" style="font-size: 20px; color: red;"></i>
         <% end %>
+          <%= link_to acceptinvite_path(brief), method: :patch, class:"d-flex justify-content-end" do %>
+          <i class="fas fa-times" style="font-size: 20px; color: red;"></i>
+        <% end %>
+
+        <%= link_to acceptinvite_path(private_invite_id: brief.private_invites.first.id, private_brief_id: brief.id), method: :patch, class:"d-flex justify-content-end" do %>
+          <i class="fas fa-check" style="font-size: 20px; color: green;"></i>
+          <% end %>
       </div>
 <% end %>
+
+<h2 style="color: white;"> You've accepted the following private auditions: </h2>
+<% if @accepted_pbs != [] %>
+      <% @accepted_pbs.each do |brief| %>
+  <%= link_to private_brief_path(brief) do %>
+    <div> <p style="color:white;"> <%= brief.title %></p></div>
+  <% end %>
+  <% end %>
+  <% end %>
 
 
 <% else %>
