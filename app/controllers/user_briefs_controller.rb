@@ -5,7 +5,7 @@ class UserBriefsController < ApplicationController
 
     @brief = Brief.find(params[:brief_id])
     @user_brief = UserBrief.find(params[:user_brief_id])
-    @application = Application.create!(user_id: current_user.id, user_brief_id: @user_brief.id)
+    @application = Application.create!(user_id: current_user.id, user_brief_id: @user_brief.id, status: "accepted")
     @accepted = Application.where(user_id: current_user.id).map { |application| application.user_brief.brief }
 
     @matching_briefs.each do |brief|
@@ -24,10 +24,13 @@ class UserBriefsController < ApplicationController
   end
 
   def decline_brief
+    # @matching_briefs = Brief.where(ethnicty: @user.ethnicty).where(gender: @user.gender).where(age_range: @user.age_range).where(status: "Pending")
     @brief = Brief.find(params[:brief_id])
     @user_brief = UserBrief.find(params[:user_brief_id])
-    @user_brief.status = "declined"
-    @user_brief.save
+    @application = Application.create!(user_id: current_user.id, user_brief_id: @user_brief.id, status: "declined")
+
+    # @user_brief.status = "declined"
+    # @user_brief.save
     redirect_to dashboard_path(current_user)
   end
 end

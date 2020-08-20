@@ -42,6 +42,18 @@
         <% end %>
         <% end %>
 
+        <h3 style="color:white;"> Briefs I've declined </h3>
+
+    <% @declined.each do |brief| %>
+      <div class="match">
+        <%= link_to brief_path(brief) do %>
+            <div>
+              <p style="color:white;"><%= brief.title %></p>
+            </div>
+      </div>
+        <% end %>
+        <% end %>
+
 
 <h3 style="color:white;">Pending Auditions</h3>
 
