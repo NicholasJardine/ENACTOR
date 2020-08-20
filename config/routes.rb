@@ -53,6 +53,7 @@ Rails.application.routes.draw do
   patch "/acceptb", to: "user_briefs#accept_brief"
   patch "/declineb", to: "user_briefs#decline_brief"
   patch "/acceptinvite", to: "private_invites#accept"
+  patch "/declineinvite", to: "private_invites#decline"
 
 
   devise_for :users

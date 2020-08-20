@@ -31,10 +31,23 @@ class PrivateInvitesController < ApplicationController
     @private_brief.status = 'accepted'
     @private_brief.save
     @private_invite.user.save
-    @acceptance = Acceptance.create!(user_id: current_user.id, private_invite_id: @private_invite.id)
+    @acceptance = Acceptance.create!(user_id: current_user.id, private_invite_id: @private_invite.id, status:"accepted")
 
     redirect_to dashboard_path(current_user)
   end
 
+  def decline
+    @private_brief = PrivateBrief.find(params[:private_brief_id])
+    @private_invite = PrivateInvite.find(params[:private_invite_id])
+    @private_invite.status = 'decined'
+    @private_invite.save
+    @private_brief.status = 'declined'
+    @private_brief.save
+    @private_invite.user.save
+    @declination = Acceptance.create!(user_id: current_user.id, private_invite_id: @private_invite.id, status:"declined")
+
+    redirect_to dashboard_path(current_user)
+
+  end
 
 end

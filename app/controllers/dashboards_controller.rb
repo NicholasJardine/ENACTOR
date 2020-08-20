@@ -44,7 +44,8 @@ class DashboardsController < ApplicationController
      # @finished_auditions = @alls.select { |audition| audition.status == "agreed" }
          @my_private_briefs_accepted = PrivateBrief.where(user_id: @user.id).where(status: 'accepted')
 
-    @accepted_pbs = Acceptance.where(user_id: current_user.id).map { |acceptance| acceptance.private_invite.private_brief }
+    @accepted_pbs = Acceptance.where(user_id: current_user.id).where(status: "accepted").map { |acceptance| acceptance.private_invite.private_brief }
+    @declined_pbs = Acceptance.where(user_id: current_user.id).where(status:"declined").map { |acceptance| acceptance.private_invite.private_brief }
 
    end
 
