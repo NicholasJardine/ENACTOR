@@ -16,10 +16,10 @@
 
               <div class="col-3 d-flex justify-content-between">
         <%= link_to acceptb_path(user_brief_id: brief.user_briefs.first.id, brief_id: brief.id), method: :patch, class:"d-flex justify-content-end" do %>
-          <i class="fas fa-check" style="font-size: 20px; color: green;"></i>
+          <p style="font-size: 20px; color: green;"> ACCEPT</p>
         <% end %>
         <%= link_to declineb_path(user_brief_id: brief.user_briefs.first.id, brief_id: brief.id), method: :patch, class:"d-flex justify-content-end" do %>
-          <i class="fas fa-times" style="font-size: 20px; color: red;"></i>
+          <p style="font-size: 20px; color: red;"> DECLINE</p>
         <% end %>
       </div>
 
@@ -38,6 +38,9 @@
             <div>
               <p style="color:white;"><%= brief.title %></p>
             </div>
+                <%= link_to deleteb_path(user_brief_id: brief.user_briefs.first.id, brief_id: brief.id), method: :patch, class:"d-flex justify-content-end" do %>
+          <p style="font-size: 20px; color: blue;"> REMOVE FROM DASHBOARD</p>
+        <% end %>
       </div>
         <% end %>
         <% end %>
