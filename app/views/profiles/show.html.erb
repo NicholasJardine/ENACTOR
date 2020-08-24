@@ -69,14 +69,17 @@
 <%= link_to "NEW POST", new_post_path, class: "btn btn-flat-orange" %>
 <% else %>
 
-
 <div class="row">
-
    <% @my_posts.each do |post| %>
    <div class="row">
-  <div class="col-2">
-   <%= cl_image_tag post.image.key, height: 200, width: 200, crop: :fill %>
-</div>
+    <div>
+      <%= link_to post_path(post) do %>
+      <div class="col-2">
+       <%= cl_image_tag post.image.key, height: 200, width: 200, crop: :fill %>
+    </div>
+      <% end %>
+    </div>
+
 </div>
    <% end %>
 

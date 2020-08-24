@@ -3,6 +3,9 @@ class PostsController < ApplicationController
   end
 
   def show
+    @user = current_user
+    @profile = Profile.where(user_id: @user.id)
+    @post = Post.find(params[:id])
   end
 
   def new
@@ -30,8 +33,21 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    @user = current_user
+    @profile = Profile.where(user_id: @user.id)
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to profile_path(@profile)
+
   end
 
+    def delete_post
+    @user = current_user
+    @profile = Profile.where(user_id: @user.id)
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to profile_path(@profile)
+    end
 
   private
 

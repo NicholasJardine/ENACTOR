@@ -1,2 +1,15 @@
 <h1>Posts#show</h1>
 <p>Find me in app/views/posts/show.html.erb</p>
+
+
+<div class="container">
+      <div>
+       <%= cl_image_tag @post.image.key, height: 800, width: 800, crop: :fill %>
+      </div>
+<br>
+<div class="mt-5">
+
+<%= link_to "DELETE POST", delete_post_path(id: @post.id), class: "btn btn-flat-orange", :method => :delete %>
+</div>
+
+</div>
