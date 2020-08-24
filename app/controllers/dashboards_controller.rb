@@ -15,6 +15,7 @@ class DashboardsController < ApplicationController
 
     @accepted = Application.where(user_id: current_user.id).where(status: "accepted").map { |application| application.user_brief.brief }
     @declined = Application.where(user_id: current_user.id).where(status: "declined").map { |application| application.user_brief.brief }
+    @deleted = Application.where(user_id: current_user.id).where(status: "deleted").map { |application| application.user_brief.brief }
 
     @accepted.each do |brief|
       if @accepted.include?(brief)
@@ -31,6 +32,17 @@ class DashboardsController < ApplicationController
       end
     end
 
+      @deleted.each do |brief|
+      if @deleted.include?(brief)
+         @matching_briefs = @matching_briefs.reject{ |brief| @deleted.include?(brief) }
+      end
+    end
+
+      @deleted.each do |brief|
+      if @deleted.include?(brief)
+         @accepted = @accepted.reject{ |brief| @deleted.include?(brief) }
+      end
+    end
     @myauditions = Audition.where(user_id: current_user.id)
     @my_private_auditions = PrivateAudition.where(user_id: current_user.id)
 

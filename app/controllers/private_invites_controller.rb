@@ -50,4 +50,9 @@ class PrivateInvitesController < ApplicationController
 
   end
 
+  # def delete
+
+
+  # end
+
 end
