@@ -6,6 +6,7 @@
       <div>
        <%= cl_image_tag @post.image.key, height: 800, width: 800, crop: :fill %>
       </div>
+      <div class="mt-5"><p style="color:white;">  <%= @post.caption.upcase %> </p></div>
 <br>
 <div class="mt-5">
 
