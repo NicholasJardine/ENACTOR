@@ -6,11 +6,14 @@
       <div>
        <%= cl_image_tag @post.image.key, height: 800, width: 800, crop: :fill %>
       </div>
+      <% if @post.caption? %>
       <div class="mt-5"><p style="color:white;">  <%= @post.caption.upcase %> </p></div>
+
+      <% end %>
 <br>
 <div class="mt-5">
 
-<%= link_to "DELETE POST", delete_post_path(id: @post.id), class: "btn btn-flat-orange", :method => :delete %>
+<%= link_to "DELETE FROM GALLERY", delete_post_path(id: @post.id), class: "btn btn-flat-orange", :method => :delete %>
 </div>
 
 </div>

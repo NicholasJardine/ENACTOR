@@ -1,148 +1,160 @@
-<% if @user.occupation == "Actor" %>
-  <h3 style="color:white;">New Opportunities</h3>
-  <% if @matching_briefs == []  %>
-    <p style="color:white;">currently, there are no briefs that match your profile</p>
 
-  <% else %>
-    <% @matching_briefs.each do |brief| %>
-      <div class="match">
-        <%= link_to brief_path(brief) do %>
-            <div>
-              <p style="color:white;"><%= brief.title %></p>
-            </div>
-      </div>
+<div class="container">
+
+  <div class="mt-5">
+
+    <% if @user.occupation == "Actor" %>
+      <h3 style="color:#eaa81b;">New Opportunities</h3>
+      <% if @matching_briefs == []  %>
+        <p style="color:white;">currently, there are no briefs that match your profile</p>
+
+      <% else %>
+        <% @matching_briefs.each do |brief| %>
+          <div class="match">
+            <%= link_to brief_path(brief) do %>
+                <div>
+                  <p style="color:white;"><%= brief.title %></p>
+                </div>
+          </div>
+            <% end %>
+
+
+                  <div class="col-3 d-flex justify-content-between">
+            <%= link_to acceptb_path(user_brief_id: brief.user_briefs.first.id, brief_id: brief.id), method: :patch, class:"d-flex justify-content-end" do %>
+              <p style="font-size: 20px; color: green;"> ACCEPT</p>
+            <% end %>
+            <%= link_to declineb_path(user_brief_id: brief.user_briefs.first.id, brief_id: brief.id), method: :patch, class:"d-flex justify-content-end" do %>
+              <p style="font-size: 20px; color: red;"> DECLINE</p>
+            <% end %>
+          </div>
+
+
         <% end %>
 
+      <% end %>
+    <br>
 
-              <div class="col-3 d-flex justify-content-between">
-        <%= link_to acceptb_path(user_brief_id: brief.user_briefs.first.id, brief_id: brief.id), method: :patch, class:"d-flex justify-content-end" do %>
-          <p style="font-size: 20px; color: green;"> ACCEPT</p>
+
+    <h3 style="color:#eaa81b;"> Briefs I've accepted </h3>
+
+        <% @accepted.each do |brief| %>
+          <div class="match">
+            <%= link_to brief_path(brief) do %>
+                <div>
+                  <p style="color:white;"><%= brief.title %></p>
+                </div>
+                    <%= link_to deleteb_path(user_brief_id: brief.user_briefs.first.id, brief_id: brief.id), method: :patch, class:"d-flex justify-content-end" do %>
+              <p style="font-size: 20px; color: blue;"> REMOVE FROM DASHBOARD</p>
+            <% end %>
+          </div>
+            <% end %>
+            <% end %>
+
+            <h3 style="color:#eaa81b;"> Briefs I've declined </h3>
+
+        <% @declined.each do |brief| %>
+          <div class="match">
+            <%= link_to brief_path(brief) do %>
+                <div>
+                  <p style="color:white;"><%= brief.title %></p>
+                </div>
+          </div>
+            <% end %>
+            <% end %>
+
+
+    <h3 style="color:#eaa81b;">Pending Auditions</h3>
+
+    <div class="audition-links">
+
+    <% if @myauditions ==[] %>
+      <p style="color:white;">You have no auditions being reviewed at the moment.</p>
+    <% else %>
+      <% @myauditions.each do |audition| %>
+        <%= link_to audition_path(audition) do %>
+          <div> <p style="color:white;"> <%= audition.title %></p></div>
+          <% end %>
+          <% end %>
+    <% end%>
+    <br>
+    <h3 style="color:#eaa81b;">Private auditions I've submitted.</h3>
+
+
+    <% if @my_private_auditions ==[] %>
+      <p style="color:white;"> You havent been selected for a private audition or have not yet <br> submitted your audition video for your private auditions</p>
+
+    <% else %>
+      <% @my_private_auditions.each do |audition| %>
+        <%= link_to private_audition_path(audition) do %>
+          <div> <p style="color:white;"> <%= audition.title %></p></div>
+          <% end %>
         <% end %>
-        <%= link_to declineb_path(user_brief_id: brief.user_briefs.first.id, brief_id: brief.id), method: :patch, class:"d-flex justify-content-end" do %>
-          <p style="font-size: 20px; color: red;"> DECLINE</p>
-        <% end %>
-      </div>
+    <% end%>
 
 
+    </div>
+
+
+
+
+    <h2 style="color: #eaa81b;"> You've been personally requested for: </h2>
+
+    <% @my_private_briefs.each do |brief| %>
+      <%= link_to private_brief_path(brief) do %>
+        <div> <p style="color:white;"> <%= brief.title %></p></div>
+      <% end %>
+          <div>
+
+            <%= link_to declineinvite_path(private_invite_id: brief.private_invites.first.id, private_brief_id: brief.id), method: :patch, class:"d-flex justify-content-end" do %>
+              <i class="fas fa-times" style="font-size: 20px; color: red;"></i>
+              <% end %>
+
+            <%= link_to acceptinvite_path(private_invite_id: brief.private_invites.first.id, private_brief_id: brief.id), method: :patch, class:"d-flex justify-content-end" do %>
+              <i class="fas fa-check" style="font-size: 20px; color: green;"></i>
+              <% end %>
+          </div>
     <% end %>
 
-  <% end %>
-<br>
-
-
-<h3 style="color:white;"> Briefs I've accepted </h3>
-
-    <% @accepted.each do |brief| %>
-      <div class="match">
-        <%= link_to brief_path(brief) do %>
-            <div>
-              <p style="color:white;"><%= brief.title %></p>
-            </div>
-                <%= link_to deleteb_path(user_brief_id: brief.user_briefs.first.id, brief_id: brief.id), method: :patch, class:"d-flex justify-content-end" do %>
-          <p style="font-size: 20px; color: blue;"> REMOVE FROM DASHBOARD</p>
-        <% end %>
-      </div>
-        <% end %>
-        <% end %>
-
-        <h3 style="color:white;"> Briefs I've declined </h3>
-
-    <% @declined.each do |brief| %>
-      <div class="match">
-        <%= link_to brief_path(brief) do %>
-            <div>
-              <p style="color:white;"><%= brief.title %></p>
-            </div>
-      </div>
-        <% end %>
-        <% end %>
-
-
-<h3 style="color:white;">Pending Auditions</h3>
-
-<div class="audition-links">
-
-<% if @myauditions ==[] %>
-  <p style="color:white;">You have no auditions being reviewed at the moment.</p>
-<% else %>
-  <% @myauditions.each do |audition| %>
-    <%= link_to audition_path(audition) do %>
-      <div> <p style="color:white;"> <%= audition.title %></p></div>
+    <h2 style="color: #eaa81b;"> You've accepted the following private requests: </h2>
+    <% if @accepted_pbs != [] %>
+          <% @accepted_pbs.each do |brief| %>
+      <%= link_to private_brief_path(brief) do %>
+        <div> <p style="color:white;"> <%= brief.title %></p></div>
       <% end %>
       <% end %>
-<% end%>
-<br>
-<h3 style="color:white;">Private auditions I've submitted.</h3>
+      <% end %>
+
+      <h2 style="color: #eaa81b;"> You've declined the following private requests: </h2>
+    <% if @declined_pbs != [] %>
+          <% @declined_pbs.each do |brief| %>
+      <%= link_to private_brief_path(brief) do %>
+        <div> <p style="color:white;"> <%= brief.title %></p></div>
+      <% end %>
+      <% end %>
+      <% end %>
 
 
-<% if @my_private_auditions ==[] %>
-  <p style="color:white;"> You havent been selected for a private audition or have not yet <br> submitted your audition video for your private auditions</p>
+    <% else %>
+    <h3 style="color: #eaa81b;">Briefs I've sent out</h3>
 
-<% else %>
-  <% @my_private_auditions.each do |audition| %>
-    <%= link_to private_audition_path(audition) do %>
-      <div> <p style="color:white;"> <%= audition.title %></p></div>
+    <% @my_briefs.each do |brief| %>
+      <%= link_to brief_path(brief) do %>
+        <div> <p style="color:white;"> <%= brief.title %></p> </div>
+    <% end %>
+    <% end %>
+
+
+    <h3 style="color: #eaa81b;">Briefs I've sent privately</h3>
+      <% @invite_briefs.each do |brief| %>
+        <%= link_to private_brief_path(brief) do %>
+          <div> <p style="color:white;"> <%= brief.title %></p> </div>
+        <% end %>
       <% end %>
     <% end %>
-<% end%>
+
+
+  </div>
+
 
 
 </div>
-
-
-
-
-<h2 style="color: white;"> You've: been personally requested for: </h2>
-
-<% @my_private_briefs.each do |brief| %>
-  <%= link_to private_brief_path(brief) do %>
-    <div> <p style="color:white;"> <%= brief.title %></p></div>
-  <% end %>
-      <div>
-
-        <%= link_to declineinvite_path(private_invite_id: brief.private_invites.first.id, private_brief_id: brief.id), method: :patch, class:"d-flex justify-content-end" do %>
-          <i class="fas fa-times" style="font-size: 20px; color: red;"></i>
-          <% end %>
-
-        <%= link_to acceptinvite_path(private_invite_id: brief.private_invites.first.id, private_brief_id: brief.id), method: :patch, class:"d-flex justify-content-end" do %>
-          <i class="fas fa-check" style="font-size: 20px; color: green;"></i>
-          <% end %>
-      </div>
-<% end %>
-
-<h2 style="color: white;"> You've accepted the following private requests: </h2>
-<% if @accepted_pbs != [] %>
-      <% @accepted_pbs.each do |brief| %>
-  <%= link_to private_brief_path(brief) do %>
-    <div> <p style="color:white;"> <%= brief.title %></p></div>
-  <% end %>
-  <% end %>
-  <% end %>
-
-  <h2 style="color: white;"> You've declined the following private requests: </h2>
-<% if @declined_pbs != [] %>
-      <% @declined_pbs.each do |brief| %>
-  <%= link_to private_brief_path(brief) do %>
-    <div> <p style="color:white;"> <%= brief.title %></p></div>
-  <% end %>
-  <% end %>
-  <% end %>
-
-
-<% else %>
-<h3 style="color: white;">Briefs I've sent out</h3>
-
-<% @my_briefs.each do |brief| %>
-  <%= link_to brief_path(brief) do %>
-    <div> <p style="color:white;"> <%= brief.title %></p> </div>
-<% end %>
-<% end %>
-
-
-<h3 style="color: white;">Briefs I've sent privately</h3>
-  <% @invite_briefs.each do |brief| %>
-    <%= link_to private_brief_path(brief) do %>
-      <div> <p style="color:white;"> <%= brief.title %></p> </div>
-    <% end %>
-  <% end %>
-<% end %>
