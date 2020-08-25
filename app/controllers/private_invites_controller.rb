@@ -50,9 +50,14 @@ class PrivateInvitesController < ApplicationController
 
   end
 
-  # def delete
+  def delete
+    @private_brief = PrivateBrief.find(params[:private_brief_id])
+    @private_invite = PrivateInvite.find(params[:private_invite_id])
+    @acceptance = Acceptance.create!(user_id: current_user.id, private_invite_id: @private_invite.id, status: "deleted")
 
-
-  # end
+    # @user_brief.status = "declined"
+    # @user_brief.save
+    redirect_to dashboard_path(current_user)
+  end
 
 end

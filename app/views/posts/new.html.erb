@@ -6,6 +6,8 @@
               <div class="form_inputs">
                 <div class="new-form-inputs">
                 <%= f.input :image, as: :file, label:"Select image" %>
+                <%= f.input :caption, label:"Write a caption for your post here:" %>
+
                 <%= f.input :user_id, :as => :hidden, :input_html => { :value => current_user.id } %>
 
             </div>
