@@ -59,6 +59,18 @@ class DashboardsController < ApplicationController
     @accepted_pbs = Acceptance.where(user_id: current_user.id).where(status: "accepted").map { |acceptance| acceptance.private_invite.private_brief }
     @declined_pbs = Acceptance.where(user_id: current_user.id).where(status:"declined").map { |acceptance| acceptance.private_invite.private_brief }
 
+      @accepted_pbs.each do |brief|
+      if @accepted_pbs.include?(brief)
+         @my_private_briefs = @my_private_briefs.reject{ |brief| @accepted_pbs.include?(brief) }
+      end
+    end
+
+      @declined_pbs.each do |brief|
+      if @declined_pbs.include?(brief)
+         @my_private_briefs = @my_private_briefs.reject{ |brief| @declined_pbs.include?(brief) }
+      end
+    end
+
    end
 
     def request_decision
