@@ -36,6 +36,9 @@
 
 
     <h3 style="color:#eaa81b;"> Briefs I've accepted </h3>
+    <% if @accepted ==[] %>
+      <p style="color:white;"> Currently you have not accepted any briefs.</p>
+    <% else %>
 
         <% @accepted.each do |brief| %>
           <div class="match">
@@ -50,7 +53,16 @@
             <% end %>
             <% end %>
 
+    <% end %>
+    <br>
+
             <h3 style="color:#eaa81b;"> Briefs I've declined </h3>
+
+            <% if @declined ==[] %>
+
+      <p style="color:white;"> Currently you have not declined any briefs.</p>
+
+            <% else %>
 
         <% @declined.each do |brief| %>
           <div class="match">
@@ -65,7 +77,9 @@
             <% end %>
             <% end %>
 
+            <% end %>
 
+<br>
     <h3 style="color:#eaa81b;">Pending Auditions</h3>
 
     <div class="audition-links">
@@ -97,7 +111,7 @@
 
     </div>
 
-
+<br>
 
 
     <h2 style="color: #eaa81b;"> You've been personally requested for: </h2>
@@ -129,6 +143,11 @@
         <div> <p style="color:white;"> <%= brief.title %></p></div>
       <% end %>
       <% end %>
+
+      <% else %>
+
+      <p style="color:white;"> Currently, you have not accepted any private requests</p>
+
       <% end %>
 
       <h2 style="color: #eaa81b;"> You've declined the following private requests: </h2>
@@ -138,6 +157,9 @@
         <div> <p style="color:white;"> <%= brief.title %></p></div>
       <% end %>
       <% end %>
+      <% else %>
+
+      <p style="color:white;"> Currently, you have not declined any private requests</p>
       <% end %>
 
 
