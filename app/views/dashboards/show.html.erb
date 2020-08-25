@@ -58,6 +58,9 @@
                 <div>
                   <p style="color:white;"><%= brief.title %></p>
                 </div>
+             <%= link_to deleteb_path(user_brief_id: brief.user_briefs.first.id, brief_id: brief.id), method: :patch, class:"d-flex justify-content-end" do %>
+              <p style="font-size: 20px; color: blue;"> REMOVE FROM DASHBOARD</p>
+            <% end %>
           </div>
             <% end %>
             <% end %>

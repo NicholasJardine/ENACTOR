@@ -43,6 +43,12 @@ class DashboardsController < ApplicationController
          @accepted = @accepted.reject{ |brief| @deleted.include?(brief) }
       end
     end
+
+    @deleted.each do |brief|
+      if @deleted.include?(brief)
+         @declined = @declined.reject{ |brief| @deleted.include?(brief) }
+      end
+    end
     @myauditions = Audition.where(user_id: current_user.id)
     @my_private_auditions = PrivateAudition.where(user_id: current_user.id)
 
