@@ -36,6 +36,9 @@ Rails.application.routes.draw do
   get 'pages/mission'
   get 'pages/how_it'
   get 'pages/staff'
+  get 'pages/search_actors'
+  post 'pages/search_actors'
+
   get 'pages/searching'
   post 'pages/searching'
   get 'pages/searching_companies'
