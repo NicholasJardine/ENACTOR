@@ -23,6 +23,18 @@ class PagesController < ApplicationController
 
   end
 
+  def search_actors
+    @user = current_user
+
+    if params[:query].present?
+      sql_query = " \
+        users.name @@ :query "
+      @users = User.where(sql_query, query: "%#{params[:query]}%").where(occupation: "Actor")
+    else
+      @users = User.where(occupation: "Actor")
+    end
+
+  end
 
   def searching
     @user = current_user
