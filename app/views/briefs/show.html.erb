@@ -1,69 +1,54 @@
+<div class="container">
 
+<h3 style="color:white; margin-top: 24px;"> <%=@brief.title.upcase  %> </h3>
 
-<!-- <table style="width:100%; color: white">
-  <tr>
-    <th>Firstname</th>
-    <th>Lastname</th>
-    <th>Age</th>
-  </tr>
-  <tr>
-    <td>Jill</td>
-    <td>Smith</td>
-    <td>50</td>
-  </tr>
-  <tr>
-    <td>Eve</td>
-    <td>Jackson</td>
-    <td>94</td>
-  </tr>
-</table> -->
+<div class="row"><div class="col-8">
 
-<h3 style="color:white;"> <%=@brief.title  %> </h3>
-<table class="mt-3" style="width:50%; color: white">
+<table style="width:50%; color: white">
   <tr>
-    <th>Character Information</th>
+    <th style="font-size: 20px;">CHARACTER INFORMATION</th>
   </tr>
   <tr>
-    <td>Age:  <%= @brief.age_range %> </td>
+    <td style="color:#eaa81b;">Age: <p style="color:white;"> <%= @brief.age_range %> </p> </td>
   </tr>
 
   <tr>
-    <td>Name:  <%= @brief.name %> </td>
+    <td style="color:#eaa81b;" > Name:  <p style="color:white;"><%= @brief.name %>  </p> </td>
   </tr>
   <tr>
-    <td>Ethnicity:  <%= @brief.ethnicty %> </td>
+    <td style="color:#eaa81b;">Ethnicity: <p style="color:white;"><%= @brief.ethnicty %>  </p> </td>
   </tr>  <tr>
-    <td>Gender:  <%= @brief.gender %> </td>
+    <td style="color:#eaa81b;" >Gender: <p style="color:white;"> <%= @brief.gender %> </p></td>
   </tr>
   <tr>
-    <td>Marital Status:  <%= @brief.marital_status %> </td>
+    <td style="color:#eaa81b;">Marital Status: <p style="color:white;"> <%= @brief.marital_status %>  </p> </td>
   </tr>
   <tr>
-    <td>Languages Required:  <%= @brief.language %> </td>
+    <td style="color:#eaa81b;">Languages Required: <p style="color:white;"> <%= @brief.language %> </p> </td>
   </tr>
   <tr>
-    <td>Profession:  <%= @brief.profession %> </td>
+    <td style="color:#eaa81b;">Profession: <p style="color:white;"> <%= @brief.profession %></p> </td>
   </tr>
   <tr>
-    <td> Home Town:  <%= @brief.hometown %> </td>
+    <td style="color:#eaa81b;"> Home Town: <p style="color:white;">  <%= @brief.hometown %> </p> </td>
   </tr>
   <tr>
-    <td>Current Home:  <%= @brief.current_home %> </td>
+    <td style="color:#eaa81b;">Current Home: <p style="color:white;"> <%= @brief.current_home %> </p> </td>
   </tr>
    <tr>
-    <td>Wants:  <%= @brief.wants %> </td>
+    <td style="color:#eaa81b;">Wants: <p style="color:white;"> <%= @brief.wants %>  </p> </td>
   </tr>
    <tr>
-    <td>Needs:  <%= @brief.needs %> </td>
+    <td style="color:#eaa81b;">Needs: <p style="color:white;"> <%= @brief.needs %> </p>  </td>
   </tr>
   <tr>
-    <td>Traits:  <%= @brief.traits %> </td>
+    <td style="color:#eaa81b;">Traits: <p style="color:white;"> <%= @brief.traits %> </p> </td>
   </tr>
   <tr>
-    <td>Flaws:  <%= @brief.flaws %> </td>
+    <td style="color:#eaa81b;">Flaws: <p style="color:white;">  <%= @brief.flaws %> </p>  </td>
   </tr>
   <tr>
-    <td>Arc Summary:  <%= @brief.arc_summary %> </td>
+    <td style="color:#eaa81b;">Arc Summary: <p style="color:white;"> <%= @brief.arc_summary %> </p>  </td>
   </tr>
 
 <!--     <td>Age  <%= @brief.age %> </td>
@@ -79,13 +64,18 @@
 
 
 </table>
-<div class="mt-3">
+<div class="mt-5">
 
        <%= link_to "Download script", (url_for(@brief.scene)), class: "btn-flat-orange" %>
 
 </div>
-       <br>
-       <br>
+
+
+</div>
+
+
+<div class="col-4">
+
        <% if @user.occupation == "Actor" %>
 
        <h2 style="color:white;">When you are ready, please attach your audition video here </h2>
@@ -134,7 +124,7 @@
 </div>
 <% end %>
        <% else %>
-       <h3 style="color: white;"> the following videos have been submitted for this brief</h3>
+       <h3 style="color: white;"> THE FOLLOWING AUDITIONS HAVE BEEN SUBMITTED:</h3>
        <p> currently there are <%= "#{@auditions.length}" %> auditions to watch</p>
         <% @auditions.each do |audition|%>
         <%= link_to audition_path(audition) do %>
@@ -149,3 +139,34 @@
        <% end %>
 
 <% end %>
+
+
+
+
+
+</div>
+</div>
+       <br>
+       <br>
+
+
+</div>
+
+<!-- <table style="width:100%; color: white">
+  <tr>
+    <th>Firstname</th>
+    <th>Lastname</th>
+    <th>Age</th>
+  </tr>
+  <tr>
+    <td>Jill</td>
+    <td>Smith</td>
+    <td>50</td>
+  </tr>
+  <tr>
+    <td>Eve</td>
+    <td>Jackson</td>
+    <td>94</td>
+  </tr>
+</table> -->
+
