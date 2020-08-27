@@ -16,7 +16,7 @@
 
 
       <% if @user.occupation == "Actor" %>
-      <div class="row" style="background:black;"><div class="col-6">
+      <div class="row" style="background:black;"><div class="col-6" style="b border-bottom: solid 4px;<!-- border-color: white; -->">
           <h3 style="color:white; text-align: left;"><%= @user.name %></h3>
         <div class="pro-deets" style=" align-items: left; display: flex; justify-content: left; ;">
 
@@ -54,7 +54,7 @@
           <br> <br>
 
             <div>
-              <h3 style="color: white;">BIOGRAPHY: </h3>
+              <h3 style="color: white;">BIO: </h3>
              <p style="color: white;"> <%= @user.bio %> </p>
             </div>
 
