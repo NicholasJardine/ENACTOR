@@ -4,7 +4,7 @@
 
 <div class="row"><div class="col-8">
 
-<table style="width:50%; color: white">
+<table style="width:50%; color: white; font-size:20px;">
   <tr>
     <th style="font-size: 20px;">CHARACTER INFORMATION</th>
   </tr>
@@ -12,7 +12,7 @@
     <td style="color:#eaa81b;">Age: <p style="color:white;"> <%= @brief.age_range %> </p> </td>
   </tr>
 
-  <tr>
+  <tr style="font-size: 20px;">
     <td style="color:#eaa81b;" > Name:  <p style="color:white;"><%= @brief.name %>  </p> </td>
   </tr>
   <tr>
@@ -78,13 +78,13 @@
 
        <% if @user.occupation == "Actor" %>
 
-       <h2 style="color:white;">When you are ready, please attach your audition video here </h2>
+       <h3 style="color:white; font-size: 24px;">WHEN YOU ARE READY, PLEASE ATTACH YOUR AUDITION HERE:</h3>
 
         <br>
         <br>
         <div class="row">
 
-          <div class="col-6">
+          <div class="col-12">
 
         <div class="accordion" id="accordionExample" style="background: #b5076b;">
           <div class="card">
