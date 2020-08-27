@@ -172,3 +172,13 @@ color:white;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 16px;
 }
+
+
+.card-image:hover {
+    position:relative;
+    top:-50px;
+    width:300px;
+    height:auto;
+    display:block;
+    z-index:999;
+}
