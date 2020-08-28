@@ -79,7 +79,7 @@ class PrivateBriefsController < ApplicationController
   private
 
   def private_brief_params
-    params.require(:private_brief).permit(:title, :name, :age, :gender, :ethnicty, :language, :sender_id, :user_id, :status, :scene)
+    params.require(:private_brief).permit(:title, :name, :age, :gender, :ethnicty, :language, :sender_id, :user_id, :status, :scene, :profession, :hometown, :current_home, :wants, :needs, :flaws, :traits, :arc_summary)
   end
 
 
