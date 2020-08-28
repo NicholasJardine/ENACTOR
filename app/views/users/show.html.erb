@@ -155,6 +155,35 @@
 
       </div>
     <% end %>
+
+    <div class="col-6">
+
+<h3 style="color: white;"> GALLERY:</h3>
+
+<% if @posts ==[] %>
+  <p style="color:white;"> This user has not posted anything to their gallery yet.</p>
+<% end %>
+
+<div class="posts">
+   <% @posts.each do |post| %>
+   <div class="row">
+    <div>
+      <%= link_to post_path(post) do %>
+      <div class="col-2">
+       <%= cl_image_tag post.image.key, height: 200, width: 200, crop: :fill %>
+    </div>
+      <% end %>
+    </div>
+
+</div>
+   <% end %>
+
+</div>
+
+
+
+
+</div>
     </div>
 
 
