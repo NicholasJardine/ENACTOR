@@ -179,6 +179,8 @@ color:white;
     height:auto;
     display:block;
     z-index:999;
+    transition: width 2s;
+    width:300px;
 }
 .logo-image img{
 width:100%;
