@@ -1,47 +1,93 @@
-<h1>PrivateBriefs#show</h1>
-<p>Find me in app/views/private_briefs/show.html.erb</p>
+<div class="container">
 
+<h3 style="color:white; margin-top: 24px;"> <%=@private_brief.title.upcase  %> </h3>
 
-<table class="mt-3" style="width:50%; color: white">
-  <tr>
-    <th>Character Information</th>
+<div class="row"><div class="col-8">
+
+<table style="width:50%; color: white; font-size:20px;">
+ <tr style="border-bottom: solid 1px";>
+    <th style="font-size: 20px;">CHARACTER INFORMATION</th>
   </tr>
   <tr>
-    <td>Age:  <%= @private_brief.age %> </td>
+    <td style="color:#eaa81b;">Age: <td style="color:white;"> <%= @private_brief.age %> </td> </td>
+  </tr>
+
+   <tr style="border-bottom: solid 1px";>
+    <td style="color:#eaa81b;" > Name:  <td style="color:white;"><%= @private_brief.name %>  </td> </td>
   </tr>
 
   <tr>
-    <td>Name:  <%= @private_brief.name %> </td>
+    <td style="color:#eaa81b;">Ethnicity: <td style="color:white;"><%= @private_brief.ethnicty %>  </td> </td>
+  </tr>
+  <tr style="border-bottom: solid 1px";>
+    <td style="color:#eaa81b;" >Gender: <td style="color:white;"> <%= @private_brief.gender %> </td></td>
+  </tr>
+
+  <tr style="border-bottom: solid 1px";>
+    <td style="color:#eaa81b;">Marital Status: <td style="color:white;"> <%= @private_brief.marital_status %>  </td> </td>
+  </tr>
+   <tr style="border-bottom: solid 1px";>
+    <td style="color:#eaa81b;">Languages Required: <td style="color:white;"> <%= @private_brief.language %> </td> </td>
+  </tr>
+   <tr style="border-bottom: solid 1px";>
+    <td style="color:#eaa81b;">Profession: <td style="color:white;"> <%= @private_brief.profession %></td> </td>
+  </tr>
+  <tr style="border-bottom: solid 1px";>
+    <td style="color:#eaa81b;"> Home Town: <td style="color:white;">  <%= @private_brief.hometown %> </td> </td>
+  </tr>
+   <tr style="border-bottom: solid 1px";>
+    <td style="color:#eaa81b;">Current Home: <td style="color:white;"> <%= @private_brief.current_home %> </td> </td>
+  </tr>
+    <tr style="border-bottom: solid 1px";>
+    <td style="color:#eaa81b;">Wants: <td style="color:white;"> <%= @private_brief.wants %>  </td> </td>
+  </tr>
+   <tr style="border-bottom: solid 1px";>
+    <td style="color:#eaa81b;">Needs: <td style="color:white;"> <%= @private_brief.needs %> </td>  </td>
+  </tr>
+  <tr style="border-bottom: solid 1px;">
+    <td style="color:#eaa81b;">Traits: <td style="color:white;"> <%= @private_brief.traits %> </td> </td>
+  </tr>
+  <tr style="border-bottom: solid 1px;">
+    <td style="color:#eaa81b;">Flaws: <td style="color:white;">  <%= @private_brief.flaws %> </td>  </td>
+  </tr>
+  <tr style="border-bottom: solid 1px";>
+    <td style=" color:#eaa81b;" >Arc Summary: <td style="color:white;"> <%= @private_brief.arc_summary %> </td>  </td>
+  </tr>
+
+<!--     <td>Age  <%= @private_brief.age %> </td>
   </tr>
   <tr>
-    <td>Ethnicity:  <%= @private_brief.ethnicty %> </td>
+    <td>Age  <%= @private_brief.age %> </td>
   </tr>
   <tr>
+    <td>Age  <%= @private_brief.age %> </td>
+  </tr>
+ -->
 
 
 
 </table>
-<div class="mt-3">
+<div class="mt-5">
 
        <%= link_to "Download script", (url_for(@private_brief.scene)), class: "btn-flat-orange" %>
 
 </div>
-       <br>
-       <br>
+
+
+</div>
+
+
+<div class="col-4">
+
        <% if @user.occupation == "Actor" %>
 
-       <h2 style="color:white;">When you are ready, please attach your audition video here </h2>
-             <div>
-        <%= link_to decline_path(@private_brief), method: :patch, class:"d-flex justify-content-end" do %>
-          <i class="fas fa-times" style="font-size: 20px; color: red;"></i>
-        <% end %>
-      </div>
+       <h3 style="color:white; font-size: 24px;">WHEN YOU ARE READY, PLEASE ATTACH YOUR AUDITION HERE:</h3>
 
         <br>
         <br>
         <div class="row">
 
-          <div class="col-6">
+          <div class="col-12">
 
         <div class="accordion" id="accordionExample" style="background: #b5076b;">
           <div class="card">
@@ -57,43 +103,54 @@
               <div class="card-body">
               <div class="form_inputs">
                 <div class="new-form-inputs">
-              <%= simple_form_for [@private_audition] do |f| %>
+              <%= simple_form_for [@audition] do |f| %>
 
               <div class="form_inputs">
                 <div class="new-form-inputs">
                 <%= f.input :title, label: "the title of your audition" %>
                 <%= f.input :video, as: :file, :resource_type => :video%>
-                <%= f.input :private_brief_id, :as => :hidden, :input_html => { :value => @private_brief.id } %>
+                <%= f.input :brief_id, :as => :hidden, :input_html => { :value => @private_brief.id } %>
                 <%= f.input :user_id, :as => :hidden, :input_html => { :value => current_user.id } %>
 
-        <%= f.button :submit, class: "btn btn-flat-orange", value: "Submit Audition" %>
             </div>
           </div>
         </div>
-            </div>
-          </div>
-        </div>
-          </div>
 
+        <%= f.button :submit, class: "btn btn-flat-orange", value: "Submit Audition" %>
 
           </div>
         </div>
 </div>
-      <% end %>
-
+</div>
+</div>
+</div>
+</div>
+<% end %>
        <% else %>
-       <h3 style="color: white;"> the following videos have been submitted for this brief</h3>
+       <h3 style="color: white;"> THE FOLLOWING AUDITIONS HAVE BEEN SUBMITTED:</h3>
        <p> currently there are <%= "#{@auditions.length}" %> auditions to watch</p>
         <% @auditions.each do |audition|%>
-        <%= link_to private_audition_path(audition) do %>
+        <%= link_to audition_path(audition) do %>
 
        <div class="brief-links">
 
 <!--               <p> <%= audition.title %></p>
- -->              <p> <%= audition.user.name %> </p>
+ -->              <h5 style="color: white;"> <%= audition.user.name.upcase %> </h5>
               <% end %>
        </div>
-<% end %>
+
+       <% end %>
 
 <% end %>
 
+
+
+
+
+</div>
+</div>
+       <br>
+       <br>
+
+
+</div>

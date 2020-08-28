@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_25_101225) do
+ActiveRecord::Schema.define(version: 2020_08_28_085250) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -170,6 +170,14 @@ ActiveRecord::Schema.define(version: 2020_08_25_101225) do
     t.string "title"
     t.string "status", default: "Pending"
     t.string "scene"
+    t.string "profession"
+    t.string "hometown"
+    t.string "current_home"
+    t.text "wants"
+    t.text "needs"
+    t.text "flaws"
+    t.text "traits"
+    t.text "arc_summary"
     t.index ["user_id"], name: "index_private_briefs_on_user_id"
   end
 
