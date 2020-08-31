@@ -1,14 +1,56 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  font-weight:medium;
+  font-size:20px;
 }
 
+.navbar-lewagon:hover {
+  justify-content: space-between;
+  background: white;
+  font-weight:medium;
+  font-size:20px;
+  color:red;
+}
+
+.nav-link a:hover {
+  justify-content: space-between;
+  background: white;
+  font-weight:medium;
+  font-size:20px;
+  color:red;
+}
+
+.nav-link li:hover {
+  justify-content: space-between;
+  background: white;
+  font-weight:medium;
+  font-size:20px;
+  color:red;
+}
+
+.nav-item a:hover {
+  justify-content: space-between;
+  background: white;
+  font-weight:medium;
+  font-size:20px;
+  color:red;
+}
+
+.nav-item a:hover {
+  justify-content: space-between;
+  background: white;
+  font-weight:medium;
+  font-size:20px;
+  color:red;
+}
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
-  height:40px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
 }
+
