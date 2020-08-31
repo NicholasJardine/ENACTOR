@@ -3,8 +3,12 @@
 
   <div class="mt-5">
 
+
     <% if @user.occupation == "Actor" %>
-      <h3 style="color:#eaa81b;">New Opportunities</h3>
+
+<div class="row"><div class="col-6">
+<h2 class="mb-5" style="text-decoration: underline; color:#CCA459; font-weight: bold; ">OPPORTUNITIES</h2>
+      <h3 style="color:#CCA459;">NEW</h3>
       <% if @matching_briefs == []  %>
         <p style="color:white;">currently, there are no briefs that match your profile</p>
 
@@ -32,10 +36,11 @@
         <% end %>
 
       <% end %>
+
     <br>
 
 
-    <h3 style="color:#eaa81b;"> Briefs I've accepted </h3>
+    <h3 style="color:#CCA459;"> ACCEPTED </h3>
     <% if @accepted ==[] %>
       <p style="color:white;"> Currently you have not accepted any briefs.</p>
     <% else %>
@@ -57,8 +62,7 @@
 
     <% end %>
     <br>
-
-            <h3 style="color:#eaa81b;"> Briefs I've declined </h3>
+            <h3 style="color:#CCA459;"> DECLINED</h3>
 
             <% if @declined ==[] %>
 
@@ -84,41 +88,12 @@
             <% end %>
 
 <br>
-    <h3 style="color:#eaa81b;">Pending Auditions</h3>
 
-    <div class="audition-links">
+</div>
+<div class="col-6">
+  <h2 class="mb-5" style="text-decoration: underline;font-weight: bold; color:#CCA459; ">PRIVATE REQUESTS</h2>
 
-    <% if @myauditions ==[] %>
-      <p style="color:white;">You have no auditions being reviewed at the moment.</p>
-    <% else %>
-      <% @myauditions.each do |audition| %>
-        <%= link_to audition_path(audition) do %>
-          <div> <p style="color:white;"> <%= audition.title %></p></div>
-          <% end %>
-          <% end %>
-    <% end%>
-    <br>
-    <h3 style="color:#eaa81b;">Private auditions I've submitted.</h3>
-
-
-    <% if @my_private_auditions ==[] %>
-      <p style="color:white;"> You havent been selected for a private audition or have not yet <br> submitted your audition video for your private auditions</p>
-
-    <% else %>
-      <% @my_private_auditions.each do |audition| %>
-        <%= link_to private_audition_path(audition) do %>
-          <div> <p style="color:white;"> <%= audition.title %></p></div>
-          <% end %>
-        <% end %>
-    <% end%>
-
-
-    </div>
-
-<br>
-
-
-    <h2 style="color: #eaa81b;"> You've been personally requested for: </h2>
+    <h3 style="color: #CCA459;"> YOU'VE BEEN REQUESTED FOR: </h3>
     <% if @my_private_briefs ==[] %>
       <p style="color:white"> Nothing yet. Your time is coming!</p>
     <% else %>
@@ -139,7 +114,7 @@
 
     <% end %>
 
-    <h2 style="color: #eaa81b;"> You've accepted the following private requests: </h2>
+    <h3 style="color: #CCA459;"> ACCEPTED: </h3>
     <% if @accepted_pbs != [] %>
           <% @accepted_pbs.each do |brief| %>
       <%= link_to private_brief_path(brief) do %>
@@ -158,7 +133,7 @@
 
       <% end %>
 
-      <h2 style="color: #eaa81b;"> You've declined the following private requests: </h2>
+      <h3 style="color: #CCA459;"> DECLINED: </h3>
     <% if @declined_pbs != [] %>
           <% @declined_pbs.each do |brief| %>
       <%= link_to private_brief_path(brief) do %>
@@ -171,8 +146,65 @@
       <% end %>
 
 
+
+</div>
+
+
+</div>
+
+
+<div class="mybox "style="border: solid 1px; border-color:#CCA459; border-radius: 4px; padding: 16px;">
+
+<h2 class="mb-5" style="text-decoration: underline; color:#CCA459; font-weight: bold; ">MY PAST AUDITIONS</h2>
+
+<div class="row">
+
+
+  <div class="col-6">
+
+
+    <h3 style="color:#CCA459;">MY AUDITIONS</h3>
+    <% if @myauditions ==[] %>
+      <p style="color:white;">You have no auditions being reviewed at the moment.</p>
     <% else %>
-    <h3 style="color: #eaa81b;">Briefs I've sent out</h3>
+      <% @myauditions.each do |audition| %>
+        <%= link_to audition_path(audition) do %>
+          <div> <p style="color:white;"> <%= audition.title %></p></div>
+          <% end %>
+          <% end %>
+    <% end%>
+    <br>
+    </div>
+
+<div class="col-6">
+
+
+    <h3 style="color:#CCA459;">PRIVATE AUDITIONS.</h3>
+
+
+    <% if @my_private_auditions ==[] %>
+      <p style="color:white;"> You havent been selected for a private audition or have not yet <br> submitted your audition video for your private auditions</p>
+
+    <% else %>
+      <% @my_private_auditions.each do |audition| %>
+        <%= link_to private_audition_path(audition) do %>
+          <div> <p style="color:white;"> <%= audition.title %></p></div>
+          <% end %>
+        <% end %>
+    <% end%>
+
+</div></div>
+
+
+</div>
+
+<br>
+
+
+
+
+    <% else %>
+    <h3 style="color: #CCA459;">Briefs I've sent out</h3>
 
     <% @my_briefs.each do |brief| %>
       <%= link_to brief_path(brief) do %>
@@ -181,7 +213,7 @@
     <% end %>
 
 
-    <h3 style="color: #eaa81b;">Briefs I've sent privately</h3>
+    <h3 style="color: #CCA459;">Briefs I've sent privately</h3>
       <% @invite_briefs.each do |brief| %>
         <%= link_to private_brief_path(brief) do %>
           <div> <p style="color:white;"> <%= brief.title %></p> </div>
