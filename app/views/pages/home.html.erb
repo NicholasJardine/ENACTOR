@@ -36,12 +36,12 @@
     <div class="carousel-caption d-none d-md-block">
     <h5 style="font-weight: bold;"><%= @last.title.upcase %></h5>
     <div class="mt-5">
-    <p><%= link_to "Read More", articles_path(@last), class: "btn-flat-dis"%></p>
+    <p><%= link_to "Read More", article_path(@last), class: "btn-flat-dis"%></p>
 
     </div>
     </div>
     </div>
-    <% @articles.each do |article| %>
+    <% @articles_without_latest.each do |article| %>
 
     <div class="carousel-item">
     <%= cl_image_tag article.image.key, height: 500, width: 1000, crop: :scale %>
