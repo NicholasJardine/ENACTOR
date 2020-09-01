@@ -3,8 +3,10 @@ class PagesController < ApplicationController
 
   def home
     @user = current_user
-    @last = Article.last
+    @last = Article.first
     @articles = Article.all
+    @articles_without_latest = @articles.reject{|article| article == @last}
+
     # @others = @articles.drop(@articles.length - 1)
   end
 
