@@ -74,6 +74,13 @@ class PagesController < ApplicationController
     #   @users = User.all
     # end
   end
+
+
+  def carousel
+    @user = current_user
+    @articles = Article.all
+
+  end
 end
 
 

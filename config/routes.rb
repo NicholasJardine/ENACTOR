@@ -38,6 +38,7 @@ Rails.application.routes.draw do
   get 'pages/staff'
   get 'pages/search_actors'
   post 'pages/search_actors'
+  get 'pages/carousel'
 
   get 'pages/searching'
   post 'pages/searching'

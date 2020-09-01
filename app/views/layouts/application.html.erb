@@ -17,6 +17,8 @@
     <%= render 'shared/nav_two' %>
     <%= render 'shared/flashes' %>
     <%= yield %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= yield :after_js %>
   </body>
   <br>
   <br style="background-color:black;"><br><br><br><br>
