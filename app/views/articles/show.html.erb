@@ -5,14 +5,14 @@
 <div class="container" style="background: black;">
 
   <div class="row">
-    <div class="col-12">
+    <div class="col-12 mb-3">
      <h2 style="color: white;"> <%= @article.title.upcase %></h2>
     </div>
   </div>
 
   <div class="row">
     <div class="col-12">
-    <%= cl_image_tag @article.image.key, height: 600, width: 1000, crop: :fill %>
+    <%= cl_image_tag @article.image.key, height: 600, width: 1000, crop: :mpad %>
 
     </div>
   </div>
@@ -28,7 +28,7 @@
 
     <div class="col-8">
 
-        <p style="color: white;"><%= @article.paragraph_one %></p>
+        <p style="color: white; font-size: 16px;"><%= @article.paragraph_one %></p>
       <br>
           <p style="color: white;"><%= @article.paragraph_two %></p>
       <br>

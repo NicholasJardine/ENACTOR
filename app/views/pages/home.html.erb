@@ -31,7 +31,7 @@
 
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
-    <div class="carousel-item active">
+    <div class="carousel-item active img-fluid">
     <%= cl_image_tag @last.image.key, height: 500, width: 1000, crop: :scale %>
     <div class="carousel-caption d-none d-md-block">
     <h5 style="font-weight: bold;"><%= @last.title.upcase %></h5>
@@ -43,7 +43,7 @@
     </div>
     <% @articles_without_latest.each do |article| %>
 
-    <div class="carousel-item">
+    <div class="carousel-item img-fluid">
     <%= cl_image_tag article.image.key, height: 500, width: 1000, crop: :scale %>
     <div class="carousel-caption d-none d-md-block">
     <h5><%= article.title.upcase %></h5>

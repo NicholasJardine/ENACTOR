@@ -1,16 +1,16 @@
 <%= link_to user_path(user), class:"card-link" do %>
 <!--   <div class="card-lobby" style="margin-top: 60px ; border-radius: 20px;">
    -->  <% if user.photo.attached? %>
-    <div class="card-image" style="background: rgb(2,0,36); background-image:linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(0,0,0,1) 2%, rgba(0,0,0,0) 50%), url(<%= cl_image_path user.photo.key, height: 300, width: 400, crop: :fill%>
-); border-radius:4px; height:250px; background-size:cover; background-position: center;">
+    <div class="card-image" style="background: rgb(2,0,36); background-image:linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(0,0,0,1) 2%, rgba(0,0,0,0) 50%), url(<%= cl_image_path user.photo.key, height: 300, width: 300, crop: :lpad%>
+); border-radius:2px; width:300px; height:250px; background-size:cover; background-position: center;">
     </div>
     <div class="card-body card-body-lobby">
-      <h5><%= user.name %></h5>
+      <h5><%= user.name.upcase %></h5>
     </div>
 
       <% else %>
     <div class="card-image" style="background: rgb(2,0,36); background-image:linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(0,0,0,1) 2%, rgba(0,0,0,0) 50%), url(<%= asset_path "default-avatar.jpeg"%>
-); border-radius:4px; height:250px; background-size:cover; background-position: center;">
+); border-radius:2px; width:300px; height:250px; background-size:cover; background-position: center;">
     </div>
     <div class="card-body card-body-lobby">
       <h5><%= user.name %></h5>
