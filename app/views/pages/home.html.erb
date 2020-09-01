@@ -20,7 +20,8 @@
   </div>
 </div>
 <% end %> <br>
-<h3 class="m-5" style="text-align: center; color: white;" > INDUSTRY NEWS:</h3>
+<h3 class="m-5" style="text-align: center; color: white; font-weight: bold;opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);" > INDUSTRY NEWS:</h3>
 <% if @articles != [] && @last != nil %>
 
 
@@ -31,16 +32,19 @@
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-    <%= cl_image_tag @last.image.key, height: 500, width: 1000, crop: :fill %>
+    <%= cl_image_tag @last.image.key, height: 500, width: 1000, crop: :scale %>
     <div class="carousel-caption d-none d-md-block">
-    <h5><%= @last.title %></h5>
-    <p><%= link_to "Read More", articles_path(@last)%></p>
+    <h5 style="font-weight: bold;"><%= @last.title.upcase %></h5>
+    <div class="mt-5">
+    <p><%= link_to "Read More", articles_path(@last), class: "btn-flat-dis"%></p>
+
+    </div>
     </div>
     </div>
     <% @articles.each do |article| %>
 
     <div class="carousel-item">
-    <%= cl_image_tag article.image.key, height: 500, width: 1000, crop: :fill %>
+    <%= cl_image_tag article.image.key, height: 500, width: 1000, crop: :scale %>
     <div class="carousel-caption d-none d-md-block">
     <h5><%= article.title.upcase %></h5>
     <div class="mt-5">
