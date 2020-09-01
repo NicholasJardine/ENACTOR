@@ -33,3 +33,6 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
 });
+
+import 'owl.carousel/dist/assets/owl.carousel.css';
+import 'owl.carousel';

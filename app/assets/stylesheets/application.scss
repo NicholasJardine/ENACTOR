@@ -18,6 +18,10 @@
 
 @import "components/form";
 
+
+@import 'owl.carousel';
+@import 'owl.theme.default';
+
 .main-container{
   height: calc(100vh - 80px);
   background: black;
@@ -207,6 +211,23 @@ width:100%;
     height: 200px;
 }
 
+.carousel-item {
+
+    // border-radius: 0px;
+    flex-shrink: 0;
+    // min-width: 100%;
+    // height: 500px;
+    overflow: hidden;
+background-size: contain;
+}
+.carousel-item img{
+
+    border-radius: 0px;
+    flex-shrink: 1;
+    min-width: 100%;
+    height: 500px;
+
+}
 /*
 .navbar {
     border: 0;

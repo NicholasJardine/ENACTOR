@@ -204,7 +204,10 @@
 
 
     <% else %>
-    <h3 style="color: #CCA459;">Briefs I've sent out</h3>
+<h2 class="mb-5" style="text-decoration: underline; color:#CCA459; font-weight: bold; ">COMPANY BRIEFS</h2>
+
+    <div class="row"><div class="col-6">
+    <h3 style="color: #CCA459;">SENT TO GENERAL PUBLIC</h3>
 
     <% @my_briefs.each do |brief| %>
       <%= link_to brief_path(brief) do %>
@@ -213,12 +216,22 @@
     <% end %>
 
 
-    <h3 style="color: #CCA459;">Briefs I've sent privately</h3>
+    </div>
+
+<div class="col-6">
+
+
+
+    <h3 style="color: #CCA459;">SENT PRIVATELY</h3>
       <% @invite_briefs.each do |brief| %>
         <%= link_to private_brief_path(brief) do %>
           <div> <p style="color:white;font-size: 20px;"> <%= brief.title %></p> </div>
         <% end %>
       <% end %>
+
+
+</div>
+  </div>
     <% end %>
 
 
