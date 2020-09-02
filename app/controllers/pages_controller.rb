@@ -83,6 +83,10 @@ class PagesController < ApplicationController
     @articles = Article.all
 
   end
+
+  def terms_and_conditions
+
+  end
 end
 
 
