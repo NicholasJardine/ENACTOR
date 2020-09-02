@@ -12,7 +12,7 @@ class User < ApplicationRecord
 
   has_many :user_auditions
   has_many :auditions
-
+  validates :accepted_terms, presence: true
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
