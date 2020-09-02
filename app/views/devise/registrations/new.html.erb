@@ -22,6 +22,14 @@
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
     <%= f.input :occupation, :collection => ['Actor', 'Production Company'], label: "Actor or production company?"%>
+
+    <div class="ts d-flex" style="justify-content: space-between;">
+
+      <p style="color:white;"> I agree to Enactors <%= link_to "terms and conditions", pages_terms_and_conditions_path %></p>
+    <%= f.check_box :accepted_terms %>
+    </div>
+
+
   </div>
 
   <div class="form-actions">
