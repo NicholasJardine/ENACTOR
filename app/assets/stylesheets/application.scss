@@ -10,10 +10,12 @@
 
 // Your CSS partials
 @import "components/index";
+@import "components/card_post";
 @import "components/btn-flat-orange";
 
 
 @import "pages/index";
+@import "pages/components";
 @import "pages/mission";
 @import "pages/terms_and_conditions";
 
