@@ -232,6 +232,14 @@ background-size: contain;
     height: 500px;
 
 }
+
+
+* {
+  font-family: "Lato";
+ }
+ * h1,h2,h3,h4,h5,h6{
+    font-family: "Oswald";
+ }
 /*
 .navbar {
     border: 0;
@@ -256,11 +264,6 @@ background-size: contain;
   line-height: 50px;
 }
 
-.navbar-header h1 {
-    letter-spacing: 1px;
-    color: white !important;
-    font-family: 'Lobster Two', cursive;
-}
 
 .navbar li a, .navbar {
     color: white !important;
