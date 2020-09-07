@@ -10,10 +10,12 @@
 
 // Your CSS partials
 @import "components/index";
+@import "components/card_post";
 @import "components/btn-flat-orange";
 
 
 @import "pages/index";
+@import "pages/components";
 @import "pages/mission";
 @import "pages/terms_and_conditions";
 
@@ -178,8 +180,8 @@ color:white;
 
 .posts{
   display:grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 16px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px 0px;
 }
 
 
@@ -210,7 +212,7 @@ width:100%;
 .fill img {
     flex-shrink: 1;
     min-width: 100%;
-    height: 200px;
+    height: 350px;
 }
 
 .carousel-item {
@@ -230,6 +232,14 @@ background-size: contain;
     height: 500px;
 
 }
+
+
+* {
+  font-family: "Lato";
+ }
+ * h1,h2,h3,h4,h5,h6{
+    font-family: "Oswald";
+ }
 /*
 .navbar {
     border: 0;
@@ -254,11 +264,6 @@ background-size: contain;
   line-height: 50px;
 }
 
-.navbar-header h1 {
-    letter-spacing: 1px;
-    color: white !important;
-    font-family: 'Lobster Two', cursive;
-}
 
 .navbar li a, .navbar {
     color: white !important;
@@ -284,3 +289,6 @@ background-size: contain;
   color:white;
 }
  */
+.t-c-button{
+   color:#CCA459;
+}

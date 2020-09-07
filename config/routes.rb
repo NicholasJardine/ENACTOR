@@ -33,6 +33,8 @@ Rails.application.routes.draw do
   get 'actors/delete'
 
   get 'pages/home'
+  get 'pages/components'
+
   get 'pages/mission'
   get 'pages/how_it'
   get 'pages/staff'
