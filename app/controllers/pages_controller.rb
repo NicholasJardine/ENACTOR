@@ -85,11 +85,11 @@ class PagesController < ApplicationController
   end
 
   def terms_and_conditions
-
+    @user = current_user
   end
 
   def components
-@user = current_user
+   @user = current_user
   end
 end
 

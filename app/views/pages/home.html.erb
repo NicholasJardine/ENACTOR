@@ -2,8 +2,8 @@
 <% if user_signed_in? %>
 <div class="banner mt-5" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path "header.jpg" %>);">
   <div class="container">
-    <h1>Enactor connects <strong>talented people</strong> with <strong>the world</strong>!</h1>
-    <p>Enactor’s mission is to give actors and production companies (marketing agencies, theatre companies, film productions) the ability to easily find the actor they wish to have in their projects, and to simplify the process of auditioning with the aid of online auditions. To help them save both time and money. Click here to find out how! It is also a great tool to use during the Covid 19 pandemic to lessen face to face auditions.</p>
+    <h1>Pictor connects <strong>talented people</strong> with <strong>the world</strong>!</h1>
+    <p>Pictor’s mission is to give actors and production companies (marketing agencies, theatre companies, film productions) the ability to easily find the actor they wish to have in their projects, and to simplify the process of auditioning with the aid of online auditions. To help them save both time and money. Click here to find out how! It is also a great tool to use during the Covid 19 pandemic to lessen face to face auditions.</p>
       <% if @user.name == nil %>
       <br><br><br>
     <p style= ' color:white; opacity: .7; font-weight: bold;'> We noticed you haven't created your profile yet. To do so, click <a style= ' color:white; opacity: .7; font-weight: bold;'><%= link_to "here", edit_user_registration_path %> </a>  </p> <p style= 'opacity: .7; font-weight: bold;'> to add your personal touches!</p>
@@ -14,8 +14,8 @@
 <% else %>
   <div class="banner mt-5" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path "header.jpg" %>);">
   <div class="container">
-    <h1>Enactor connects <strong>talented people</strong> with <strong>the world</strong>!</h1>
-    <p>Enactor’s mission is to give actors and production companies (marketing agencies, theatre companies, film productions) the ability to easily find the actor they wish to have in their projects, and to simplify the process of auditioning with the aid of online auditions. To help them save both time and money. Click here to find out how! It is also a great tool to use during the Covid 19 pandemic to lessen face to face auditions.</p>
+    <h1>Pictor connects <strong>talented people</strong> with <strong>the world</strong>!</h1>
+    <p>Pictor’s mission is to give actors and production companies (marketing agencies, theatre companies, film productions) the ability to easily find the actor they wish to have in their projects, and to simplify the process of auditioning with the aid of online auditions. To help them save both time and money. Click here to find out how! It is also a great tool to use during the Covid 19 pandemic to lessen face to face auditions.</p>
     <a class="nav-item"><%= link_to "Get Started", new_user_registration_path, class: "btn btn-flat-orange" %></a>
   </div>
 </div>

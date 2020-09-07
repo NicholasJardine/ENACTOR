@@ -1,4 +1,4 @@
-<div class="container-fluid mt-5">
+<div class="container-fluid m-5">
 
     <% if @user.name == nil%>
     <div class="row"> <div class="col-6" style="background-color:black">
@@ -16,7 +16,7 @@
 
       <% if @user.occupation == "Actor" %>
       <div class="row" style="background:black;"><div class="col-6" style="b border-bottom: solid 4px;<!-- border-color: white; -->">
-          <h3 style="color:white; text-align: left;"><%= @user.name %></h3>
+          <h3 class="mb-5" style="color:white; text-align: left;"><%= @user.name.upcase %></h3>
         <div class="pro-deets" style=" align-items: left; display: flex; justify-content: left; ;">
 
 
@@ -68,7 +68,7 @@
       </div>
 <div class="col-6">
 
-<h3 style="color: white;"> MY GALLERY:</h3>
+<h3 class="mb-5"style="color: white;"> MY GALLERY:</h3>
 <% if @my_posts == [] %>
 <p style="color:white"> You haven't uploaded any pictures to your gallery. Click the button below to add one.</p>
 <%= link_to "NEW POST", new_post_path, class: "btn btn-flat-orange" %>
@@ -92,7 +92,7 @@
 
     <% else %>
     <div>
-      <p></p>
+  <p></p>
     </div>
 
     <% end %>
