@@ -89,7 +89,10 @@ class PagesController < ApplicationController
   end
 
   def components
-   @user = current_user
+    @user = current_user
+    @last = Article.first
+    @articles = Article.all
+    @articles_without_latest = @articles.reject{|article| article == @last}
   end
 end
 
