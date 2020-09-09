@@ -236,9 +236,11 @@ background-size: contain;
 
 * {
   font-family: "Oswald";
+  font-weight:500;
  }
  * h1,h2,h3,h4,h5,h6{
     font-family: "Oswald";
+    color:#CCA459;
  }
 /*
 .navbar {
@@ -291,4 +293,7 @@ background-size: contain;
  */
 .t-c-button{
    color:#CCA459;
+}
+.standard{
+  padding: 16px 16px;
 }

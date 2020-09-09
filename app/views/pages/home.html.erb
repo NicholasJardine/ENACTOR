@@ -16,18 +16,20 @@
   <div class="container">
     <h1>Pictor connects <strong>talented people</strong> with <strong>the world</strong>!</h1>
     <p>Pictor’s mission is to give actors and production companies (marketing agencies, theatre companies, film productions) the ability to easily find the actor they wish to have in their projects, and to simplify the process of auditioning with the aid of online auditions. To help them save both time and money. Click here to find out how! It is also a great tool to use during the Covid 19 pandemic to lessen face to face auditions.</p>
-    <a class="nav-item"><%= link_to "Get Started", new_user_registration_path, class: "btn btn-flat-orange" %></a>
+    <a class="nav-item" style=""><%= link_to "Get Started", new_user_registration_path, class: "btn btn-flat-orange mt-3" %></a>
   </div>
 </div>
 <% end %> <br>
-<h3 class="m-5" style="text-align: center; color: white; font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);" > ENTERTAINMENT NEWS:</h3>
+<!-- <h3 class="m-5" style="text-align: center; color: #CCA55B; font-size: 32px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);" > ENTERTAINMENT NEWS</h3> -->
 <% if @articles != [] && @last != nil %>
 
 
 <div class="row" style="background:black;"><div class="col-12">
 
 <div class="container">
+  <h3 class="my-5" style="text-align: center; color: #CCA55B; font-size: 32px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);" > ENTERTAINMENT NEWS</h3>
 
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">

@@ -1,28 +1,30 @@
 <div class="container mt-5">
 
-  <div class="search-bar" style="margin-top: 20px;">
+  <div class="search-bar mt-5">
 
 
-  <h3 style="color:white;">Find an actor BY NAME in the field below!</h3>
+  <h3 class="mb-4">SEARCH AN ACTOR BY NAME IN THE FIELD BELOW</h3>
     <div class="row">
-    <div class="col-3" >
-      <div style=" display:flex; justify-content: space-between;">
+    <div class="col-4" >
 
  <%= form_tag pages_searching_path method: :get do %>
+<div style=" display:flex; justify-content: space-between;">
 
  <p>
 
   <%= text_field_tag :query,
     params[:query],
-    class: "form-control",
+    class: "form-control standard",
     placeholder: "Search Actors"
   %>
 
  </p>
- <%= submit_tag "Search", class: "btn btn-flat-orange" %>
+<p> <%= submit_tag "Search", class: "btn btn-flat-orange" %> </p>
+
+
+</div>
 <% end %>
 
-      </div>
 </div>
 </div>
 
