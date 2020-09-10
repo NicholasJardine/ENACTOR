@@ -14,12 +14,16 @@
 <% else %>
   <div class="banner mt-5" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path "header.jpg" %>);">
   <div class="container">
-    <i> <h1>Pictor <strong>Simplifies</strong> the <strong>audition process on both ends</strong>!</h1> </i>
-    <p>Our mission is to give actors and production companies (marketing agencies, theatre companies, film productions) the ability to easily find the actor they wish to have in their projects, and to simplify the process of auditioning with the aid of online auditions. To help them save both time and money. Click here to find out how! It is also a great tool to use during the Covid 19 pandemic to lessen face to face auditions.</p>
+    <i> <h1>Pictor <strong>Simplifies</strong> the <strong>casting process on both ends</strong>!</h1> </i>
+
+    <p>Connect online with the perfect actors for your projects, or showcase your talent with our online auditioning process. Pictor brings its users more opporunities with less stress</p>
+    <p>Our mission is to give actors and production companies the ability to easily find the actor they wish to have in their projects, and to simplify the process of auditioning with the aid of online auditions. To help them save both time and money. Click here to find out how! It is also a great tool to use during the Covid 19 pandemic to lessen face to face auditions.</p>
     <a class="nav-item" style=""><%= link_to "Get Started", new_user_registration_path, class: "btn btn-flat-orange mt-3" %></a>
   </div>
 </div>
 <% end %> <br>
+
+
 <!-- <h3 class="m-5" style="text-align: center; color: #CCA55B; font-size: 32px;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);" > ENTERTAINMENT NEWS</h3> -->
 <% if @articles != [] && @last != nil %>
@@ -73,20 +77,6 @@
 
 </div>
 
-  <ol class="carousel-indicators">
-    <% @articles.each do |article| %>
-    <li data-target="#carouselExampleControls" data-slide-to="0" class="active">
-    <div class="card-product">
-    <%= cl_image_tag article.image.key, height: 250, width: 250, crop: :fill %>
-      <div class="card-product-infos">
-<!--         <h2> <%= article.title %></h2>
-<p><strong><%= article.description %></strong></p> -->
-        <p> <%= link_to "Read More", articles_show_path(article), class: "btn-ghost"%> </p>
-      </div>
-    </div>
-    </li>
-    <% end %>
-  </ol>
 
 </div>
 <!-- <div class="row"><div class="col-9">
