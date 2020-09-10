@@ -14,27 +14,33 @@
 <% else %>
   <div class="banner mt-5" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path "header.jpg" %>);">
   <div class="container">
-    <h1>Pictor connects <strong>talented people</strong> with <strong>the world</strong>!</h1>
-    <p>Pictor’s mission is to give actors and production companies (marketing agencies, theatre companies, film productions) the ability to easily find the actor they wish to have in their projects, and to simplify the process of auditioning with the aid of online auditions. To help them save both time and money. Click here to find out how! It is also a great tool to use during the Covid 19 pandemic to lessen face to face auditions.</p>
-    <a class="nav-item"><%= link_to "Get Started", new_user_registration_path, class: "btn btn-flat-orange" %></a>
+    <i> <h1>Pictor <strong>Simplifies</strong> the <strong>casting process on both ends</strong>!</h1> </i>
+
+    <p>Connect online with the perfect actors for your projects, or showcase your talent with our online auditioning process. Pictor brings its users more opporunities with less stress</p>
+    <p>Our mission is to give actors and production companies the ability to easily find the actor they wish to have in their projects, and to simplify the process of auditioning with the aid of online auditions. To help them save both time and money. Click here to find out how! It is also a great tool to use during the Covid 19 pandemic to lessen face to face auditions.</p>
+    <a class="nav-item" style=""><%= link_to "Get Started", new_user_registration_path, class: "btn btn-flat-orange mt-3" %></a>
   </div>
 </div>
 <% end %> <br>
-<h3 class="m-5" style="text-align: center; color: white; font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);" > ENTERTAINMENT NEWS:</h3>
+
+
+<!-- <h3 class="m-5" style="text-align: center; color: #CCA55B; font-size: 32px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);" > ENTERTAINMENT NEWS</h3> -->
 <% if @articles != [] && @last != nil %>
 
 
 <div class="row" style="background:black;"><div class="col-12">
 
 <div class="container">
+  <h3 class="my-5" style="text-align: center; color: #CCA55B; font-size: 32px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);" > ENTERTAINMENT NEWS</h3>
 
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active img-fluid">
+    <h5 class="mb-3"style="font-weight: bold; text-align: center"><%= @last.title.upcase %></h5>
     <%= cl_image_tag @last.image.key, height: 500, width: 1000, crop: :scale %>
     <div class="carousel-caption d-none d-md-block">
-    <h5 style="font-weight: bold;"><%= @last.title.upcase %></h5>
     <div class="mt-5">
     <p><%= link_to "Read More", article_path(@last), class: "btn-flat-dis"%></p>
 
@@ -44,9 +50,9 @@
     <% @articles_without_latest.each do |article| %>
 
     <div class="carousel-item img-fluid">
+    <h5 class='mb-3'style="text-align: center;"><%= article.title.upcase %></h5>
     <%= cl_image_tag article.image.key, height: 500, width: 1000, crop: :scale %>
     <div class="carousel-caption d-none d-md-block">
-    <h5><%= article.title.upcase %></h5>
     <div class="mt-5">
     <p><%= link_to "Read More", article_path(article), class: "btn-flat-dis" %></p>
 
@@ -71,20 +77,6 @@
 
 </div>
 
-  <ol class="carousel-indicators">
-    <% @articles.each do |article| %>
-    <li data-target="#carouselExampleControls" data-slide-to="0" class="active">
-    <div class="card-product">
-    <%= cl_image_tag article.image.key, height: 250, width: 250, crop: :fill %>
-      <div class="card-product-infos">
-<!--         <h2> <%= article.title %></h2>
-<p><strong><%= article.description %></strong></p> -->
-        <p> <%= link_to "Read More", articles_show_path(article), class: "btn-ghost"%> </p>
-      </div>
-    </div>
-    </li>
-    <% end %>
-  </ol>
 
 </div>
 <!-- <div class="row"><div class="col-9">
