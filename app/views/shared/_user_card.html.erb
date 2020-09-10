@@ -1,0 +1,23 @@
+ <% if user.photo.attached? %>
+<div class="card-post m-5">
+
+<%= cl_image_tag user.photo.key, height: 250, width: 250, crop: :fill %>
+  <div class="card-post-infos">
+    <div>
+      <h2 style="color: black"><%= user.name.upcase %></h2>
+    </div>
+  </div>
+</div>
+
+<% else %>
+<div class="card-post m-5">
+
+<%= image_tag 'default-avatar.jpeg' %>
+  <div class="card-post-infos">
+    <div>
+      <h2 style="color: black;"><%= user.name.upcase %></h2>
+    </div>
+  </div>
+</div>
+
+<% end %>
