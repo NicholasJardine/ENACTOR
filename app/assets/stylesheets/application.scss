@@ -71,7 +71,7 @@
 .banner {
   background-size: cover;
   background-position: center;
-  padding: 150px 0;
+  padding: 88px 0;
   height:520px;
 }
 
@@ -297,4 +297,22 @@ background-size: contain;
 }
 .standard{
   padding: 16px 16px;
+}
+
+.btn-ghost{
+  color:black;
+  opacity:.6;
+  font-weight: bold;
+  padding: 12px 24px;
+  background-color: #C4C2B7;
+  text-align: center;
+  position:relative;
+  border: solid 4px;
+  border-color:#CCA459;
+  border-radius:4px;
+  bottom:0;
+  left:0;
+  height:50px;
+  margin-top: 40px;
+
 }
