@@ -181,8 +181,10 @@ color:white;
 
 .articles-grid{
   display:grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
+       justify-content: center;
+      align-content: start;
 }
 
 
@@ -342,4 +344,9 @@ background-size: contain;
             display: flex;
             flex-direction: row;
             padding:24px;
+}
+
+
+.news-split{
+padding:0 80px;
 }
