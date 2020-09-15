@@ -141,107 +141,23 @@
 
 <% end %>
 
+
+
+</div>
 <div class="news-split mt-5">
-
-<div>
-
 <h4 style="color: white;">  <span style="padding: 0 10px; font-size:1.75rem;"> Pictor Online    </span>  </h4>
-
-</div>
-</div>
-
-
-</div>
-<!-- <div class="row"><div class="col-9">
-
-<div class="container-3">
   <% @articles.each do |article| %>
-  <div class="container">
-    <div class="card-product">
-    <%= cl_image_tag article.image.key, height: 250, width: 250, crop: :fill %>
-      <div class="card-product-infos">
-        <h2> <%= article.title %></h2>
-        <p><strong><%= article.description %></strong></p>
-        <p> <%= link_to "Read More", articles_show_path(article), class: "btn-ghost"%> </p>
-      </div>
+
+<div class="articles-grid">
+      <div>
+        <div>
+<%= cl_image_tag article.image.key, height: 200, width: 300, crop: :fill %>
+
+        </div>
+      <h2><%= article.title %></h2>
     </div>
-  </div>
-  <% end %>
-  </div>
-
-
+<% end %>
 
 </div>
-<br><br>
-</div> -->
-
 </div>
-
-</div>
-
-
-
-
-
-
-<!-- </div> -->
-
-
-<br><br><br>
-
-  </div>
-<div class="row" style="background:black;">
-  <div class="col-12" style="background-color: black;">
-
-<!-- <div style="display: flex; justify-content:space-between;background-color:black;">
- -->
-<!-- <div class="pages-links" style="display: flex; justify-content: space-around; position: absolute; background: black;">
- -->
-
-
-
-<!-- <div class="pages" style="display: flex; justify-content: space-around;position: relative;">
-
- <div class="clicky" style="background-color: black">
-    <%= link_to pages_how_it_path do %>
-      <div class="image-links">
-        <%= image_tag "how.jpeg" %>
-        <p style="color: white;">How it works</p>
-      </div>
-      <% end %>
-  </div>
-
-
-  <div class="clicky">
-    <%= link_to pages_mission_path do %>
-      <div class="image-links">
-        <%= image_tag "vision.jpeg" %>
-        <p style="color: white;">Vision and Mission</p>
-      </div>
-    <% end %>
-  </div>
-
-
-  <div class="clicky">
-    <%= link_to pages_staff_path do %>
-      <div class="image-links">
-        <%= image_tag "staff.jpeg" %>
-        <p style="color: white;">Our Staff</p>
-      </div>
-      <% end %>
-  </div>
-
-
-</div> -->
-
-
-</div>
-
-
-
-
-
-</div>
-<!-- </div>
- -->
 
