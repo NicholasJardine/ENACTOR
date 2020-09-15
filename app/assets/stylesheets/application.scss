@@ -179,6 +179,15 @@ color:white;
   grid-gap: 16px;
 }
 
+.articles-grid{
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+       justify-content: center;
+      align-content: start;
+}
+
+
 .posts{
   display:grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -317,4 +326,27 @@ background-size: contain;
   height:50px;
   margin-top: 40px;
 
+}
+
+.new{
+  border-color:black;
+  border: solid 1px;
+}
+
+
+.news-split h4:before, h4:after {
+     content: "";
+     flex: 1 1;
+     border-bottom: 2px solid #000;
+     margin: auto;
+}
+.news-split h4 {
+            display: flex;
+            flex-direction: row;
+            padding:24px;
+}
+
+
+.news-split{
+padding:0 80px;
 }
