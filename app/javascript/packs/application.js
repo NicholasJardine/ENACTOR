@@ -25,7 +25,7 @@ console.log('Hello World from Webpacker')
 
 // External imports
 import "bootstrap";
-import 'bootstrap/dist/js/bootstrap.bundle';
+// import 'bootstrap/dist/js/bootstrap.bundle';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
