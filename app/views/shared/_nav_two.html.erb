@@ -3,13 +3,17 @@
         <div class="navbar-header">
 
             <div class="new-nav-logo" style="display: flex; justify-content: space-between; align-items: flex-end;">
-
-
+<div class="row">
+  <div class="col-6">
   <%= link_to pages_home_path do %>
          <div class=" fill navbar-left logo" style="height: 125px; width:300px;">
           <%= image_tag "LOGO4.png" %>
           </div>
           <% end %>
+
+  </div>
+</div>
+
 
 <!--     <div class="navbar-left" style="float:left; color: #CCA459; font-weight: bold; font-size: 24px; margin-left: 20px;"><i class="brand brand-name navbar-left" style="color: #CCA459;">Casting With Ease</i>
         </div> -->
@@ -18,15 +22,14 @@
 
     </div>
 
+<div class="col-6">
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
 
-<p>STAY UPDATED: For up to date information about the COVID-19 pandemic please visit <a href="https://www.sacoronavirus.co.za" target="blank"><i style="color:black">www.sacoronavirus.co.za</i></a></p>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in?%>
         <% if @user.email == "kayla@gmail.com" %>
@@ -121,6 +124,15 @@
     </ul>
   </div>
 </div>
+
+
+</div>
+<div class="d-fle"style="align-items: right; position: relative; margin:40px 42px;">
+  <p style="text-align: right;">STAY UPDATED: For up to date information about the COVID-19 pandemic please visit <a href="https://www.sacoronavirus.co.za" target="blank"><i style="color:blue; text-align:center;">www.sacoronavirus.co.za</i></a></p>
+
+</div>
+
+
 </nav>
 
 
