@@ -1,3 +1,5 @@
+ <%= link_to user_path(user), class:"card-link" do %>
+
  <% if user.photo.attached? %>
 <div class="card-post m-5">
 
@@ -15,9 +17,10 @@
 <%= image_tag 'default-avatar.jpeg' %>
   <div class="card-post-infos">
     <div>
-      <h2 style="color: black;"><%= user.name.upcase %></h2>
+      <h2 style="color: black;"><%= user.name %></h2>
     </div>
   </div>
 </div>
 
+<% end %>
 <% end %>

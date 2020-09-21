@@ -1,19 +1,25 @@
 <div class="container mt-5">
-
-  <div class="search-bar" style="margin-top: 20px;">
-
-
-  <h3 style="color:white;">Find an company  BY NAME in the field below!</h3>
-    <div class="row">
-    <div class="col-3">
+  <div class="search-bar mt-5">
+  <h3 class="mb-4">SEARCH A COMPANY BY NAME IN THE FIELD BELOW</h3>
+  <div class="row">
+    <div class="col-4">
 <%= form_tag pages_searching_path method: :get do %>
+<div style=" display:flex; justify-content: space-around;">
+
+      <p>
+
   <%= text_field_tag :query,
     params[:query],
     class: "form-control",
     placeholder: "Search Companies"
   %>
-  <br>
-  <%= submit_tag "Search", class: "btn btn-flat-orange" %>
+
+      </p>
+<p>
+
+ <%= submit_tag "Search", class: "btn btn-flat-orange-search" %>
+</p>
+</div>
 <% end %>
 </div>
 </div>
@@ -24,7 +30,7 @@
 
 <div class="cards">
  <% @users.each do |user| %>
-      <%= render 'shared/searchcard', user: user %>
+      <%= render 'shared/user_card', user: user %>
   <% end %>
 </div>
 
