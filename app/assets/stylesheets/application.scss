@@ -311,3 +311,17 @@ padding:0 80px;
 
   border-radius:0px;
 }
+
+
+.card-post > img {
+  height: 200px;
+  width: 200px;
+  flex-shrink: 1;
+  border-radius:0px;
+}
+.card-post:hover> img {
+  height: 200px;
+  width: 200px;
+  flex-shrink: 1;
+  border-radius:0px;
+}
