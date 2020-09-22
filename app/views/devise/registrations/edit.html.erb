@@ -57,7 +57,7 @@
       <%= f.input :gender, collection:["Male", "Female", "Non-Binary"], label: "Gender"%>
       <%= f.input :ethnicty, collection:["Black", "White","Mixed", "Asian", "Indian", "Racially Ambiguos" ], label: "Race/Ethnicity"%>
       <%= f.input :language, collection:langs, label: "Language "%>
-    <%= f.input :cv, as: :file, :resource_type => :raw %>
+      <%= f.input :cv, as: :file, :resource_type => :raw %>
     <% else %>
      <h2>Company information</h2>
       <%= f.input :name, label: "Company Name" %>
