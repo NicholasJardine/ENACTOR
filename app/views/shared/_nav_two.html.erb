@@ -42,30 +42,30 @@
               <%= link_to "Home", pages_home_path, class: "nav-link" %>
             </li>
             <li class="nav-item active">
-              <%= link_to "Search Actors", pages_searching_path, class: "nav-link" %>
+              <%= link_to "Search actors", pages_searching_path, class: "nav-link" %>
             </li>
             <li class="nav-item active">
-              <%= link_to "Production Companies", pages_searching_companies_path, class: "nav-link" %>
+              <%= link_to "Production companies", pages_searching_companies_path, class: "nav-link" %>
             </li>
             <% if @user.occupation == "Actor" %>
             <li class="nav-item active">
-              <%= link_to "My Auditions", dashboards_show_path, class: "nav-link" %>
+              <%= link_to "My auditions", dashboards_show_path, class: "nav-link" %>
             </li>
             <% else %>
             <li class="nav-item active">
-              <%= link_to "Create a Brief", new_brief_path, class: "nav-link" %>
+              <%= link_to "Create a brief", new_brief_path, class: "nav-link" %>
             </li>
             <% end %>
                     <li class="nav-item">
-              <%= link_to "My Profile", profile_path(current_user), class: "nav-link" %>
+              <%= link_to "My profile", profile_path(current_user), class: "nav-link" %>
             </li>
 
           <li class="nav-item dropdown">
             <%= cl_image_tag @user.photo.key, height: 40, width: 40, crop: :fill, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
               <%= link_to "Edit profile", edit_user_registration_path, class: "dropdown-item" %>
-              <%= link_to "My Dashboard", dashboards_show_path , class: "dropdown-item" %>
-              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+<!--               <%= link_to "My Dashboard", dashboards_show_path , class: "dropdown-item" %>
+ -->              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
               <%= link_to "Cancel my account", registration_path(@user), class: "dropdown-item", data: { confirm: "Are you sure?" }, method: :delete %>
 
             </div>
@@ -75,10 +75,10 @@
               <%= link_to "Home", pages_home_path, class: "nav-link" %>
             </li>
             <li class="nav-item active">
-              <%= link_to "Search Actors", pages_searching_path, class: "nav-link" %>
+              <%= link_to "Search actors", pages_searching_path, class: "nav-link" %>
             </li>
             <li class="nav-item active">
-              <%= link_to "Production Companies", pages_searching_companies_path, class: "nav-link" %>
+              <%= link_to "Production companies", pages_searching_companies_path, class: "nav-link" %>
             </li>
               <% if @user.occupation == "Actor" %>
             <li class="nav-item active">
@@ -86,19 +86,19 @@
             </li>
             <% else %>
             <li class="nav-item active">
-              <%= link_to "Create a Brief", new_brief_path, class: "nav-link" %>
+              <%= link_to "Create a brief", new_brief_path, class: "nav-link" %>
             </li>
             <% end %>
                     <li class="nav-item">
-              <%= link_to "My Profile", profile_path(current_user), class: "nav-link" %>
+              <%= link_to "My profile", profile_path(current_user), class: "nav-link" %>
             </li>
 
           <li class="nav-item dropdown">
             <%= image_tag "default-avatar.jpeg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
               <%= link_to "Edit profile", edit_user_registration_path, class: "dropdown-item" %>
-              <%= link_to "My Dashboard", dashboards_show_path, class: "dropdown-item" %>
-              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+<!--               <%= link_to "My Dashboard", dashboards_show_path, class: "dropdown-item" %>
+ -->              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
               <%= link_to "Cancel my account", registration_path(@user), class: "btn-flat-orange", data: { confirm: "Are you sure?" }, method: :delete %>
 
             </div>
@@ -127,12 +127,12 @@
 
 
 </div>
-<div class="d-fle"style="align-items: right; position: relative; margin:40px 42px;">
-  <p style="text-align: right;">STAY UPDATED: For up to date information about the COVID-19 pandemic please visit <a href="https://www.sacoronavirus.co.za" target="blank"><i style="color:blue; text-align:center;">www.sacoronavirus.co.za</i></a></p>
-
-</div>
 
 
 </nav>
 
 
+<div class="d-fle"style="align-items: right; position: relative; margin:40px 42px;">
+  <p style="text-align: right; color: white; opacity: 0.7">STAY UPDATED: For up to date information about the COVID-19 pandemic please visit <a href="https://www.sacoronavirus.co.za" target="blank"><i style="color:blue; text-align:center;">www.sacoronavirus.co.za</i></a></p>
+
+</div>
