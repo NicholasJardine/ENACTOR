@@ -57,6 +57,7 @@
       <%= f.input :gender, collection:["Male", "Female", "Non-Binary"], label: "Gender"%>
       <%= f.input :ethnicty, collection:["Black", "White","Mixed", "Asian", "Indian", "Racially Ambiguos" ], label: "Race/Ethnicity"%>
       <%= f.input :language, collection:langs, label: "Language "%>
+    <%= f.input :cv, as: :file, :resource_type => :raw %>
     <% else %>
      <h2>Company information</h2>
       <%= f.input :name, label: "Company Name" %>
@@ -76,7 +77,6 @@
     <%= f.input :bio, label: "Bio"%>
     <%= f.input :talents,collection:talents, label: "Extra talents"%>
     <%= f.input :socialmedia, label: "Your social media handles and/or links"%>
-
 
     <h3 style="color:white;"> Agent Details </h3>
     <%= f.input :agent_details, label: "If you have an agent, feel free to fill in their contact information here."%>
