@@ -30,8 +30,6 @@
 
 
 
-<!-- ["isiZulu", "isiXhosa", "Venda", "Tswana", "Sotho", "Pedi", "Tsonga", "Swati", "English", "Afrikaans"] -->
-
 <div class="container mt-5">
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <div class="form-inputs">
@@ -48,7 +46,11 @@
                   required: true,
                   input_html: { autocomplete: "current-password" } %>
 
-      <%= f.input :name, label: "Full Name" %><br><br><br>
+      <%= f.input :name, label: "Full Name" %>
+
+      <br><br><br>
+
+
     <% if current_user.occupation == "Actor" %>
 
       <h2>Profile Info (For Casting)</h2>
@@ -57,7 +59,6 @@
       <%= f.input :gender, collection:["Male", "Female", "Non-Binary"], label: "Gender"%>
       <%= f.input :ethnicty, collection:["Black", "White","Mixed", "Asian", "Indian", "Racially Ambiguos" ], label: "Race/Ethnicity"%>
       <%= f.input :language, collection:langs, label: "Language "%>
-      <%= f.input :cv, as: :file, :resource_type => :raw %>
     <% else %>
      <h2>Company information</h2>
       <%= f.input :name, label: "Company Name" %>
@@ -77,14 +78,15 @@
     <%= f.input :bio, label: "Bio"%>
     <%= f.input :talents,collection:talents, label: "Extra talents"%>
     <%= f.input :socialmedia, label: "Your social media handles and/or links"%>
+    <%= f.input :cv, as: :file, :resource_type => :raw, label: "Attach a PDF copy of your CV (optional)" %>
 
     <h3 style="color:white;"> Agent Details </h3>
     <%= f.input :agent_details, label: "If you have an agent, feel free to fill in their contact information here."%>
+    </div>
+  </div>
   <div class="form-actions">
     <%= f.button :submit, "Update", class: 'btn-flat-orange' %>
   </div>
-    </div>
+  </div>
     <% end %>
-  </div>
-  </div>
 </div>
