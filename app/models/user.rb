@@ -1,5 +1,7 @@
 class User < ApplicationRecord
   has_one_attached :photo
+  has_one_attached :cv
+
   has_many_attached :images
 
   has_many :briefs
