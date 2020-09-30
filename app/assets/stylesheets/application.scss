@@ -304,6 +304,9 @@ padding:0 80px;
 
 .img-art img{
   border-radius:0;
+  position:relative;
+  margin:0 auto;
+
 }
 
 
@@ -324,4 +327,22 @@ padding:0 80px;
   width: 200px;
   flex-shrink: 1;
   border-radius:0px;
+}
+
+
+.legends-pic{
+  background-color:red;
+}
+
+
+.study-links-new{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+}
+
+.study-links-new-1{
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 16px;
 }
