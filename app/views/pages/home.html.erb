@@ -30,7 +30,7 @@
         <div class="col-6 fill">
           <h2 style="color: white; opacity:0.7;"> Some popular choices</h2>
        </div>
-          <div class="study-links mt-5" style="position:relative; margin:0 620px">
+          <div class="study-links mt-5" style="position:relative; margin:0 auto">
             <p style="color:white; opacity:0.7; font-size:1.5rem;"></p>
             <div class="d-flex" style="justify-content: space-between; width: 500px;">
               <%= link_to "https://www.afda.co.za/",target: :_blank do %>
@@ -48,7 +48,7 @@
 
               <%= link_to "https://www.afda.co.za/",target: :_blank do %>
               <div  style="width: 243px; height:84px;">
-                <%= image_tag "legends.png" %>
+                <%= image_tag "legends.png", class: "legends-pic" %>
                 <a href="https://www.afda.co.za/" target="blank" style="color: black;align-items: center;"><i style="color: black;"> Legends </i></a>
               </div>
               <% end %>
@@ -94,34 +94,53 @@
         <div class="col-6 fill">
           <h2 style="color: white; opacity:0.7;"> Some popular schools</h2>
        </div>
-          <div class="study-links mt-5" style="position:relative; margin:0 620px">
-            <p style="color:white; opacity:0.7; font-size:1.5rem;"></p>
-            <div class="d-flex" style="justify-content: space-between; width: 500px;">
+          <div class="study-links-new mt-5">
+
+              <div>
+
               <%= link_to "https://www.afda.co.za/",target: :_blank do %>
               <div  style="width: 243px; height:84px;">
                 <%= image_tag "afda.png" %>
-                <a href="https://www.afda.co.za/" target="blank" style="color: black;align-items: center;"><i style="color: black;"> AFDA </i></a>
+                <a href="https://www.afda.co.za/" target="blank" style="color: black;align-items: center;"><i style="color: white;"> AFDA </i></a>
               </div>
               <% end %>
+
+              </div>
+
+              <div>
+
               <%= link_to "http://www.artschool.co.za/ ", target: :_blank do %>
               <div  style="width: 243px; height:84px;">
                 <%= image_tag "nsa.jpg" %>
-                <a href="http://www.artschool.co.za/ "target="blank" style="color: black"><i style="color: black;">NSA </i></a>
+                <a href="http://www.artschool.co.za/ "target="blank" style="color: white"><i style="color: white;">NSA </i></a>
               </div>
               <% end %>
+
+              </div>
+
+              <div>
+
               <%= link_to "https://www.afda.co.za/",target: :_blank do %>
               <div  style="width: 243px; height:84px;">
                 <%= image_tag "afda.png" %>
-                <a href="https://www.afda.co.za/" target="blank" style="color: black;align-items: center;"><i style="color: black;"> Wits University </i></a>
+                <a href="https://www.afda.co.za/" target="blank" style="color: white;align-items: center;"><i style="color: white;"> Wits University </i></a>
               </div>
               <% end %>
+
+              </div>
+
+              <div>
+
               <%= link_to "http://www.artschool.co.za/ ", target: :_blank do %>
               <div  style="width: 243px; height:84px;">
                 <%= image_tag "nsa.jpg" %>
-                <a href="http://www.artschool.co.za/ "target="blank" style="color: black"><i style="color: black;">UJ </i></a>
+                <a href="http://www.artschool.co.za/ "target="blank" style="color: white"><i style="color: white;">UJ </i></a>
               </div>
               <% end %>
-            </div>
+
+              </div>
+
+
           </div>
         </div>
       </div>

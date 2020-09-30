@@ -2,6 +2,8 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!
 
   def home
+
+    @users = User.all
     @user = current_user
     @last = Article.first
     @articles = Article.all
