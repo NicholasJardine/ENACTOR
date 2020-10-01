@@ -9,6 +9,14 @@ class PagesController < ApplicationController
     @articles = Article.all
     @articles_without_latest = @articles.reject{|article| article == @last}
 
+
+    if params[:query].present?
+      sql_query = " \
+        users.name @@ :query "
+      @users = User.where(sql_query, query: "%#{params[:query]}%").where(occupation: "Actor")
+    else
+      @users = User.where(occupation: "Actor")
+    end
     # @others = @articles.drop(@articles.length - 1)
   end
 
