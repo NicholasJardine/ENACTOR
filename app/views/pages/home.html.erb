@@ -228,39 +228,56 @@
         </div>
       </div>
     </div>
-
-    <div class="banner" style="background-color:#C4C2B7;">
-      <div class="container">
-        <div class="row" style="padding: ]24px;">
-          <div class="col-6 fill mt-5">
-            <h3> Stores near you </h3>
-            <div>
-                 <%= form_tag pages_searching_path method: :get do %>
-                <div style=" display:flex; justify-content: space-around;">
-
-                 <p>
-
-                  <%= text_field_tag :query,
-                    params[:query],
-                    class: "form-control standard",
-                    placeholder: "Search your area"
-                  %>
-
-                 </p>
-                <p> <%= submit_tag "Search", class: "btn btn-flat-orange-search" %> </p>
+  <div class="banner" style="background-color:#C4C2B7;">
 
 
-                </div>
-                <% end %>
+<div class="container mt-5">
+
+  <div class="search-bar mt-5">
+
+  <h1 class="mb-4" style="text-align: center; font-size: 2.75rem;"> Equiptment stores near you</h1>
+
+  <h3 class="mb-4" style="text-align: center;">Search your location</h3>
+    <div class="row">
 
 
-            </div>
-          </div>
-          <div class="col-6 fill"> <%= image_tag "map.jpeg" %> </div>
 
-        </div>
-      </div>
+<div class="col-4" style="position: relative; margin:0 auto;">
+
+
+ <%= form_tag pages_searching_path method: :get do %>
+<div style=" display:flex; justify-content: space-between;">
+ <p>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control standard",
+    placeholder: "Search Actors"
+  %>
+ </p>
+<p> <%= submit_tag "Search", class: "btn btn-flat-orange-search" %> </p>
+
+
+</div>
+<% end %>
+<div class="fill">
+  <%= image_tag "map.jpeg" %>
+
+</div>
+
+
+
+
+ </div>
+</div>
+
   </div>
+<br><br><br>
+
+</div>
+
+
+</div>
+
 
   <% end %>
 
