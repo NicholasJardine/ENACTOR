@@ -71,7 +71,9 @@
 .banner {
   background-size: cover;
   background-position: center;
-  padding: 88px 0;
+  padding: 150px 0;
+  background-repeat: no-repeat;
+  position: relative;
 }
 
 .banner h1 {
@@ -173,6 +175,11 @@ color:white;
 }
 
 .cards{
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+.shows{
   display:grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
