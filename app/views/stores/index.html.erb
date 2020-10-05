@@ -1,0 +1,53 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Stores</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @stores.each do |store| %>
+      <tr>
+        <td><%= store.name %></td>
+        <td><%= store.address %></td>
+        <td><%= link_to 'Show', store %></td>
+        <td><%= link_to 'Edit', edit_store_path(store) %></td>
+        <td><%= link_to 'Destroy', store, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+    <div class="row">
+      <div class="col-4">
+
+        <h1>CouchCrash<br>A warm seat for anyone, anywhere</h1>
+        <p>Search for a couch</p>
+        <%= form_tag stores_path, method: :get do %>
+          <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Location"
+          %>
+            <%= button_tag(type: "submit", class: "btn btn-flat") do %>
+              <i class="fas fa-search"></i> Search
+            <% end %>
+        <% end %>
+      </div>
+    </div>
+
+<%= link_to 'New Store', new_store_path %>
+<div id="map"
+     style="width: 100%; height: 600px;"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+
+
