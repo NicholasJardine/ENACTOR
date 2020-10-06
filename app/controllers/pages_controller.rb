@@ -9,7 +9,6 @@ class PagesController < ApplicationController
     @articles = Article.all
     @articles_without_latest = @articles.reject{|article| article == @last}
 
-
     if params[:query].present?
       @stores = Store.geocoded.where("address ILIKE ?", "%#{params[:query]}%")
     else
@@ -23,8 +22,6 @@ class PagesController < ApplicationController
         # image_url: helpers.asset_url('REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS')
       }
     end
-
-
 
     if params[:query].present?
       sql_query = " \
