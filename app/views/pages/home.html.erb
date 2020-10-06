@@ -421,7 +421,24 @@
 
           </div>
             <% end %>
+
         </div>
+
+        <br><br>
+          <div class="container pt-4 pb-5">
+    <div class="row carousel-indicators">
+      <div class="col-md-4 item">
+
+<%= cl_image_tag @last.image.key, height: 500, width: 1000, crop: :scale, class: "d-block w-100 img-fluid", :data_target => "carouselExampleIndicators", :data_slide_to => 0 %>
+
+     </div>
+     <% @articles_without_latest.each do |article| %>
+      <div class="col-md-4 item">
+<%= cl_image_tag article.image.key, height: 500, width: 1000, crop: :scale, class: "d-block w-100 img-fluid", :data_target => "carouselExampleIndicators", :data_slide_to => "#{article.id}".to_i %>
+      </div>
+      <% end %>
+    </div>
+  </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
           <i class="fas fa-chevron-left"></i>
         </a>
