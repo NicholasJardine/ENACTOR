@@ -247,14 +247,14 @@
 
 
   <div class="container">
-<div class="mt-5">
+<div class="mt-5"style="position:relative; margin:0 auto;">
 
-    <div class="row">
-      <div class="col-9">
-<h1> Find your nearest equiptment store</h1>
+    <div class="row" >
+      <div class="col-9"style="position:relative; margin:0 auto; text-align: center;">
+<h1 style="font-size:2.75rem"> Find your nearest equiptment store</h1>
         <p style="color: white; opacity:0.7;">Search your desired location in the field below</p>
       </div>
-      <div class="col-4">
+      <div class="col-4" style="position:relative; margin:0 auto;">
         <%= form_tag stores_path, method: :get do %>
           <%= text_field_tag :query,
           params[:query],
@@ -269,7 +269,7 @@
     </div>
 
 <div id="map"
-     style="width: 50%; height: 500px;"
+     style="width: 70%; height: 500px;position:relative; margin:0 auto;"
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 
@@ -387,15 +387,11 @@
 
 
 <div class="row" style="background:black;"><div class="col-12" style="background-color: white;opacity: 0.7;">
-
-<div class="container mb-5" >
-
   <h1 class="my-5" style="text-align: center; color: black; font-size: 3.75rem;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);" > <strong>  Industry News </strong></h1>
-<div class="container">
   <div class="col-12 col-md-6" style="position: relative; margin:0 auto;">
-    <div id="carouselExampleIndicators" class="carousel slide custom-slider" data-ride="carousel">
-        <div class="carousel-inner">
+    <div id="carouselExampleIndicators" class="carousel slide custom-slider" data-ride="carousel"style="width: 750px;">
+        <div class="carousel-inner"style="width: 750px;">
           <div class="carousel-item active">
             <div class="carousel-img-container d-flex justify-content-center">
     <%= cl_image_tag @last.image.key, height: 500, width: 1000, crop: :scale, class: "d-block w-100" %>
@@ -434,8 +430,10 @@
         </a>
       </div>
   </div>
-</div>
 <div class="news-split mt-5" style>
+  <div class="container">
+
+
 <h4 style="color: black;">  <span style="padding: 0 16px; font-size:2.0rem;"> Pictor Online    </span>  </h4>
 <p class="mb-3" style="text-align: center; color: black;">Latest</p>
 <div class="articles-grid">
@@ -473,5 +471,8 @@
 </ul>
   </div>
 </div>
-</div>
 <% end %>
+
+  </div>
+</div>
+</div>
