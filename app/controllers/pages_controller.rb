@@ -11,6 +11,22 @@ class PagesController < ApplicationController
 
 
     if params[:query].present?
+      @stores = Store.geocoded.where("address ILIKE ?", "%#{params[:query]}%")
+    else
+      @stores = Store.geocoded
+    end
+    @markers = @stores.map do |store|
+      {
+        lat: store.latitude,
+        lng: store.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { store: store })
+        # image_url: helpers.asset_url('REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS')
+      }
+    end
+
+
+
+    if params[:query].present?
       sql_query = " \
         users.name @@ :query "
       @users = User.where(sql_query, query: "%#{params[:query]}%").where(occupation: "Actor")
