@@ -37,3 +37,9 @@ document.addEventListener('turbolinks:load', () => {
 
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel';
+
+import { initMapbox } from '../plugins/init_mapbox';
+
+document.addEventListener('turbolinks:load', () => {
+  initMapbox();
+})

@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
 
 
+  resources :stores
   get 'articles/index'
   get 'articles/show'
   get 'articles/new'
