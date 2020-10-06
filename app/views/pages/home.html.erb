@@ -428,13 +428,23 @@
           <div class="container pt-4 pb-5">
     <div class="row carousel-indicators">
       <div class="col-md-4 item">
-
+        <%= link_to article_path(@last) do %>
+<div>
 <%= cl_image_tag @last.image.key, height: 500, width: 1000, crop: :scale, class: "d-block w-100 img-fluid", :data_target => "carouselExampleIndicators", :data_slide_to => 0 %>
+</div>
+     <% end %>
 
      </div>
      <% @articles_without_latest.each do |article| %>
       <div class="col-md-4 item">
+      <%= link_to article_path(article) do %>
+
+<div>
+
 <%= cl_image_tag article.image.key, height: 500, width: 1000, crop: :scale, class: "d-block w-100 img-fluid", :data_target => "carouselExampleIndicators", :data_slide_to => "#{article.id}".to_i %>
+
+</div>
+      <% end %>
       </div>
       <% end %>
     </div>
