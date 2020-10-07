@@ -356,6 +356,8 @@ padding:0 80px;
 }
 
 .quiz{
+  align-items: center;
+  padding-left: 72px;
   color:black;
   text-align:center;
 }
@@ -385,4 +387,20 @@ body .no-padding{
 
 .info-link{
   color:black;
+}
+
+.art-cover {
+  border: solid 8px;
+  // border-color: #977327;
+  border-color:black;
+
+}
+
+.quiz-image{
+width:300px;
+height:150px;
+}
+
+.weekly-quiz{
+align-items:center;
 }

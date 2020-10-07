@@ -6,7 +6,7 @@
 
     <% if @user.occupation == "Actor" %>
 
-<div class="row"><div class="col-6">
+<div class="row"><div class="col-6" style="border: solid 1px; border-color:#CCA459; border-radius: 4px; padding: 16px;">
 <h2 class="mb-5" style="text-decoration: underline; color:#CCA459; font-weight: bold; ">OPPORTUNITIES</h2>
       <h3 style="color:#CCA459;">NEW</h3>
       <% if @matching_briefs == []  %>
@@ -23,7 +23,7 @@
             <% end %>
 
 
-                  <div class="col-3 d-flex justify-content-between">
+                  <div class="col-3 d-flex" style="justify-content: space-between;">
             <%= link_to acceptb_path(user_brief_id: brief.user_briefs.first.id, brief_id: brief.id), method: :patch, class:"d-flex justify-content-end" do %>
               <p style="font-size: 20px; color: green;"> ACCEPT</p>
             <% end %>
