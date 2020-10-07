@@ -472,15 +472,15 @@
 <div class="articles-grid">
   <% @latest.each do |article| %>
 
-      <div style="border-bottom: solid 2px; border-color: #181B1E;">
-        <div>
+      <div style="border-bottom: solid 2px; border-color: #181B1E; align-items:center">
+        <div style="padding-left: 30px;">
 <%= cl_image_tag article.image.key, height: 200, width: 300, crop: :fill %>
 
         </div>
-        <div style="padding:32px;">
+        <div class="py-5" >
 
-      <h2 style=" color:black; text-align: center; font-size:22px; font-weight:400;"><%= article.title %></h2>
-      <p class="mb-5 mt-3" style="font-size: 18px; color:black; opacity:0.8; text-align: center;"><%= article.description %> </p>
+      <h2 style=" color:black; text-align: left; font-size:22px; font-weight:400;"><%= article.title %></h2>
+      <p class="mb-5 mt-3" style="font-size: 18px; color:black; opacity:0.8; text-align: left;"><%= article.description %> </p>
 
         </div>
     </div>
