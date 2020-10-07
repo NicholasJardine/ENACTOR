@@ -281,17 +281,29 @@
         <p style="color: white; opacity:0.7;">Search your desired location in the field below</p>
       </div>
       <div class="col-4" style="position:relative; margin:0 auto;">
-        <%= form_tag stores_path, method: :get do %>
+
+       <%= form_tag stores_path, method: :get do %>
+<div style="display:flex; justify-content: space-around;">
+
+  <p>
           <%= text_field_tag :query,
           params[:query],
           class: "form-control",
           placeholder: "Location"
           %>
-            <%= button_tag(type: "submit", class: "btn btn-flat") do %>
-              <i class="fas fa-search"></i> Search
-            <% end %>
-        <% end %>
+  </p>
+
+  <p>
+  <%= button_tag(type: "submit", class: "btn btn-flat") do %>
+  <i class="fas fa-search"></i> Search
+  <% end %>
+  </p>
+
+</div>
+<% end %>
       </div>
+
+
     </div>
 
 <div id="map"
