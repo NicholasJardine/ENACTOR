@@ -399,6 +399,7 @@
     <div id="carouselExampleIndicators" class="carousel slide custom-slider" data-ride="carousel"style="width: 750px;">
         <div class="carousel-inner"style="width: 750px;">
           <div class="carousel-item active">
+            <%=  %>
             <div class="carousel-img-container d-flex justify-content-center">
     <%= cl_image_tag @last.image.key, height: 500, width: 1000, crop: :scale, class: "d-block w-100" %>
             </div>
@@ -467,20 +468,23 @@
   <div class="container">
 
 
-<h4 style="color: black;">  <span style="padding: 0 16px; font-size:2.0rem;"> Pictor Online    </span>  </h4>
-<p class="mb-3" style="text-align: center; color: black; font-size:1.5rem;">Latest</p>
+<h4 style="color: black;">  <span style="padding: 0 16px; font-size:2.25rem;"> Pictor Online    </span>  </h4>
+<p class="mb-3" style="text-align: center; color: black; font-size:1.75rem;">Latest</p>
 <div class="articles-grid">
+
   <% @latest.each do |article| %>
 
       <div style="border-bottom: solid 1px; border-color: #181B1E; align-items:center">
-        <div style="padding-left: 30px;">
-<%= cl_image_tag article.image.key, height: 200, width: 300, crop: :fill %>
+        <%= link_to article_path(article) do %>
+        <div style="padding-left: 24px;">
+<%= cl_image_tag article.image.key, height: 200, width: 300, crop: :fill, class: "art-cover" %>
 
         </div>
-        <div class="py-5" >
+        <% end %>
+        <div class="pt-5 pb-3 pl-3" >
 
-      <h2 style=" color:black; text-align: left; font-size:22px; font-weight:400;"><%= article.title %></h2>
-      <p class="mb-5 mt-3" style="font-size: 18px; color:black; opacity:0.8; text-align: left;"><%= article.description %> </p>
+      <h2 style=" color:black; text-align: left; font-size:22px; font-weight:400;"><%= article.title.capitalize %></h2>
+      <p class="mb-5 mt-3" style="font-size: 18px; color:black; opacity:0.8; text-align: left;"><%= article.description.capitalize %> </p>
 
         </div>
     </div>
