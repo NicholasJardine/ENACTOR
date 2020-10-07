@@ -8,6 +8,7 @@ class PagesController < ApplicationController
     @last = Article.first
     @articles = Article.all
     @articles_without_latest = @articles.reject{|article| article == @last}
+    @latest = [@articles.last, @articles[-2], @articles[-3]]
 
     if params[:query].present?
       @stores = Store.geocoded.where("address ILIKE ?", "%#{params[:query]}%")

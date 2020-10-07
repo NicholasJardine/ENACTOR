@@ -431,7 +431,7 @@
         </div>
 
         <br><br>
-          <div class="container pt-4 pb-5">
+<!--           <div class="container pt-4 pb-5">
     <div class="row carousel-indicators">
       <div class="col-md-4 item">
         <%= link_to article_path(@last) do %>
@@ -447,14 +447,14 @@
 
 <div>
 
-<%= cl_image_tag article.image.key, height: 500, width: 1000, crop: :scale, class: "d-block w-100 img-fluid", :data_target => "carouselExampleIndicators", :data_slide_to => "#{article.id}".to_i %>
+<%= cl_image_tag article.image.key, height: 500, width: 1000, crop: :scale, class: "d-block w-100 img-fluid", :data_target => "carouselExampleIndicators", :data_slide_to => @articles_without_latest.index(article) %>
 
 </div>
       <% end %>
       </div>
       <% end %>
     </div>
-  </div>
+  </div> -->
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
           <i class="fas fa-chevron-left"></i>
         </a>
@@ -468,9 +468,9 @@
 
 
 <h4 style="color: black;">  <span style="padding: 0 16px; font-size:2.0rem;"> Pictor Online    </span>  </h4>
-<p class="mb-3" style="text-align: center; color: black;">Latest</p>
+<p class="mb-3" style="text-align: center; color: black; font-size:1.5rem;">Latest</p>
 <div class="articles-grid">
-  <% @articles.each do |article| %>
+  <% @latest.each do |article| %>
 
       <div style="border-bottom: solid 2px; border-color: #181B1E;">
         <div>
