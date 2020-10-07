@@ -28,7 +28,7 @@
 
         </div>
         <div class="col-6">
-          <h2 style="color: white; opacity:0.7; font-size:2.5rem; text-align: center;"> Popular agencies</h2>
+          <h1 style="color: white; opacity:0.7; font-size:3.0rem; text-align: center;"> Popular agencies</h1>
           <div class="study-links-new mt-5">
 
               <div>
@@ -86,9 +86,21 @@
       <div class="container">
         <div class="row" style="padding: ]24px;">
           <div class="col-6 mt-5">
-            <h3 style="font-size:2.75rem;" > Test your industry Knowledge</h3>
+            <h3 style="font-size:2.75rem; color: black; font-weight:550;" > Test your industry Knowledge</h3>
             <div class="mt-3">
-            <p style="font-size: 1.75rem;"> <%= link_to "Weekly Quiz", "#", class: "quiz"  %>  </p>
+
+              <div class="weekly-quiz">
+
+              <div class="quiz-image">
+                <%= image_tag "quiz.jpg" %>
+
+              </div>
+              <div style="background-color:white; width: 300px; height:auto;">
+
+            <p style="font-size: 1.75rem; "> <%= link_to "Weekly Quiz", "#", class: "quiz"  %>  </p>
+              </div>
+
+              </div>
             <p style="font-size: 1.75rem; color:black;"> <%= link_to "Did you know?", "#", class: "quiz" %>  </p>
 
             </div>
@@ -122,7 +134,7 @@
               <%= link_to "https://www.afda.co.za/",target: :_blank do %>
               <div  style="width: 243px; height:84px; text-align: center;">
                 <%= image_tag "afda.png" %>
-                <a href="https://www.afda.co.za/" target="blank" style="color: black;align-items: center;"><i style="color: white;"> AFDA </i></a>
+                <a href="https://www.afda.co.za/" target="blank" style="color: black;align-items: center;"><i style="color: white; font-size:1.25rem;"> AFDA </i></a>
               </div>
               <% end %>
 
@@ -133,7 +145,7 @@
               <%= link_to "http://www.artschool.co.za/ ", target: :_blank do %>
               <div  style="width: 243px; height:84px;text-align: center;">
                 <%= image_tag "nsa.jpg" %>
-                <a href="http://www.artschool.co.za/ "target="blank" style="color: white"><i style="color: white;">NSA </i></a>
+                <a href="http://www.artschool.co.za/ "target="blank" style="color: white"><i style="color: white; font-size:1.25rem;">NSA </i></a>
               </div>
               <% end %>
 
@@ -144,7 +156,7 @@
               <%= link_to "https://www.wits.ac.za/wsoa/theatre--performance/",target: :_blank do %>
               <div  style="width: 243px; height:84px;text-align: center;">
                 <%= image_tag "wits.jpg" %>
-                <a href="https://www.wits.ac.za/wsoa/theatre--performance/" target="blank" style="color: white;align-items: center;"><i style="color: white;"> Wits University </i></a>
+                <a href="https://www.wits.ac.za/wsoa/theatre--performance/" target="blank" style="color: white;align-items: center;"><i style="color: white; font-size:1.25rem;"> Wits University </i></a>
               </div>
               <% end %>
 
@@ -155,7 +167,7 @@
               <%= link_to "https://www.uj.ac.za/faculties/humanities/school-of-communication/Pages/The-Department-of-Journalism,-Film---Television.aspx ", target: :_blank do %>
               <div  style="width: 243px; height:84px;text-align: center;">
                 <%= image_tag "uj.jpg" %>
-                <a href="http://www.artschool.co.za/ "target="blank" style="color: white"><i style="color: white;">UJ </i></a>
+                <a href="http://www.artschool.co.za/ "target="blank" style="color: white"><i style="color: white; font-size:1.25rem;">UJ </i></a>
               </div>
               <% end %>
 
@@ -468,8 +480,8 @@
   <div class="container">
 
 
-<h4 style="color: black;">  <span style="padding: 0 16px; font-size:2.25rem;"> Pictor Online    </span>  </h4>
-<p class="mb-3" style="text-align: center; color: black; font-size:1.75rem;">Latest</p>
+<h4 style="color: black;">  <span style="padding: 0 16px; font-size:2.25rem; font-weight:750;"> Pictor Online    </span>  </h4>
+<p class="mb-3" style="text-align: center; color: black; font-size:1.75rem; font-weight:550;">Latest</p>
 <div class="articles-grid">
 
   <% @latest.each do |article| %>
@@ -483,8 +495,8 @@
         <% end %>
         <div class="pt-5 pb-3 pl-3" >
 
-      <h2 style=" color:black; text-align: left; font-size:22px; font-weight:400;"><%= article.title.capitalize %></h2>
-      <p class="mb-5 mt-3" style="font-size: 18px; color:black; opacity:0.8; text-align: left;"><%= article.description.capitalize %> </p>
+      <h2 style=" color:black; text-align: left; font-size:22px; font-weight:500;"><%= article.title.capitalize %></h2>
+      <p class="mb-5 mt-3" style="font-size: 18px; color:black; opacity:0.8; text-align: left; font-weight:450;"><%= article.description.capitalize %> </p>
 
         </div>
     </div>
