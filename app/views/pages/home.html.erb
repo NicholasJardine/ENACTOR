@@ -87,26 +87,31 @@
         <div class="row" style="padding: ]24px;">
           <div class="col-6 mt-5">
             <h3 style="font-size:2.75rem; color: black; font-weight:500;" > Test your industry Knowledge</h3>
-            <div class="mt-3" style="position: relative; margin:0 auto;">
+            <div class="mt-3 tests-grid" style="position: relative; margin:0 auto;">
 
-              <div class="weekly-quiz mt-3" style="padding-left:110px;">
+              <div class="weekly-quiz mt-3">
+
+                <div style="position: relative; margin:0 auto;">
 
               <div class="quiz-image"> <%= image_tag "quiz.jpg" %> </div>
 
-              <div style="background-color:white; width: 300px; height:auto;">
+              <div style="background-color:white; width: 300px; height:auto;border: solid 4px;">
 
             <p style="font-size: 1.75rem; "> <%= link_to "Weekly Quiz", "#", class: "quiz"  %>  </p>
               </div>
 
+
+                </div>
+
               </div>
 
 
-              <div class="weekly-quiz mt-3" style="padding-left:110px;">
+              <div class="weekly-quiz mt-3" >
 
               <div class="quiz-image"> <%= image_tag "did-you.png" %> </div>
 
-              <div style="background-color:white; width: 300px; height:auto;">
-            <p style="font-size: 1.75rem; color:black; "> <%= link_to " Learn something", "#", class: "quiz" %>  </p>
+              <div style="background-color:white; width: 300px; height:auto;border: solid 4px;">
+            <p style="font-size: 1.75rem; color:black;  "> <%= link_to " Learn something", "#", class: "quiz-2" %>  </p>
               </div>
 
               </div>
@@ -114,9 +119,9 @@
             </div>
           </div>
             <div class="col-6 mt-5" style="position: relative; margin:0 auto; justify-content: center;">
-              <h1 style="font-size:3.0rem; text-align: center;"> <strong style="color: black;">Acting Tips</strong></h1>
-              <p class="mt-3" style='text-align: center; font-size: 1.35rem; color: black; opacity:.9'> We recently did an interview with Daniel Jardine, and he shared some of his acting tips and insights with us. </p>
-              <div class="d-flex" style="justify-content: center;">
+              <h1 style="font-size:3.0rem; text-align: center; padding-left: 100px;"> <strong style="color: black;">Acting Tips</strong></h1>
+              <p class="mt-3" style='text-align: center; font-size: 1.35rem; color: black; opacity:.9; padding-left: 100px'> We recently did an interview with Daniel Jardine, and he shared some of his acting tips and insights with us. </p>
+              <div class="d-flex" style="justify-content: center; padding-left: 100px">
                 <a class="nav-item" style=""><%= link_to "Read more", new_user_registration_path, class: "btn btn-flat-orange mt-3" %></a>
               </div>
             </div>
@@ -130,7 +135,7 @@
       <div class="row" style="background-color: black; ">
         <div class="col-8" style="justify-content: center; align-items: center; padding-top: 40px;">
 
-          <div style="width: 75%; margin-left: 64px; position:relative; margin:0 auto; justify-content: left;">
+          <div style="width: 75%; margin-left: 64px; position:relative; margin:0 auto;">
 
           <h1 style="font-size:3.0rem; color: white; opacity:0.7; text-align: left"> <strong>Further your studies</strong></h1>
           <p class="mt-3" style='text-align: left; font-size: 1.35rem; color: white; opacity:.7'> its never too late to get an education. South Africa has a number of unique acting schools through which you can hone your skills. Find out more by clicking any of the links. for a more complete list of your options click here</p>
@@ -142,7 +147,7 @@
         <div class="col-4 d-flex" style="justify-content:right;">
             <div style="position:relative; margin:0 auto;">
 
-          <%= image_tag "student.jpeg",  class: "studies-pic"%>
+          <%= image_tag "student.jpeg",  class: "studies-pic schools"%>
             </div>
         </div>
 
