@@ -362,6 +362,14 @@ padding:0 80px;
   text-align:center;
 }
 
+.quiz-2{
+  align-items: center;
+  padding-left: 56px;
+  color:black;
+  text-align:center;
+}
+
+
 
 .col-md-3{
   display: inline-block;
@@ -399,8 +407,50 @@ body .no-padding{
 .quiz-image{
 width:300px;
 height:150px;
+// border: solid px;
 }
 
 .weekly-quiz{
 align-items:center;
+}
+
+
+.studies-pic{
+border-radius: 4px;
+}
+
+.schools{
+  border: solid 2px; border-color: white;
+}
+
+.tests-grid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+       justify-content: center;
+      align-content: start;
+}
+.clapper{
+  border: solid 4px;
+  background: black;
+}
+.fc p{
+
+  padding-top: 64px;
+padding-bottom: 75px;
+// border: solid px;
+}
+
+
+.fc{
+width:300px;
+height:150px;
+// border: solid px;
+background-color:black;
+color:white;
+}
+
+
+.accept{
+ padding-left: 16px;
 }

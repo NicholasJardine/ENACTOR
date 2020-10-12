@@ -87,26 +87,31 @@
         <div class="row" style="padding: ]24px;">
           <div class="col-6 mt-5">
             <h3 style="font-size:2.75rem; color: black; font-weight:500;" > Test your industry Knowledge</h3>
-            <div class="mt-3" style="position: relative; margin:0 auto;">
+            <div class="mt-3 tests-grid" style="position: relative; margin:0 auto;">
 
-              <div class="weekly-quiz mt-3" style="padding-left:110px;">
+              <div class="weekly-quiz mt-3">
+
+                <div style="position: relative; margin:0 auto;">
 
               <div class="quiz-image"> <%= image_tag "quiz.jpg" %> </div>
 
-              <div style="background-color:white; width: 300px; height:auto;">
+              <div style="background-color:white; width: 300px; height:auto;border: solid 4px;">
 
             <p style="font-size: 1.75rem; "> <%= link_to "Weekly Quiz", "#", class: "quiz"  %>  </p>
               </div>
 
+
+                </div>
+
               </div>
 
 
-              <div class="weekly-quiz mt-3" style="padding-left:110px;">
+              <div class="weekly-quiz mt-3" >
 
               <div class="quiz-image"> <%= image_tag "did-you.png" %> </div>
 
-              <div style="background-color:white; width: 300px; height:auto;">
-            <p style="font-size: 1.75rem; color:black; "> <%= link_to " Learn something", "#", class: "quiz" %>  </p>
+              <div style="background-color:white; width: 300px; height:auto;border: solid 4px;">
+            <p style="font-size: 1.75rem; color:black;  "> <%= link_to " Learn something", "#", class: "quiz-2" %>  </p>
               </div>
 
               </div>
@@ -114,9 +119,9 @@
             </div>
           </div>
             <div class="col-6 mt-5" style="position: relative; margin:0 auto; justify-content: center;">
-              <h1 style="font-size:3.0rem; text-align: center;"> <strong style="color: black;">Acting Tips</strong></h1>
-              <p class="mt-3" style='text-align: center; font-size: 1.35rem; color: black; opacity:.9'> We recently did an interview with Daniel Jardine, and he shared some of his acting tips and insights with us. </p>
-              <div class="d-flex" style="justify-content: center;">
+              <h1 style="font-size:3.0rem; text-align: center; padding-left: 100px;"> <strong style="color: black;">Acting Tips</strong></h1>
+              <p class="mt-3" style='text-align: center; font-size: 1.35rem; color: black; opacity:.9; padding-left: 100px'> We recently did an interview with Daniel Jardine, and he shared some of his acting tips and insights with us. </p>
+              <div class="d-flex" style="justify-content: center; padding-left: 100px">
                 <a class="nav-item" style=""><%= link_to "Read more", new_user_registration_path, class: "btn btn-flat-orange mt-3" %></a>
               </div>
             </div>
@@ -128,14 +133,25 @@
   <div class="banner" style=" background-color: black;" >
     <div class="container" style="background-color: black;">
       <div class="row" style="background-color: black; ">
-        <div class="col-6" style="position: relative; margin:0 auto; justify-content: center;">
-          <h1 style="font-size:3.0rem; color: white; opacity:0.7; text-align: center"> <strong>Further your studies</strong></h1>
-          <p class="mt-3" style='text-align: center; font-size: 1.35rem; color: white; opacity:.7'> its never too late to get an education. South Africa has a number of unique acting schools through which you can hone your skills. Find out more by clicking any of the links. for a more complete list of your options click here</p>
+        <div class="col-8" style="justify-content: center; align-items: center; padding-top: 40px;">
+
+          <div style="width: 75%; margin-left: 64px; position:relative; margin:0 auto;">
+
+          <h1 style="font-size:3.0rem; color: white; opacity:0.7; text-align: left"> <strong>Further your studies</strong></h1>
+          <p class="mt-3" style='text-align: left; font-size: 1.35rem; color: white; opacity:.7'> its never too late to get an education. South Africa has a number of unique acting schools through which you can hone your skills. Find out more by clicking any of the links. for a more complete list of your options click here</p>
+          </div>
           <div class="mt-5">
           </div>
         </div>
 
-          <div class="study-links-new-1 mt-5" style="position: relative; margin: 0 auto;">
+        <div class="col-4 d-flex" style="justify-content:right;">
+            <div style="position:relative; margin:0 auto;">
+
+          <%= image_tag "student.jpeg",  class: "studies-pic schools"%>
+            </div>
+        </div>
+
+          <div class="study-links-new-1 mt-5" style="position: relative; margin: 0 auto; padding-top: 56px;">
 
               <div>
 
@@ -350,7 +366,7 @@
       <div class="col-6" style="position: relative; margin:0 auto; justify-content: center;">
 
     <h1 style="font-size:3.0rem; color: white; opacity:0.7; text-align: center"> <strong>Showcase your talent</strong></h1>
-    <p class="mt-3" style='text-align: center; font-size: 1.35rem; color: white; opacity:.7'> Sign up and become a part of a database of actors. Become more accessible and discoverable, agent or no agent. Fill in your details to match with casting briefs best suited to you! Add pictures and videos to give your profile a personal touch! </p>
+    <p class="mt-3" style='text-align: center; font-size: 1.35rem; color: white; opacity:.7'> Sign up and become a part of a database of actors. Become more accessible and discoverable, agent or no agent. Fill in your details to match with casting briefs best suited to you and audition from anywhere with our online audition process! Add pictures and videos to give your profile a personal touch! </p>
 <div class="mt-5">
 
 <div class="d-flex" style="justify-content: center;">
@@ -364,7 +380,7 @@
 
     <div class="col-6 fill">
 
-<%= image_tag 'Social-Media.webp', class: "mb-5" %>    </div>
+<%= image_tag 'audition-2.jpeg', class: "mb-5" %>    </div>
 
 
 <div class="study-links mt-5" style="position:relative; margin:0 620px">
@@ -403,13 +419,13 @@
 
         <div class="col-6 fill mt-5">
 
-    <%= image_tag 'castingt.png', class: "mb-5" %>    </div>
+    <%= image_tag 'castingt.png', class: "mb-5 clapper" %>    </div>
 
 
           <div class="col-6 mt-5" style="position: relative; margin:0 auto; justify-content: center;">
 
-        <h1 style="font-size:3.0rem; text-align: center;"> <strong style="color: black;">Looking for actors?</strong></h1>
-        <p class="mt-3" style='text-align: center; font-size: 1.35rem; color: black; opacity:.9'> Gain access to a database of actors in South Africa. Production Companies/ casting directors can send casting briefs directly to actors and manage the audition process entirely online. </p>
+        <h1 style="font-size:3.0rem; text-align: center; padding-top: 48px;"> <strong style="color: black;">Looking for actors?</strong></h1>
+        <p class="mt-3" style='text-align: center; font-size: 1.35rem; color: black; opacity:.9 padding-top: 64px;'> Gain access to a database of actors in South Africa. Production Companies/ casting directors can send casting briefs directly to actors and manage the audition process entirely online. </p>
     <div class="d-flex" style="justify-content: center;">
 
 
@@ -429,7 +445,7 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);" > <strong>  Industry News </strong></h1>
   <div class="col-12 col-md-6" style="position: relative; margin:0 auto;">
     <div id="carouselExampleIndicators" class="carousel slide custom-slider" data-ride="carousel"style="width: 750px;">
-        <div class="carousel-inner"style="width: 750px;">
+        <div class="carousel-inner"style="width: 750px; border: solid 4px;">
           <div class="carousel-item active">
             <%=  %>
             <div class="carousel-img-container d-flex justify-content-center">
@@ -506,7 +522,7 @@
 
   <% @latest.each do |article| %>
 
-      <div style="border-bottom: solid 1px; border-color: #181B1E; align-items:center">
+      <div>
         <%= link_to article_path(article) do %>
         <div style="padding-left: 24px;">
 <%= cl_image_tag article.image.key, height: 200, width: 300, crop: :fill, class: "art-cover" %>
@@ -515,8 +531,8 @@
         <% end %>
         <div class="pt-5 pb-3 pl-3" >
 
-      <h2 style=" color:black; text-align: left; font-size:22px; font-weight:500;"><%= article.title.capitalize %></h2>
-      <p class="mb-5 mt-3" style="font-size: 18px; color:black; opacity:0.8; text-align: left; font-weight:450;"><%= article.description.capitalize %> </p>
+      <h2 style=" color:black; text-align: left; font-size:22px; font-weight:700;"><%= article.title.capitalize %></h2>
+      <p class="mb-5 mt-3" style="font-size: 18px; color:black; opacity:0.7; text-align: left; font-weight:700;"><%= article.description.capitalize %> </p>
 
         </div>
     </div>
@@ -526,24 +542,40 @@
 </div>
 <div class="row" style="margin-top:60px;">
   <div class="col-8" style="position:relative; margin:0 auto; align-items: center;">
-    <h3 style="position: relative; margin: 0 auto; font-weight:500; text-align: center; color: black;">What's happening in the film and television industry? Keep up to date by visiting the following websites</h3 style="position: relative; margin: 0 auto; ">
+    <h3 style="position: relative; margin: 0 auto; font-weight:700; text-align: center; color: black; font-size:2.5rem; padding-top: 85px;">What's happening in the film and television industry? Keep up to date with these websites</h3 style="position: relative; margin: 0 auto; ">
 
-<div class="mt-3" style="position: relative; margin: 0 auto; color:black; text-align: center;">
-
-<ul>
-  <li>
-  <%= link_to "www.filmcontact.com", "https://filmcontact.com/", class: "info-link"%>
-
-  </li>
-
-  <li>
-      <%= link_to "www.actorspaces.co.za/", "https://www.actorspaces.co.za/", class: "info-link" %>
-
-  </li>
-</ul>
-</div>
 
   </div>
+
+
+<div class="col-6" style="position:center; margin:0 auto; padding-top: 80px;">
+
+<div class="mt-3 tests-grid pb-5" style="position: relative; margin: 0 auto; color:black; text-align: center;">
+
+<div>
+<%= link_to "https://www.actorspaces.co.za/" , target: :_blank do%>
+  <div class=" quiz-image">
+
+    <%= image_tag "Actors-space.png.png" %>
+  </div>
+  <% end %>
+
+</div>
+
+<div class=""style="background-color:white; color:black; width:300px; height:150px;">
+<%= link_to "https://filmcontact.com/" , target: :_blank, class: "fc" do%>
+  <div class=" fc " style="align-items: center;">
+    <p style="color: white;"> FilmContact.com</p>
+  </div>
+  <% end %>
+
+</div>
+
+</div>
+
+</div>
+
+
 </div>
 <% end %>
 
