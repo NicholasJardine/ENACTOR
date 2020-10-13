@@ -441,14 +441,14 @@
 
 
 <div class="row" style="background:black;"><div class="col-12" style="background-color: white;opacity: 0.7;">
-  <h1 class="my-5" style="text-align: center; color: black; font-size: 3.75rem; opacity:0.7;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);" > <strong>  Industry News </strong></h1>
+  <h1 class="my-5" style="text-align: center; color: black; font-size: 3.75rem; opacity:0.7; font-weight:900;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2); padding-top: 100px; padding-bottom: 25px; padding-right: 56px;" > <strong>  Industry News </strong></h1>
   <div class="col-12 col-md-6" style="position: relative; margin:0 auto;">
     <div id="carouselExampleIndicators" class="carousel slide custom-slider" data-ride="carousel"style="width: 750px;">
-        <div class="carousel-inner"style="width: 750px; border: solid 4px;">
+        <div class="carousel-inner"style="width: 750px;">
           <div class="carousel-item active">
-            <%=  %>
-            <div class="carousel-img-container d-flex justify-content-center">
+            <h3 style="text-align: center; color: black; font-weight: 700; font-size:2.25rem; padding-bottom: 40px;">  <%= @last.title %> </h3>
+            <div class="carousel-img-container d-flex justify-content-center" style="border:solid 4px;">
     <%= cl_image_tag @last.image.key, height: 500, width: 1000, crop: :scale, class: "d-block w-100" %>
             </div>
 
@@ -462,7 +462,9 @@
           </div>
               <% @articles_without_latest.each do |article| %>
           <div class="carousel-item">
-            <div class="carousel-img-container d-flex justify-content-center">
+                        <h3 style="text-align: center; color: black; font-size:2.25rem; font-weight: 700; padding-bottom: 40px;">  <%= article.title %> </h3>
+
+            <div class="carousel-img-container d-flex justify-content-center" style="border:solid 4px;">
      <%= cl_image_tag article.image.key, height: 500, width: 1000, crop: :scale, class: "d-block w-100" %>
             </div>
 
@@ -517,12 +519,12 @@
 
 
 <h4 style="color: black;">  <span style="padding: 0 16px; font-size:2.25rem; font-weight:750;"> Pictor Online    </span>  </h4>
-<p class="mb-3" style="text-align: center; color: black; font-size:1.75rem; font-weight:550;">Latest</p>
+<p class="mb-3" style="text-align: center; color: black; font-size:1.75rem; font-weight:550; padding-bottom: 16px;">Latest</p>
 <div class="articles-grid">
 
   <% @latest.each do |article| %>
 
-      <div>
+      <div style="border-bottom: solid 1px;">
         <%= link_to article_path(article) do %>
         <div style="padding-left: 24px;">
 <%= cl_image_tag article.image.key, height: 200, width: 300, crop: :fill, class: "art-cover" %>
