@@ -447,7 +447,7 @@
     <div id="carouselExampleIndicators" class="carousel slide custom-slider" data-ride="carousel"style="width: 750px;">
         <div class="carousel-inner"style="width: 750px;">
           <div class="carousel-item active">
-            <h3 style="text-align: center; color: black; font-weight: 700; font-size:2.25rem; padding-bottom: 40px;">  <%= @last.title %> </h3>
+            <h3 style="text-align: center; color: black; font-weight: 700; font-size:2.25rem; padding-bottom: 40px;">  <%= @last.title.capitalize %> </h3>
             <div class="carousel-img-container d-flex justify-content-center" style="border:solid 4px;">
     <%= cl_image_tag @last.image.key, height: 500, width: 1000, crop: :scale, class: "d-block w-100" %>
             </div>
@@ -462,7 +462,7 @@
           </div>
               <% @articles_without_latest.each do |article| %>
           <div class="carousel-item">
-                        <h3 style="text-align: center; color: black; font-size:2.25rem; font-weight: 700; padding-bottom: 40px;">  <%= article.title %> </h3>
+                        <h3 style="text-align: center; color: black; font-size:2.25rem; font-weight: 700; padding-bottom: 40px;">  <%= article.title.capitalize %> </h3>
 
             <div class="carousel-img-container d-flex justify-content-center" style="border:solid 4px;">
      <%= cl_image_tag article.image.key, height: 500, width: 1000, crop: :scale, class: "d-block w-100" %>
