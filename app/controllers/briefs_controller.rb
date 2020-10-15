@@ -7,6 +7,8 @@ class BriefsController < ApplicationController
     @brief = Brief.find(params[:id])
     @audition = Audition.new
     @auditions = Audition.where(brief_id: @brief.id)
+
+    @reason = Reason.new
   end
 
 
@@ -62,6 +64,9 @@ class BriefsController < ApplicationController
   def brief_params
     params.require(:brief).permit(:title, :name, :race, :age, :gender, :ethnicty, :language, :marital_status, :profession, :hometown, :current_home, :wants, :needs, :flaws, :traits, :arc_summary, :attachment, :user_id, :age_range, :scene)
   end
+  #   def reason_params
+  #   params.require(:brief).permit(:human_trafficking, :not_legit, :unsafe, :child_abuse, :sexual_content)
+  # end
 
 end
 

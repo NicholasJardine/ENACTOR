@@ -87,6 +87,7 @@ Rails.application.routes.draw do
   resources :private_briefs, path: '/', param: :id, only: %i[show]
   resources :articles, only: [:index, :show, :new, :create, :update, :delete]
   resources :articles, path: '/', param: :id, only: %i[show]
+  resources :reasons, only: [:show, :new, :create, :update, :delete]
 
 
   resources :auditions, only: [:index, :show, :new, :create, :update, :delete]

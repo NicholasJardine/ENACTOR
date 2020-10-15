@@ -175,7 +175,6 @@
 </table> -->
 
 
-<%= link_to acceptb_path(user_brief_id: brief.user_briefs.first.id, brief_id: brief.id), method: :patch, class:"d-flex justify-content-end" do %>
 
 
 <!-- Button trigger modal -->
@@ -217,6 +216,7 @@
         <%= f.button :submit, class: "btn btn-flat-orange", value: "Submit Audition" %>
 
           </div>
+          <% end %>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -225,3 +225,4 @@
     </div>
   </div>
 </div>
+
