@@ -39,6 +39,15 @@ class BriefsController < ApplicationController
     @user_brief.save
   end
 
+  def report_brief
+
+    @user = current_user
+    @brief = Brief.find(params[:id])
+    @brief.reported_status == true
+    @brief.save
+
+  end
+
   def edit
   end
 

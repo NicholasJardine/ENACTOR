@@ -124,6 +124,7 @@
 </div>
 </div>
 </div>
+
 </div>
 <% end %>
        <% else %>
@@ -173,3 +174,54 @@
   </tr>
 </table> -->
 
+
+<%= link_to acceptb_path(user_brief_id: brief.user_briefs.first.id, brief_id: brief.id), method: :patch, class:"d-flex justify-content-end" do %>
+
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Reasons for Reporting</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+
+                      <div class="form_inputs">
+                <div class="new-form-inputs">
+              <%= simple_form_for [@reason] do |f| %>
+
+              <div class="form_inputs">
+                <div class="new-form-inputs">
+                 <%= f.check_box :human_trafficking, label: "Suspected Human trafficking" %>
+                 <%= f.check_box :unsafe, label: "Brief seems suspicious and generally unsafe" %>
+                 <%= f.check_box :sexual_content, label: "Sexual Content" %>
+                 <%= f.check_box :child_abuse, label: "Child abuse" %>
+                 <%= f.check_box :not_legit, label: "Production Company does not seem legitimate" %>
+                <%= f.input :brief_id, :as => :hidden, :input_html => { :value => @brief.id } %>
+                <%= f.input :user_id, :as => :hidden, :input_html => { :value => current_user.id } %>
+
+            </div>
+          </div>
+        </div>
+
+        <%= f.button :submit, class: "btn btn-flat-orange", value: "Submit Audition" %>
+
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
