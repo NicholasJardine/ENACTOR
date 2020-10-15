@@ -201,11 +201,46 @@
 
               <div class="form_inputs">
                 <div class="new-form-inputs">
+
+
+    <div class="ts d-flex" style="justify-content: space-between;">
+
+      <p style="color:#CCA459;"> Human trafficking</p>
+
                  <%= f.check_box :human_trafficking, label: "Suspected Human trafficking" %>
+
+    </div>
+        <div class="ts d-flex" style="justify-content: space-between;">
+
+      <p style="color:#CCA459;"> Brief seems suspicious and generally unsafe</p>
+
                  <%= f.check_box :unsafe, label: "Brief seems suspicious and generally unsafe" %>
+
+    </div>
+
+        <div class="ts d-flex" style="justify-content: space-between;">
+
+      <p style="color:#CCA459;"> Sexually explicit content or requests</p>
+
                  <%= f.check_box :sexual_content, label: "Sexual Content" %>
+
+    </div>
+
+        <div class="ts d-flex" style="justify-content: space-between;">
+
+      <p style="color:#CCA459;"> Child Abuse</p>
+
                  <%= f.check_box :child_abuse, label: "Child abuse" %>
+
+    </div>
+
+            <div class="ts d-flex" style="justify-content: space-between;">
+
+      <p style="color:#CCA459;"> The production company does not seem legitimate</p>
+
                  <%= f.check_box :not_legit, label: "Production Company does not seem legitimate" %>
+
+    </div>
                 <%= f.input :brief_id, :as => :hidden, :input_html => { :value => @brief.id } %>
                 <%= f.input :user_id, :as => :hidden, :input_html => { :value => current_user.id } %>
 
