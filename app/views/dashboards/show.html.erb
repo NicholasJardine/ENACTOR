@@ -197,7 +197,36 @@
 
 
 </div>
+<% if @user.email == "kayla@gmail.com" %>
+<div class="row">
+  <div class="col-6">
+    <h3>  Briefs that have been reported </h3>
+<% @reasons.each do |reason| %>
+<div class="reason" style="color:  #CCA459; font-size:1.5rem;">
 
+  <p style="color"><%= reason.brief.title %> </p>
+
+<% if reason.human_trafficking? %>
+  <p>Human Trafficking</p>
+<% end %>
+<% if reason.unsafe? %>
+  <p>generally unsafe</p>
+<% end %>
+<% if reason.child_abuse? %>
+  <p>child abuse</p>
+<% end %>
+<% if reason.sexual_content? %>
+  <p>sexually explicit request</p>
+<% end %>
+<% if reason.not_legit? %>
+  <p>Not a legitimate company</p>
+<% end %>
+</div>
+<% end %>
+
+  </div>
+</div>
+<% end %>
 <br>
 
 
