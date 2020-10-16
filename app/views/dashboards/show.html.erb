@@ -200,26 +200,26 @@
 <% if @user.email == "kayla@gmail.com" %>
 <div class="row">
   <div class="col-6">
-    <h3>  Briefs that have been reported </h3>
+    <h1 style="padding-top: 50px;">  Briefs that have been reported </h3>
 <% @reasons.each do |reason| %>
 <div class="reason" style="color:  #CCA459; font-size:1.5rem;">
 
-  <p style="color"><%= reason.brief.title %> </p>
+  <h3  style="color"><%= reason.brief.title %> </h3 style="color: white">
 
 <% if reason.human_trafficking? %>
-  <p>Human Trafficking</p>
+  <h5 style="color: white">Human Trafficking</h5 style="color: white">
 <% end %>
 <% if reason.unsafe? %>
-  <p>generally unsafe</p>
+  <h5 style="color: white">generally unsafe</h5 style="color: white">
 <% end %>
 <% if reason.child_abuse? %>
-  <p>child abuse</p>
+  <h5 style="color: white">child abuse</h5 style="color: white">
 <% end %>
 <% if reason.sexual_content? %>
-  <p>sexually explicit request</p>
+  <h5 style="color: white">sexually explicit request</h5 style="color: white">
 <% end %>
 <% if reason.not_legit? %>
-  <p>Not a legitimate company</p>
+  <h5 style="color: white">Not a legitimate company</h5 style="color: white">
 <% end %>
 </div>
 <% end %>
