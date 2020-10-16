@@ -9,6 +9,7 @@ class BriefsController < ApplicationController
     @auditions = Audition.where(brief_id: @brief.id)
 
     @reason = Reason.new
+    @account_complaint = AccountComplaint.new
   end
 
 

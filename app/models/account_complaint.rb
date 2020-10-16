@@ -1,0 +1,2 @@
+class AccountComplaint < ApplicationRecord
+end

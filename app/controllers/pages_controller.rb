@@ -118,7 +118,7 @@ class PagesController < ApplicationController
     @articles = Article.all
     @articles_without_latest = @articles.reject{|article| article == @last}
     @users = User.all
-
+    @account_complaint = AccountComplaint.new
 
     if params[:query].present?
       sql_query = " \

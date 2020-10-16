@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_15_101346) do
+ActiveRecord::Schema.define(version: 2020_10_16_094851) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,19 @@ ActiveRecord::Schema.define(version: 2020_10_15_101346) do
     t.string "status", default: "Pending"
     t.index ["private_invite_id"], name: "index_acceptances_on_private_invite_id"
     t.index ["user_id"], name: "index_acceptances_on_user_id"
+  end
+
+  create_table "account_complaints", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "career_changes", default: false
+    t.boolean "not_recieving_briefs", default: false
+    t.boolean "dont_like_it", default: false
+    t.boolean "unsatisfied", default: false
+    t.boolean "not_useful", default: false
+    t.bigint "user_id"
+    t.text "custom"
+    t.index ["user_id"], name: "index_account_complaints_on_user_id"
   end
 
   create_table "active_storage_attachments", force: :cascade do |t|
@@ -229,6 +242,7 @@ ActiveRecord::Schema.define(version: 2020_10_15_101346) do
     t.boolean "sexual_content", default: false
     t.boolean "child_abuse", default: false
     t.boolean "not_legit", default: false
+    t.text "custom"
     t.index ["brief_id"], name: "index_reasons_on_brief_id"
     t.index ["user_id"], name: "index_reasons_on_user_id"
   end
@@ -330,6 +344,7 @@ ActiveRecord::Schema.define(version: 2020_10_15_101346) do
 
   add_foreign_key "acceptances", "private_invites"
   add_foreign_key "acceptances", "users"
+  add_foreign_key "account_complaints", "users"
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "actors", "users"
   add_foreign_key "applications", "user_briefs"
