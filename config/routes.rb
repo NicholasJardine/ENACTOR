@@ -38,6 +38,7 @@ Rails.application.routes.draw do
 
   get 'pages/mission'
   get 'pages/how_it'
+  get 'pages/cancel'
   get 'pages/staff'
   get 'pages/search_actors'
   post 'pages/search_actors'

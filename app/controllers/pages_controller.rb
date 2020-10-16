@@ -102,6 +102,11 @@ class PagesController < ApplicationController
   end
 
 
+   def cancel
+    @user=current_user
+     @account_complaint = account_complaint.new
+   end
+
   def carousel
     @user = current_user
     @articles = Article.all

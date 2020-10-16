@@ -660,14 +660,14 @@
 
 
 
+              <%= simple_form_for [@account_complaint] do |f| %>
 <div>
 
 <%= link_to registration_path(@user), class: "dropdown-item", data: { confirm: "Are you sure?" }, method: :delete do %>
 
 
 <div>
-              <%= simple_form_for [@account_complaint] do |f| %>
-<button type="button" class="btn-flat-orange" data-toggle="modal" data-target="#exampleModal">
+<button type="button" class="dropdown-item" data-toggle="modal" data-target="#exampleModal">
 Cancel my account</button>
 
 <!-- Modal -->
