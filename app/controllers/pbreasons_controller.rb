@@ -19,7 +19,7 @@ class PbreasonsController < ApplicationController
   private
 
     def pbreason_params
-    params.require(:reason).permit(:human_trafficking, :not_legit, :unsafe, :child_abuse, :sexual_content, :user_id, :brief_id)
+    params.require(:pbreason).permit(:human_trafficking, :not_legit, :unsafe, :child_abuse, :sexual_content, :user_id, :private_brief_id)
   end
 
 end
