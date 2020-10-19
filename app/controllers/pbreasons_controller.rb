@@ -1,0 +1,2 @@
+class PbreasonsController < ApplicationController
+end

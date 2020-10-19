@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_16_094851) do
+ActiveRecord::Schema.define(version: 2020_10_19_123524) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -147,6 +147,20 @@ ActiveRecord::Schema.define(version: 2020_10_16_094851) do
   create_table "dashboards", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "pbreasons", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "human_trafficking", default: false
+    t.boolean "unsafe", default: false
+    t.boolean "sexual_content", default: false
+    t.boolean "child_abuse", default: false
+    t.boolean "not_legit", default: false
+    t.bigint "user_id"
+    t.bigint "private_brief_id"
+    t.index ["private_brief_id"], name: "index_pbreasons_on_private_brief_id"
+    t.index ["user_id"], name: "index_pbreasons_on_user_id"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -354,6 +368,8 @@ ActiveRecord::Schema.define(version: 2020_10_16_094851) do
   add_foreign_key "auditions", "dashboards"
   add_foreign_key "auditions", "users"
   add_foreign_key "briefs", "users"
+  add_foreign_key "pbreasons", "private_briefs"
+  add_foreign_key "pbreasons", "users"
   add_foreign_key "posts", "users"
   add_foreign_key "private_auditions", "private_briefs"
   add_foreign_key "private_auditions", "users"
