@@ -18,7 +18,7 @@ class AccountComplaintsController < ApplicationController
   private
 
     def account_complaint_params
-    params.require(:account_complaint).permit(:career_changes, :not_recieving_briefs, :dont_like_it, :not_useful, :unsatisfied, :user_id)
+    params.require(:account_complaint).permit(:career_changes, :not_recieving_briefs, :dont_like_it, :not_useful, :unsatisfied)
   end
 
 end
