@@ -43,6 +43,7 @@ Rails.application.routes.draw do
   get 'pages/search_actors'
   post 'pages/search_actors'
   get 'pages/carousel'
+  get 'pages/complaint'
   get 'pages/terms_and_conditions'
 
   get 'pages/searching'
