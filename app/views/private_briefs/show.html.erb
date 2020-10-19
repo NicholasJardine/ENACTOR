@@ -89,11 +89,12 @@
 
           <div class="col-12">
 
-        <div class="accordion" id="accordionExample" style="background: #b5076b;">
+        <div class="accordion" id="accordionExample" style="background: #CCA459;">
           <div class="card">
-            <div class="card-header" id="headingOne" style="background: #b5076b;">
+            <div class="card-header" id="headingOne" style="background: #CCA459;
+;">
               <h2 class="mb-0">
-                <button class="btn btn-link " style="background: #b5076b;" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                <button class="btn btn-link " style="background: #CCA459;" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                    <strong> Upload Audition</strong>
                </button>
               </h2>
@@ -103,7 +104,7 @@
               <div class="card-body">
               <div class="form_inputs">
                 <div class="new-form-inputs">
-              <%= simple_form_for [@audition] do |f| %>
+              <%= simple_form_for [@private_audition] do |f| %>
 
               <div class="form_inputs">
                 <div class="new-form-inputs">
@@ -154,3 +155,97 @@
 
 
 </div>
+
+
+<% if @user.occupation == "Actor" %>
+
+  <div class="container">
+
+  <h3 style="padding-bottom:56px; padding-top: 56px; color:white;"> IF THIS BRIEF SEEMS SUSPICIOUS TO YOU IN ANY WAY, PLEASE REPORT IT BELOW </h3>
+
+  <!-- Button trigger modal -->
+                <%= simple_form_for [@pbreason] do |f| %>
+  <button type="button" class="btn-flat-orange" data-toggle="modal" data-target="#exampleModal">
+  Report this brief</button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Reasons for Reporting</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+
+
+                        <div class="form_inputs">
+                  <div class="new-form-inputs">
+
+                <div class="form_inputs">
+                  <div class="new-form-inputs">
+
+
+      <div class="ts d-flex" style="justify-content: space-between;">
+
+        <p style="color:#CCA459;"> Human trafficking</p>
+
+                   <%= f.check_box :human_trafficking, label: "Suspected Human trafficking" %>
+
+      </div>
+          <div class="ts d-flex" style="justify-content: space-between;">
+
+        <p style="color:#CCA459;"> Brief seems suspicious and generally unsafe</p>
+
+                   <%= f.check_box :unsafe, label: "Brief seems suspicious and generally unsafe" %>
+
+      </div>
+
+          <div class="ts d-flex" style="justify-content: space-between;">
+
+        <p style="color:#CCA459;"> Sexually explicit content or requests</p>
+
+                   <%= f.check_box :sexual_content, label: "Sexual Content" %>
+
+      </div>
+
+          <div class="ts d-flex" style="justify-content: space-between;">
+
+        <p style="color:#CCA459;"> Child Abuse</p>
+
+                   <%= f.check_box :child_abuse, label: "Child abuse" %>
+
+      </div>
+
+              <div class="ts d-flex" style="justify-content: space-between;">
+
+        <p style="color:#CCA459;"> The production company does not seem legitimate</p>
+
+                   <%= f.check_box :not_legit, label: "Production Company does not seem legitimate" %>
+
+      </div>
+                  <%= f.input :private_brief_id, :as => :hidden, :input_html => { :value => @private_brief.id } %>
+                  <%= f.input :user_id, :as => :hidden, :input_html => { :value => current_user.id } %>
+
+              </div>
+            </div>
+          </div>
+
+          <%= f.button :submit, class: "btn btn-flat-orange", value: "Report brief" %>
+
+            </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  </div>
+
+   <% end %>
+
+<% end %>
+
+

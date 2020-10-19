@@ -8,7 +8,7 @@ class User < ApplicationRecord
   has_many :reasons
   has_many :user_briefs
   has_many :private_invites
-
+  has_many :pbreasons
   has_many :applications
   has_many :private_briefs
   has_many :posts

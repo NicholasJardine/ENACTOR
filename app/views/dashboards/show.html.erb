@@ -103,7 +103,7 @@
       <% end %>
           <div class="col-3 d-flex justify-content-between">
             <%= link_to acceptinvite_path(private_invite_id: brief.private_invites.first.id, private_brief_id: brief.id), method: :patch, class:"d-flex justify-content-end" do %>
-              <p style="font-size: 1.5rem; color: green;"> ACCEPT</p>
+              <p class="mr-5"style="font-size: 1.5rem; color: green;"> ACCEPT</p>
               <% end %>
 
             <%= link_to declineinvite_path(private_invite_id: brief.private_invites.first.id, private_brief_id: brief.id), method: :patch, class:"d-flex justify-content-end" do %>
@@ -226,6 +226,43 @@
 
   </div>
 </div>
+<% end %>
+
+
+
+
+<% if @user.email == "kayla@gmail.com" %>
+
+<div class="row">
+
+  <div class="col-6">
+        <h1 style="padding-top: 50px;">  briefs recieved privately that have been reported</h3>
+<% @pbreasons.each do |reason| %>
+<div class="reason" style="color:  #CCA459; font-size:1.5rem;">
+
+  <h3  style="color"><%= reason.private_brief.title %> </h3 style="color: white">
+
+<% if reason.human_trafficking? %>
+  <h5 style="color: white">Human Trafficking</h5 style="color: white">
+<% end %>
+<% if reason.unsafe? %>
+  <h5 style="color: white">generally unsafe</h5 style="color: white">
+<% end %>
+<% if reason.child_abuse? %>
+  <h5 style="color: white">child abuse</h5 style="color: white">
+<% end %>
+<% if reason.sexual_content? %>
+  <h5 style="color: white">sexually explicit request</h5 style="color: white">
+<% end %>
+<% if reason.not_legit? %>
+  <h5 style="color: white">Not a legitimate company</h5 style="color: white">
+<% end %>
+</div>
+<% end %>
+
+  </div>
+</div>
+
 <% end %>
 <br>
 

@@ -2,6 +2,7 @@ class DashboardsController < ApplicationController
   def show
     @user = current_user
     @reasons = Reason.all
+    @pbreasons = Pbreason.all
     # @brief = Brief.find(params[:id])
     # @auditions = Audition.where(brief_id: @brief.id)
     @matching_briefs = Brief.where(ethnicty: @user.ethnicty).where(gender: @user.gender).where(age_range: @user.age_range).where(status: "Pending")

@@ -91,6 +91,7 @@ Rails.application.routes.draw do
   resources :articles, path: '/', param: :id, only: %i[show]
   resources :reasons, only: [:show, :new, :create, :update, :delete]
   resources :account_complaints, only: [:show, :new, :create, :update, :delete]
+  resources :pbreasons, only: [:show, :new, :create, :update, :delete]
 
 
   resources :auditions, only: [:index, :show, :new, :create, :update, :delete]
