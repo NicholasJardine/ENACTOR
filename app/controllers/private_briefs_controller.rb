@@ -4,6 +4,8 @@ class PrivateBriefsController < ApplicationController
     @private_brief = PrivateBrief.find(params[:id])
     @private_audition = PrivateAudition.new
     @auditions = PrivateAudition.where(private_brief_id: @private_brief.id)
+    @pbreason = Pbreason.new
+
   end
 
   def new
