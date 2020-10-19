@@ -1,0 +1,85 @@
+<div class="container">
+  <div class="row">
+    <div style="padding-top: 24px; padding-bottom: 24px;"><h3>Please let us know why you would like to cancel your account.</h3></div>
+    <div class="col-6">
+              <%= simple_form_for [@account_complaint] do |f| %>
+<div>
+
+
+
+<div>
+
+<!--  -->
+
+
+
+                      <div class="form_inputs">
+                <div class="new-form-inputs">
+
+              <div class="form_inputs">
+                <div class="new-form-inputs">
+
+
+    <div class="ts d-flex" style="justify-content: space-between;">
+
+      <p style="color:#CCA459;"> I am changing careers</p>
+
+                 <%= f.check_box :career_changes, label: "Suspected Human trafficking" %>
+
+    </div>
+        <div class="ts d-flex" style="justify-content: space-between;">
+
+      <p style="color:#CCA459;"> I am not recieving as many opportunities as i would like</p>
+
+                 <%= f.check_box :not_recieving_briefs, label: "" %>
+
+    </div>
+
+        <div class="ts d-flex" style="justify-content: space-between;">
+
+      <p style="color:#CCA459;"> I just dont like it. </p>
+
+                 <%= f.check_box :dont_like_it, label: "" %>
+
+    </div>
+
+        <div class="ts d-flex" style="justify-content: space-between;">
+
+      <p style="color:#CCA459;"> I am unsatisfied with my experience</p>
+
+                 <%= f.check_box :unsatisfied, label: "" %>
+
+    </div>
+
+            <div class="ts d-flex" style="justify-content: space-between;">
+
+      <p style="color:#CCA459;"> I dont find the app to be useful. </p>
+
+                 <%= f.check_box :not_useful, label: "" %>
+
+    </div>
+                <div class="ts d-flex" style="justify-content: space-between;color:#CCA459;">
+
+
+                 <%= f.input :custom, label: " If you have another reason, please tell us here", class: "custom-text" %>
+
+    </div>
+
+            </div>
+          </div>
+        </div>
+
+        <%= f.button :submit, class: "btn btn-flat-orange", value: "submit reasons" %>
+
+          </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+ <% end %>
+
+
+
+</div>

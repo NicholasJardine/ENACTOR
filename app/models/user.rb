@@ -5,6 +5,7 @@ class User < ApplicationRecord
   has_many_attached :images
 
   has_many :briefs
+  has_many :reasons
   has_many :user_briefs
   has_many :private_invites
 

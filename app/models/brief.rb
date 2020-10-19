@@ -1,6 +1,7 @@
 class Brief < ApplicationRecord
   belongs_to :user
   has_many :auditions
+  has_many :reasons
   has_many :user_briefs
   has_many :users, through: :user_briefs
 

@@ -38,10 +38,12 @@ Rails.application.routes.draw do
 
   get 'pages/mission'
   get 'pages/how_it'
+  get 'pages/cancel'
   get 'pages/staff'
   get 'pages/search_actors'
   post 'pages/search_actors'
   get 'pages/carousel'
+  get 'pages/complaint'
   get 'pages/terms_and_conditions'
 
   get 'pages/searching'
@@ -65,6 +67,7 @@ Rails.application.routes.draw do
   patch "/deleteb", to: "user_briefs#delete_invite"
   delete "/delete_post", to: "posts#delete_post"
   patch "/deletepb", to: "private_invites#delete"
+  patch "/report_brief", to: "briefs#report_brief"
 
 
   devise_for :users
@@ -86,6 +89,8 @@ Rails.application.routes.draw do
   resources :private_briefs, path: '/', param: :id, only: %i[show]
   resources :articles, only: [:index, :show, :new, :create, :update, :delete]
   resources :articles, path: '/', param: :id, only: %i[show]
+  resources :reasons, only: [:show, :new, :create, :update, :delete]
+  resources :account_complaints, only: [:show, :new, :create, :update, :delete]
 
 
   resources :auditions, only: [:index, :show, :new, :create, :update, :delete]

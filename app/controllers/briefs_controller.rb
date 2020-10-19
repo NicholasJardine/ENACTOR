@@ -7,6 +7,9 @@ class BriefsController < ApplicationController
     @brief = Brief.find(params[:id])
     @audition = Audition.new
     @auditions = Audition.where(brief_id: @brief.id)
+
+    @reason = Reason.new
+    @account_complaint = AccountComplaint.new
   end
 
 
@@ -37,6 +40,15 @@ class BriefsController < ApplicationController
     @user_brief.user = current_user
     @user_brief.audition = @audition
     @user_brief.save
+  end
+
+  def report_brief
+
+    @user = current_user
+    @brief = Brief.find(params[:id])
+    @brief.reported_status == true
+    @brief.save
+
   end
 
   def edit
