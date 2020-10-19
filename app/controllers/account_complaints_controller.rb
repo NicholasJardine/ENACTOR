@@ -8,7 +8,7 @@ class AccountComplaintsController < ApplicationController
    #  @account_complaint.production_company = @production_company
     if @account_complaint.save
 
-      redirect_to cancel_path
+      redirect_to pages_cancel_path
     else
       render :new
     end

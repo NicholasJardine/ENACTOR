@@ -65,7 +65,10 @@
               <%= link_to "Edit profile", edit_user_registration_path, class: "dropdown-item" %>
 <!--               <%= link_to "My Dashboard", dashboards_show_path , class: "dropdown-item" %>
  -->              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-              <%= link_to "Cancel my account", registration_path(@user), class: "dropdown-item", data: { confirm: "Are you sure?" }, method: :delete %>
+<!--               <%= link_to "Cancel my account", registration_path(@user), class: "dropdown-item", data: { confirm: "Are you sure?" }, method: :delete %>
+ -->
+               <%= link_to "Cancel my account", pages_complaint_path, class: "dropdown-item" %>
+
 
             </div>
           </li>
@@ -98,7 +101,7 @@
               <%= link_to "Edit profile", edit_user_registration_path, class: "dropdown-item" %>
 <!--               <%= link_to "My Dashboard", dashboards_show_path, class: "dropdown-item" %>
  -->              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-              <%= link_to "Cancel my account", registration_path(@user), class: "btn-flat-orange", data: { confirm: "Are you sure?" }, method: :delete %>
+ -->              <%= link_to "Cancel my account", complaint_path, class: "dropdown-item"%>
 
             </div>
           </li>
