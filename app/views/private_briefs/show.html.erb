@@ -224,7 +224,7 @@ Report this brief</button>
                  <%= f.check_box :not_legit, label: "Production Company does not seem legitimate" %>
 
     </div>
-                <%= f.input :brief_id, :as => :hidden, :input_html => { :value => @brief.id } %>
+                <%= f.input :private_brief_id, :as => :hidden, :input_html => { :value => @private_brief.id } %>
                 <%= f.input :user_id, :as => :hidden, :input_html => { :value => current_user.id } %>
 
             </div>
