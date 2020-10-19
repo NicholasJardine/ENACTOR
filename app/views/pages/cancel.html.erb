@@ -1,13 +1,14 @@
 <div class="container">
   <div class="row">
-    <div class="col-6">
-    <div>
-      <h1>Thank you for giving us feedback!</h1>
-      <h3>
+
+    <div class="col-8" style="margin:0 auto; position:relative;">
+      <h1 class="pt-3 mt-5">Thank you for giving us feedback!</h1>
+     </div>
+    <div class="col-8" style="margin:0 auto; position:relative;">
+      <h3 class="pt-3">
         Click the button below to delete your account. There is no way to undo this.
       </h3>
-      <p style=" color:#CCA459;">Thank you for trying our service!</p>
-    </div>
-               <%= link_to "Cancel my account", registration_path(@user), class: "btn-flat-orange", data: { confirm: "Are you sure?" }, method: :delete %>
+      <p class="pt-3"style=" color:#CCA459; padding-bottom: 32px;">Thank you for trying our service!</p>
+               <%= link_to "Cancel my account", registration_path(@user), class: "btn-flat-orange mt-3", data: { confirm: "Are you sure?" }, method: :delete %>
   </div>
 </div>
