@@ -110,7 +110,7 @@
                 <div class="new-form-inputs">
                 <%= f.input :title, label: "the title of your audition" %>
                 <%= f.input :video, as: :file, :resource_type => :video%>
-                <%= f.input :brief_id, :as => :hidden, :input_html => { :value => @private_brief.id } %>
+                <%= f.input :private_brief_id, :as => :hidden, :input_html => { :value => @private_brief.id } %>
                 <%= f.input :user_id, :as => :hidden, :input_html => { :value => current_user.id } %>
 
             </div>

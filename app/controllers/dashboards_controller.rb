@@ -11,6 +11,8 @@ class DashboardsController < ApplicationController
 
 
 
+    @province_briefs = @province_briefs.reject{ |brief| brief.province == nil }
+
     @my_briefs = Brief.where(user_id: @user.id)
     # @my_accepted_briefs = UserBrief.where(user: current_user).where(status: "accepted").map { |ui| ui.brief }
 

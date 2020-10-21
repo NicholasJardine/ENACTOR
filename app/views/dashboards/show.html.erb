@@ -150,6 +150,71 @@
 </div>
 
 
+
+
+
+
+<div class="col-6" style="padding: 16px;">
+  <h2 class="mb-5" style="text-decoration: underline;font-weight: bold; color:#CCA459; ">IN MY PROVINCE</h2>
+
+    <h3 style="color: #CCA459;"> WHATS HAPPENING NEAR YOUR HOME? </h3>
+    <% if @province_briefs == [] %>
+      <p style="color:white;font-size: 1.5rem;"> Nothing yet. Your time is coming!</p>
+    <% else %>
+
+    <% @province_briefs.each do |brief| %>
+      <%= link_to brief_path(brief) do %>
+        <div> <p style="color:white;font-size: 1.5rem;"> <%= brief.title %></p></div>
+      <% end %>
+
+                  <div class="col-3 d-flex" style="">
+            <%= link_to acceptb_path(user_brief_id: brief.user_briefs.first.id, brief_id: brief.id), method: :patch, class:"d-flex justify-content-end" do %>
+              <p class="mr-5"style="font-size: 1.5rem; color: green;"> ACCEPT</p>
+            <% end %>
+            <%= link_to declineb_path(user_brief_id: brief.user_briefs.first.id, brief_id: brief.id), method: :patch, class:"d-flex justify-content-end" do %>
+              <p style="font-size: 1.5rem; color: red;"> DECLINE</p>
+            <% end %>
+          </div>
+    <% end %>
+
+    <% end %>
+
+    <h3 style="color: #CCA459;"> ACCEPTED: </h3>
+    <% if @accepted_pbs != [] %>
+          <% @accepted_pbs.each do |brief| %>
+      <%= link_to private_brief_path(brief) do %>
+        <div> <p style="color:white;font-size: 1.5rem;"> <%= brief.title %></p></div>
+                        <div class="col-3 d-flex justify-content-between">
+                    <%= link_to deletepb_path(private_invite_id: brief.private_invites.first.id, private_brief_id: brief.id), method: :patch, class:"d-flex justify-content-end" do %>
+              <p style="font-size: 1.5rem; color: blue;"> DELETE</p>
+            <% end %>
+              </div>
+      <% end %>
+      <% end %>
+
+      <% else %>
+
+      <p style="color:white;font-size: 1.5rem;"> Currently, you have not accepted anything in your province.</p>
+
+      <% end %>
+
+      <h3 style="color: #CCA459;"> DECLINED: </h3>
+    <% if @declined_pbs != [] %>
+          <% @declined_pbs.each do |brief| %>
+      <%= link_to private_brief_path(brief) do %>
+        <div> <p style="color:white;font-size: 1.5rem;"> <%= brief.title %></p></div>
+      <% end %>
+      <% end %>
+      <% else %>
+
+      <p style="color:white;font-size: 1.5rem;"> Currently, you have not declined any requests in your province.</p>
+      <% end %>
+
+
+
+</div>
+
+
 </div>
 
 
@@ -239,8 +304,10 @@
         <h1 style="padding-top: 50px;">  briefs recieved privately that have been reported</h3>
 <% @pbreasons.each do |reason| %>
 <div class="reason" style="color:  #CCA459; font-size:1.5rem;">
-
+<% if reason.private_brief !=nil %>
   <h3  style="color"><%= reason.private_brief.title %> </h3 style="color: white">
+
+<% end %>
 
 <% if reason.human_trafficking? %>
   <h5 style="color: white">Human Trafficking</h5 style="color: white">
