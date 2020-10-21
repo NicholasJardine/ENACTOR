@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_19_123524) do
+ActiveRecord::Schema.define(version: 2020_10_21_160312) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -78,6 +78,7 @@ ActiveRecord::Schema.define(version: 2020_10_19_123524) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "status", default: "Pending"
+    t.string "province"
     t.index ["user_brief_id"], name: "index_applications_on_user_brief_id"
     t.index ["user_id"], name: "index_applications_on_user_id"
   end
@@ -141,6 +142,7 @@ ActiveRecord::Schema.define(version: 2020_10_19_123524) do
     t.string "scene"
     t.string "status", default: "Pending"
     t.boolean "reported_status", default: false
+    t.string "province"
     t.index ["user_id"], name: "index_briefs_on_user_id"
   end
 
@@ -323,7 +325,6 @@ ActiveRecord::Schema.define(version: 2020_10_19_123524) do
     t.datetime "updated_at", null: false
     t.string "occupation"
     t.string "name"
-    t.string "age"
     t.string "gender"
     t.string "ethnicty"
     t.string "language"
@@ -352,6 +353,7 @@ ActiveRecord::Schema.define(version: 2020_10_19_123524) do
     t.boolean "accepted_terms", default: false
     t.string "cv"
     t.string "ciricv"
+    t.integer "age"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
