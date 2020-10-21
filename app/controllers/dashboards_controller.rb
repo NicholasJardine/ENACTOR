@@ -11,8 +11,8 @@ class DashboardsController < ApplicationController
 
 
     @accepted_provincial = Application.where(user_id: current_user.id).where(status: "accepted").where(province: @user.province).map { |application| application.user_brief.brief }
-    @declined_provincial = Application.where(user_id: current_user.id).where(status: "declined").map { |application| application.user_brief.brief }
-    @deleted_provincial = Application.where(user_id: current_user.id).where(status: "deleted").map { |application| application.user_brief.brief }
+    @declined_provincial = Application.where(user_id: current_user.id).where(status: "declined").where(province: @user.province).map { |application| application.user_brief.brief }
+    @deleted_provincial = Application.where(user_id: current_user.id).where(status: "deleted").where(province: @user.province).map { |application| application.user_brief.brief }
 
 
     @province_briefs = @province_briefs.reject{ |brief| brief.province == nil }
@@ -49,8 +49,8 @@ class DashboardsController < ApplicationController
 
 
     @accepted = Application.where(user_id: current_user.id).where(status: "accepted").where(province: nil).map { |application| application.user_brief.brief }
-    @declined = Application.where(user_id: current_user.id).where(status: "declined").map { |application| application.user_brief.brief }
-    @deleted = Application.where(user_id: current_user.id).where(status: "deleted").map { |application| application.user_brief.brief }
+    @declined = Application.where(user_id: current_user.id).where(status: "declined").where(province: nil).map { |application| application.user_brief.brief }
+    @deleted = Application.where(user_id: current_user.id).where(status: "deleted").where(province: nil).map { |application| application.user_brief.brief }
 
     @accepted.each do |brief|
       if @accepted.include?(brief)
@@ -67,7 +67,9 @@ class DashboardsController < ApplicationController
       end
     end
 
+
       @matching_briefs.reject{ |brief| @accepted.include?(brief) }
+      @matching_briefs.reject{ |brief| @declined.include?(brief) }
 
     @declined.each do |brief|
       if @declined.include?(brief)

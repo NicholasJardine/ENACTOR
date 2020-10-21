@@ -204,13 +204,13 @@
     <br>
             <h3 style="color:#CCA459;"> DECLINED</h3>
 
-            <% if @declined ==[] %>
+            <% if @declined_provincial ==[] %>
 
       <p style="color:white;font-size: 1.5rem;"> Currently you have not declined any briefs in your province.</p>
 
             <% else %>
 
-        <% @declined.each do |brief| %>
+        <% @declined_provincial.each do |brief| %>
           <div class="match">
             <%= link_to brief_path(brief) do %>
                 <div>
