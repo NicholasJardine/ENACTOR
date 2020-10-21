@@ -46,8 +46,12 @@ class UserBriefsController < ApplicationController
 def delete_invite
     @brief = Brief.find(params[:brief_id])
     @user_brief = UserBrief.find(params[:user_brief_id])
-    @application = Application.create!(user_id: current_user.id, user_brief_id: @user_brief.id, status: "deleted")
 
+        if @user_brief.brief.province != nil
+        @application = Application.create!(user_id: current_user.id, user_brief_id: @user_brief.id, status: "deleted", province: @user_brief.brief.province)
+    else
+    @application = Application.create!(user_id: current_user.id, user_brief_id: @user_brief.id, status: "deleted")
+    end
     # @user_brief.status = "declined"
     # @user_brief.save
     redirect_to dashboard_path(current_user)

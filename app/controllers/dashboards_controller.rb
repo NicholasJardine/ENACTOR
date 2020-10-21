@@ -100,6 +100,19 @@ class DashboardsController < ApplicationController
          @declined = @declined.reject{ |brief| @deleted.include?(brief) }
       end
     end
+
+
+          @deleted_provincial.each do |brief|
+      if @deleted_provincial.include?(brief)
+         @accepted_provincial = @accepted_provincial.reject{ |brief| @deleted_provincial.include?(brief) }
+      end
+    end
+
+    @deleted_provincial.each do |brief|
+      if @deleted_provincial.include?(brief)
+         @declined_provincial = @declined_provincial.reject{ |brief| @deleted_provincial.include?(brief) }
+      end
+    end
     @myauditions = Audition.where(user_id: current_user.id)
     @my_private_auditions = PrivateAudition.where(user_id: current_user.id)
 
