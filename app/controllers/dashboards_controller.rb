@@ -5,12 +5,12 @@ class DashboardsController < ApplicationController
     @pbreasons = Pbreason.all
     # @brief = Brief.find(params[:id])
     # @auditions = Audition.where(brief_id: @brief.id)
-    @matching_briefs = Brief.where(ethnicty: @user.ethnicty).where(gender: @user.gender).where(age_range: @user.age_range).where(status: "Pending")
+    @matching_briefs = Brief.where(ethnicty: @user.ethnicty).where(gender: @user.gender).where(age_range: @user.age_range).where(status: "Pending").where(province: nil)
     @current_matching_briefs = Brief.where(ethnicty: @user.ethnicty).where(gender: @user.gender).where(age_range: @user.age_range).where(status: "Pending")
         @province_briefs = Brief.where(ethnicty: @user.ethnicty).where(gender: @user.gender).where(age_range: @user.age_range).where(status: "Pending").where(province: @user.province)
 
 
-    @accepted_provincial = Application.where(user_id: current_user.id).where(status: "accepted").map { |application| application.user_brief.brief }
+    @accepted_provincial = Application.where(user_id: current_user.id).where(status: "accepted").where(province: @user.province).map { |application| application.user_brief.brief }
     @declined_provincial = Application.where(user_id: current_user.id).where(status: "declined").map { |application| application.user_brief.brief }
     @deleted_provincial = Application.where(user_id: current_user.id).where(status: "deleted").map { |application| application.user_brief.brief }
 
@@ -39,13 +39,16 @@ class DashboardsController < ApplicationController
     end
 
 
+
+
+
     @my_briefs = Brief.where(user_id: @user.id)
     # @my_accepted_briefs = UserBrief.where(user: current_user).where(status: "accepted").map { |ui| ui.brief }
 
      #@not_accepted_briefs = UserBrief.where(status: "Pending").map { |ui| ui.brief.where }
 
 
-    @accepted = Application.where(user_id: current_user.id).where(status: "accepted").map { |application| application.user_brief.brief }
+    @accepted = Application.where(user_id: current_user.id).where(status: "accepted").where(province: nil).map { |application| application.user_brief.brief }
     @declined = Application.where(user_id: current_user.id).where(status: "declined").map { |application| application.user_brief.brief }
     @deleted = Application.where(user_id: current_user.id).where(status: "deleted").map { |application| application.user_brief.brief }
 
@@ -56,11 +59,25 @@ class DashboardsController < ApplicationController
       end
     end
 
+
+        @accepted_provincial.each do |brief|
+      if @accepted_provincial.include?(brief)
+         @matching_briefs = @matching_briefs.reject{ |brief| @accepted_provincial.include?(brief) }
+
+      end
+    end
+
       @matching_briefs.reject{ |brief| @accepted.include?(brief) }
 
     @declined.each do |brief|
       if @declined.include?(brief)
          @matching_briefs = @matching_briefs.reject{ |brief| @declined.include?(brief) }
+      end
+    end
+
+        @declined_provincial.each do |brief|
+      if @declined_provincial.include?(brief)
+         @matching_briefs = @matching_briefs.reject{ |brief| @declined_provincial.include?(brief) }
       end
     end
 
@@ -155,4 +172,6 @@ class DashboardsController < ApplicationController
     # @user_invite.save
     # redirect_to dashboard_path(current_user)
   end
+
+
 end

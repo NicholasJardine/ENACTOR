@@ -181,11 +181,11 @@
 
 
     <h3 style="color:#CCA459;"> ACCEPTED </h3>
-    <% if @accepted ==[] %>
+    <% if @accepted_provincial ==[] %>
       <p style="color:white;font-size: 1.5rem;"> Currently you have not accepted any briefs in your province.</p>
     <% else %>
 
-        <% @accepted.each do |brief| %>
+        <% @accepted_provincial.each do |brief| %>
           <div class="match">
             <%= link_to brief_path(brief) do %>
                 <div>
