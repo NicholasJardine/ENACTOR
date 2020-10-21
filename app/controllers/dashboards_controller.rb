@@ -10,8 +10,34 @@ class DashboardsController < ApplicationController
         @province_briefs = Brief.where(ethnicty: @user.ethnicty).where(gender: @user.gender).where(age_range: @user.age_range).where(status: "Pending").where(province: @user.province)
 
 
+    @accepted_provincial = Application.where(user_id: current_user.id).where(status: "accepted").map { |application| application.user_brief.brief }
+    @declined_provincial = Application.where(user_id: current_user.id).where(status: "declined").map { |application| application.user_brief.brief }
+    @deleted_provincial = Application.where(user_id: current_user.id).where(status: "deleted").map { |application| application.user_brief.brief }
+
 
     @province_briefs = @province_briefs.reject{ |brief| brief.province == nil }
+
+        @accepted_provincial.each do |brief|
+      if @accepted_provincial.include?(brief)
+         @province_briefs = @province_briefs.reject{ |brief| @accepted_provincial.include?(brief) }
+
+      end
+    end
+
+        @declined_provincial.each do |brief|
+      if @declined_provincial.include?(brief)
+         @province_briefs = @province_briefs.reject{ |brief| @declined_provincial.include?(brief) }
+
+      end
+    end
+
+            @deleted_provincial.each do |brief|
+      if @deleted_provincial.include?(brief)
+         @province_briefs = @province_briefs.reject{ |brief| @deleted_provincial.include?(brief) }
+
+      end
+    end
+
 
     @my_briefs = Brief.where(user_id: @user.id)
     # @my_accepted_briefs = UserBrief.where(user: current_user).where(status: "accepted").map { |ui| ui.brief }
