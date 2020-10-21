@@ -55,7 +55,9 @@
 
       <h2>Profile Info (For Casting)</h2>
       <%= f.input :photo, as: :file, label:"Select Profile Picture" %>
-      <%= f.input :age_range, collection:ages, label: "Age"%>
+<!--       <%= f.input :age_range, collection:ages, label: "Age"%>
+ -->      <%= f.input :age, label: "Age"%>
+
       <%= f.input :gender, collection:["Male", "Female", "Non-Binary"], label: "Gender"%>
       <%= f.input :ethnicty, collection:["Black", "White","Mixed", "Asian", "Indian", "Racially Ambiguos" ], label: "Race/Ethnicity"%>
       <%= f.input :language, collection:langs, label: "Language "%>
