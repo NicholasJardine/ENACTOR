@@ -88,7 +88,7 @@ Rails.application.routes.draw do
   resources :briefs, path: '/', param: :id, only: %i[show]
   resources :private_briefs, only: [:show, :new, :create, :update, :delete]
   resources :private_briefs, path: '/', param: :id, only: %i[show]
-  resources :articles, only: [:index, :show, :new, :create, :update, :delete]
+  resources :articles, only: [:index, :show, :new, :create, :update, :edit, :delete]
   resources :articles, path: '/', param: :id, only: %i[show]
   resources :reasons, only: [:show, :new, :create, :update, :delete]
   resources :account_complaints, only: [:show, :new, :create, :update, :delete]

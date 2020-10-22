@@ -1,2 +1,30 @@
-<h1>Articles#edit</h1>
-<p>Find me in app/views/articles/edit.html.erb</p>
+<div class="container">
+  <h1>Adjust your article accordingly.</h1>
+
+  <div class="row">
+<div class="col-6">
+
+              <%= simple_form_for [@article] do |f| %>
+              <div class="form_inputs">
+                <div class="new-form-inputs">
+                <%= f.input :author, label: "Author of the article" %>
+                <%= f.input :title, label: "The title of the article" %>
+                <%= f.input :description, label: "Short article description" %>
+                <%= f.input :paragraph_one, label: "Short article paragraph" %>
+                <%= f.input :paragraph_two, label: "Short article paragraph" %>
+                <%= f.input :paragraph_three, label: "Short article paragraph" %>
+                <%= f.input :paragraph_four, label: "Short article paragraph" %>
+                <%= f.input :paragraph_five, label: "Short article paragraph" %>
+                <%= f.input :paragraph_six, label: "Short article paragraph" %>
+                <%= f.input :image, as: :file, label: "Cover image for article" %>
+        <%= f.button :submit, class: "btn btn-flat-orange", value: "Update Article" %>
+<% end %>
+
+            </div>
+          </div>
+        </div>
+
+  </div>
+
+</div>
+

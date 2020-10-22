@@ -1,8 +1,14 @@
 <div class="container" style="background: black;">
+<% if @user.email == "kayla@gmail.com" %>
+  <%= link_to edit_article_path do %>
+  <h3 style=" color:white;">Edit article </h3>
+  <% end %>
+<% end %>
 
   <div class="row">
     <div class="col-12 my-5">
      <h2 > <%= @article.title.upcase %></h2>
+     <h5> By <%= @article.author %></h5>
     </div>
   </div>
 
