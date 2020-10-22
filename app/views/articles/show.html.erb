@@ -1,8 +1,18 @@
-<div class="container" style="background: black;">
+<div class="container" style="background: black; padding-left: 116px">
+<% if @user.email == "kayla@gmail.com" %>
+  <%= link_to article_path(@article), data: { confirm: "Are you sure?" }, method: :delete do%>
+  <h3 style=" color:white;">Delete article </h3>
+  <% end %>
+
+    <%= link_to edit_article_path do %>
+  <h3 style=" color:white;">Edit article </h3>
+  <% end %>
+<% end %>
 
   <div class="row">
     <div class="col-12 my-5">
-     <h2 > <%= @article.title.upcase %></h2>
+     <h2 style="text-align: center"> <%= @article.title.upcase %></h2>
+     <h5 style="padding-left: 16px;text-align: center;"> By <%= @article.author %></h5>
     </div>
   </div>
 
@@ -18,7 +28,7 @@
 
 </div>
 
-  <div class="container" style="background: black;">
+  <div class="container" style="background: black; padding-left: 116px">
 
   <div class="row">
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_21_160312) do
+ActiveRecord::Schema.define(version: 2020_10_22_150914) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -96,6 +96,7 @@ ActiveRecord::Schema.define(version: 2020_10_21_160312) do
     t.text "paragraph_four"
     t.text "paragraph_five"
     t.text "paragraph_six"
+    t.string "author"
   end
 
   create_table "auditions", force: :cascade do |t|

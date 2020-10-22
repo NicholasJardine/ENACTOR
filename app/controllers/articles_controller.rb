@@ -28,15 +28,28 @@ class ArticlesController < ApplicationController
   end
 
   def edit
+    @user = current_user
+    @article = Article.find(params[:id])
+
   end
 
   def update
+  @article = Article.find(params[:id])
+  @article.update(article_params)
+  redirect_to article_path(@article)
   end
+
+  def destroy
+  @article = Article.find(params[:id])
+  @article.destroy
+
+  redirect_to :root
+end
 
     private
 
   def article_params
-    params.require(:article).permit(:title, :image, :attachment, :description, :paragraph_one, :paragraph_two, :paragraph_three, :paragraph_four, :paragraph_five, :paragraph_six)
+    params.require(:article).permit(:title, :image, :attachment, :description, :paragraph_one, :paragraph_two, :paragraph_three, :paragraph_four, :paragraph_five, :paragraph_six, :author)
   end
 
 end

@@ -70,7 +70,8 @@ Rails.application.routes.draw do
   patch "/report_brief", to: "briefs#report_brief"
 
 
-  devise_for :users, :controllers => { :registrations => 'users' }
+  devise_for :users, :controllers => { :registrations => 'user_registrations' }
+
   root to: 'pages#home'
 
   resources :actors, only: [:show, :new, :create, :update, :delete]
@@ -87,7 +88,7 @@ Rails.application.routes.draw do
   resources :briefs, path: '/', param: :id, only: %i[show]
   resources :private_briefs, only: [:show, :new, :create, :update, :delete]
   resources :private_briefs, path: '/', param: :id, only: %i[show]
-  resources :articles, only: [:index, :show, :new, :create, :update, :delete]
+  resources :articles
   resources :articles, path: '/', param: :id, only: %i[show]
   resources :reasons, only: [:show, :new, :create, :update, :delete]
   resources :account_complaints, only: [:show, :new, :create, :update, :delete]
