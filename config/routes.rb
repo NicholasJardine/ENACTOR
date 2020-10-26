@@ -70,7 +70,7 @@ Rails.application.routes.draw do
   patch "/report_brief", to: "briefs#report_brief"
 
 
-  devise_for :users, :controllers => { :registrations => 'user_registrations' }
+  devise_for :users, :controllers => { :registrations => 'users/user_registrations' }
 
   root to: 'pages#home'
 

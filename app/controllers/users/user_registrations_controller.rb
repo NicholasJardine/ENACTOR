@@ -1,13 +1,13 @@
-class UserRegistrationsController < Devise::RegistrationsController
+class Users::UserRegistrationsController < Devise::RegistrationsController
   skip_before_action :authenticate_user!
   before_action :configure_permitted_perameters, if: :devise_controller?
 
   def create
 
-       @request.env['devise.mapping'] = Devise.mappings[:user]
-
 
         super do |resource|
+
+      if resource.occupation == "Actor"
 
         if resource.age <30 && resource.age > 19
           resource.age_range = "20-29"
@@ -37,6 +37,7 @@ class UserRegistrationsController < Devise::RegistrationsController
         end
 
         resource.save
+      end
       end
 
 
