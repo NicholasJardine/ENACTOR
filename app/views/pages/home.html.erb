@@ -220,36 +220,52 @@
 
   <div class="banner" style=" background-color: black;" >
     <div class="container" style="background-color: black;">
+          <h1 style="font-size:2.75rem; opacity: 0.7; text-align: center; position:relative; margin: 0 auto;"> Whats being filmed?</h1>
       <div class="row" style="background-color: black; ">
 
-        <div class="col-6 mb-5">
+        <div class="col-6 my-5">
 
-          <h1 style="font-size:2.75rem; opacity: 0.7; text-align: center;"> Whats being filmed?</h1>
+         <h3 style="font-size:2.75rem;  padding-top: 40px; color:white;opacity: 0.7; text-align: center; position:relative; margin: 0 auto;"> Currently Filming</h3>
 
-          <div class="shows mt-5">
+          <div class="shows mt-3 " style="padding-top: 24px; padding-right: 100px;">
 
-            <div style="height: 150px; width:150px;">
+            <div style="height: 150px; width:150px;padding-top: 24px;">
               <%= image_tag 'blood-and-water.jpeg' %>
             </div>
 
-            <div style="height: 150px; width:150px;">
+            <div style="height: 150px; width:150px; padding-top: 24px;">
               <%= image_tag 'isono.jpeg' %>
             </div>
 
 
-            <div style="height: 150px; width:150px;">
+            <div style="height: 150px; width:150px;padding-top: 24px;">
               <%= image_tag 'skeem-saam.jpg' %>
             </div>
 
+
+
+            <div style="height: 150px; width:150px;padding-top: 24px;">
+              <%= image_tag '7de.jpg' %>
+            </div>
+
+
+
+            <div style="height: 150px; width:150px;padding-top: 24px;">
+              <%= image_tag 'muv.jpg' %>
+            </div>
+
+              <div style="height: 150px; width:150px;padding-top: 24px;">
+              <%= image_tag 'isidingo-1.jpg' %>
+            </div>
 
           </div>
 
         </div>
 <br><br><br>
         <div class="col-6 mt-5" style="">
-          <h3 style="font-size:2.75rem; color: white; opacity:0.7; padding-top: 40px;"> The Gauteng Film Commission </h3>
-          <p> bringing you all the relevant information and support you need for your films.  click <%= link_to "here", "http://www.gautengfilm.org.za/industry-development/project-support" %> to visit their website and find out more. </p>
-                    <div class="mb-5 mt-5" style="position: relative; margin: 0 auto;">
+          <h3 style="font-size:2.75rem; color: white; opacity:0.7; padding-top: 40px; text-align: left;"> The Gauteng Film Commission </h3>
+          <p style=" padding-top: 24px;"> Bringing you all the relevant information and support you need for your films.  Click <%= link_to "here", "http://www.gautengfilm.org.za/industry-development/project-support" %> to visit their website and find out more. </p>
+                    <div class=" mt-3" style="position: relative; margin: 0 auto;">
             <%= link_to "http://www.gautengfilm.org.za/industry-development/project-support", target: :_blank do %>
             <div> <%=  image_tag "gfc-logo.png" %> </div>
             <% end %>
