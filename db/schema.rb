@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_22_150914) do
+ActiveRecord::Schema.define(version: 2020_10_27_125230) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -144,6 +144,7 @@ ActiveRecord::Schema.define(version: 2020_10_22_150914) do
     t.string "status", default: "Pending"
     t.boolean "reported_status", default: false
     t.string "province"
+    t.string "showtitle"
     t.index ["user_id"], name: "index_briefs_on_user_id"
   end
 
