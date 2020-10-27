@@ -349,7 +349,40 @@
 </div>
 
 <% end %>
+
+<% if @user.email == "kayla@gmail.com" %>
+
+<div class="row">
+
+  <div class="col-6">
+        <h1 style="padding-top: 50px;">  Reason why person has cancelled account</h3>
+<% @account_complaints.each do |complaint| %>
+<div class="reason" style="color:  #CCA459; font-size:1.5rem;">
+
+<% if complaint.not_useful? %>
+  <h5 style="color: white"> The application was not useful.</h5 style="color: white">
+<% end %>
+<% if complaint.not_recieving_briefs? %>
+  <h5 style="color: white">Using this application was too costly.</h5 style="color: white">
+<% end %>
+<% if complaint.dont_like_it? %>
+  <h5 style="color: white">There is another website or application that I prefer.</h5 style="color: white">
+<% end %>
+<% if complaint.unsatisfied? %>
+  <h5 style="color: white">It was hard to navigate and/or use.</h5 style="color: white">
+<% end %>
+<% if complaint.custom? %>
+  <p style="color: white"><%= complaint.custom %></p style="color: white">
+<% end %>
+</div>
+<% end %>
+
+  </div>
+</div>
+
+<% end %>
 <br>
+
 
 
 
