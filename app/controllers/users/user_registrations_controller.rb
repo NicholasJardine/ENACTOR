@@ -73,6 +73,7 @@ class Users::UserRegistrationsController < Devise::RegistrationsController
 
   end
 
+
   protected
 
   def configure_permitted_perameters
