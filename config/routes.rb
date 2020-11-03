@@ -69,6 +69,7 @@ Rails.application.routes.draw do
   patch "/deletepb", to: "private_invites#delete"
   patch "/report_brief", to: "briefs#report_brief"
   delete "/destroy", to: "users#destroy"
+  delete "/destroy_user", to: "users/user_registrations#destroy_user"
 
   # delete "/delete_user", to: "users/user_registrations#delete_user"
 
