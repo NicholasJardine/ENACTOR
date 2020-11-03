@@ -32,12 +32,6 @@
  <% @users.each do |user| %>
  <div>
       <%= render 'shared/user_card', user: user %>
-  <% if @user.email == "kayla@gmail.com" %>
-  <div style="padding-left: 56px;">
-        <%= link_to "Delete User", registration_path(user), class: "btn-flat-orange mt-3", data: { confirm: "Are you sure?" }, method: :delete %>
-
-  </div>
-  <% end %>
 
 
  </div>

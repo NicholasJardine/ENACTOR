@@ -71,6 +71,12 @@ class Users::UserRegistrationsController < Devise::RegistrationsController
       end
 
 
+def destroy
+  @u = User.find(params: id)
+  @u.destroy
+  redirect_to :root
+end
+
   end
 
 
