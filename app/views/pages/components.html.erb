@@ -314,14 +314,14 @@
 
   <% @latest.each do |article| %>
 
-      <div class=".col-6 col-lg-3 "style="border-bottom: solid 1px;">
+      <div class=".col-8  "style="border-bottom: solid 1px;">
         <%= link_to article_path(article) do %>
-        <div style="padding-left: 24px;">
+        <div style="padding-left: 120px; ">
 <%= cl_image_tag article.image.key, height: 200, width: 300, crop: :fill, class: "art-cover" %>
 
         </div>
         <% end %>
-        <div class="pt-5 pb-3 pl-3" >
+        <div class="pt-5 pb-3" style="padding-left: 120px;" >
 
       <h2 style=" color:black; text-align: left; font-size:22px; font-weight:700;"><%= article.title.capitalize %></h2>
       <p class="mb-5 mt-3" style="font-size: 18px; color:black; opacity:0.7; text-align: left; font-weight:700;"><%= article.description.capitalize %> </p>
@@ -333,7 +333,7 @@
 </div>
   </div>
 <div class="row" style="margin-top:60px;">
-  <div class="col-8" style="position:relative; margin:0 auto; align-items: center;">
+  <div class="col-12 col-lg-8" style="position:relative; margin:0 auto; align-items: center;">
     <h3 style="position: relative; margin: 0 auto; font-weight:700; text-align: center; color: black; font-size:2.5rem; padding-top: 85px;">What's happening in the film and television industry? Keep up to date with these websites</h3 style="position: relative; margin: 0 auto; ">
 
 
