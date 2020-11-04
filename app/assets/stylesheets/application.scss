@@ -342,7 +342,19 @@ padding:0 80px;
   background-color:red;
 }
 
+@media(min-width: 1280px) {
+  .articles-grid {
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
 
+@media(max-width: 992px) {
+  .articles-grid {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
 // .study-links-new{
 //   display:grid;
 //   grid-template-columns: 1fr 1fr;
