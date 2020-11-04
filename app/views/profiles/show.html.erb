@@ -38,6 +38,11 @@
             <tr style="font-size:1.5rem; font-weight: 500;">
               <td>Gender:  <%= @user.gender %> </td>
             </tr>
+            </tr>
+            <tr style="font-size:1.5rem; font-weight: 500;">
+              <td>Residence:  <%= @user.province %> </td>
+            </tr>
+
             <tr style="font-size:1.5rem; font-weight: 500;">
               <td>Skills:  <%= @user.talents %> </td>
             </tr>
@@ -151,8 +156,12 @@
               <h3 style="color: white;">About Us: </h3>
              <p style="color: white;"> <%= @user.bio %> </p>            </div>
              <br>
-             <h3 style="color:white"> Get in Touch with Us </h3>
-              <p>Contact Details:  <%= @user.agent_details %> </p>
+              <h3 style=" color:white">Contact Details:</h3>
+              <div>
+                <p style="color: white;">Company tel: <%= @user.tel %> </p>
+                <p style="color: white;">Email: <%= @user.company_email %> </p>
+
+              </div>
 
 
 

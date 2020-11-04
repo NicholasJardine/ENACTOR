@@ -1,412 +1,223 @@
-<div class="card-post m-5">
 
-<%= cl_image_tag @user.photo.key, height: 200, width: 200, crop: :fill %>
-  <div class="card-post-infos">
-    <div>
-      <h2>Title here</h2>
-      <p>Short description here!</p>
-    </div>
-  </div>
-</div>
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path "oscar-award.jpg" %>);">
+    <div class="container">
+      <h1 style="font-size: 3.75rem; font-weight: 700;">Pictor - <strong> Simplifying Casting </strong> on <strong>Both Ends</strong>!</h1>
+      <h2 class="mt-3"style=" font-weight: 1.25rem; color:white; opacity: 0.7; text-align: center;">The perfect platform to find talent, or showcase your own. Our modern approach to casting connects actors and production companies with ease. Dream chasing made easy.</h2>
 
-
-<div class="nav" style="width:100%; background-color: white;">
-
-
-  <div class="row"><div class="col4">
-
-
-      <%= link_to pages_home_path do %>
-         <div class=" fill navbar-left logo" style="height: 150px; width:350px;">
-          <%= image_tag "LOGO4.png" %>
-          </div>
-          <% end %>
-
-  </div></div>
-
-</div>
-
-
-  <div class="banner" style="background-color: #C4C2B7">
-  <div class="container">
-    <div class="row" style="padding: ]24px;"><div class="col-6" style="position: relative; margin:0 auto; justify-content: center;">
-
-    <h1 style="font-size:2.75rem;"> <strong>Showcase your talent</strong></h1>
-    <p class="mt-3" style='text-align: center; font-size: 1.25rem; color: white; opacity:.9'> Audition from anywhere through our online audition process! Fill in your details to match with casting opportunities. Add pictures and videos to your portfolio to give your profile a personal touch </p>
-
-    <a class="nav-item" style=""><%= link_to "Get Started", new_user_registration_path, class: "btn btn-flat-orange mt-3" %></a>
-
-    </div>
-
-    <div class="col-6 fill">
-
-<%= image_tag 'Social-Media.webp', class: "mb-5" %>    </div></div>
-
-    <div class="row" style="padding: ]24px;">
-
-    <div class="col-6 fill mt-5">
-
-<%= image_tag 'castingt.png', class: "mb-5" %>    </div>
-
-
-      <div class="col-6 mt-5" style="position: relative; margin:0 auto; justify-content: center;">
-
-    <h1 style="font-size:2.75rem; text-align: center;"> <strong>Looking for talent?</strong></h1>
-    <p class="mt-3" style='text-align: center; font-size: 1.25rem; color: white; opacity:.9'> Easily find the perfect fit for any role in your project. Production Companies can place casting calls and manage the audition process entirely online. </p>
-<div class="d-flex" style="justify-content: center;">
-
-
-    <a class="nav-item" style=""><%= link_to "Get Started", new_user_registration_path, class: "btn btn-flat-orange mt-3" %></a>
-</div>
-
-    </div>
-
-
-
-</div>
-
-  </div>
-<!--     <div class="row"><div class="col-12" style="">
-
-        <p class="my-5" style="color: white; opacity: .7;">Pictor’s mission is to give actors and production companies (marketing agencies, theatre companies, film productions) the ability to easily find the actor they wish to have in their projects, and to simplify the process of auditioning with the aid of online auditions. To help them save both time and money. Click here to find out how! It is also a great tool to use during the Covid 19 pandemic to lessen face to face auditions and helps our users to keep up to date with industry news.</p>
-        <p> </p>
-    </div></div> -->
-
-<% if @articles != [] && @last != nil %>
-
-
-<div class="row" style="background:black;"><div class="col-12">
-
-<div class="container">
-  <h3 class="my-5" style="text-align: center; color: #CCA55B; font-size: 32px;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);" > ENTERTAINMENT NEWS</h3>
-
-<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active img-fluid">
-    <h5 class="mb-3"style="font-weight: bold; text-align: center"><%= @last.title.upcase %></h5>
-    <%= cl_image_tag @last.image.key, height: 500, width: 1000, crop: :scale %>
-    <div class="carousel-caption d-none d-md-block">
-    <div class="mt-5">
-    <p><%= link_to "Read More", article_path(@last), class: "btn-flat-dis"%></p>
-
-    </div>
-    </div>
-    </div>
-    <% @articles_without_latest.each do |article| %>
-
-    <div class="carousel-item img-fluid">
-    <h5 class='mb-3'style="text-align: center;"><%= article.title.upcase %></h5>
-    <%= cl_image_tag article.image.key, height: 500, width: 1000, crop: :scale %>
-    <div class="carousel-caption d-none d-md-block">
-    <div class="mt-5">
-    <p><%= link_to "Read More", article_path(article), class: "btn-flat-dis" %></p>
-
-    </div>
-    </div>
-    </div>
+    <% if @user.name == nil %>
+    <br><br><br>
+    <p style= ' color:white; opacity: .7; font-weight: 400;'> We noticed you haven't created your profile yet. To do so, click <a style= ' color:white; opacity: .7; font-weight: bold;'><%= link_to "here", edit_user_registration_path %> </a>  </p> <p style= 'opacity: .7; font-weight: bold;'> to add your personal touches!</p>
     <% end %>
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-
-<% end %>
-
-</div>
-
-
-<div class="card-post m-5">
-
-<%= cl_image_tag @user.photo.key, height: 250, width: 250, crop: :fill %>
-  <div class="card-post-infos">
-    <div>
-      <h2 style="color: black"><%= @user.name.upcase %></h2>
-    </div>
-  </div>
-</div>
-
-
-  <div class="banner" style="background-color: #C4C2B7;">
-  <div class="container">
-<div class="row" style="padding: ]24px;"><div class="col-6" style="position: relative; margin:0 auto; justify-content: center;">
-    <h1 style="font-size:2.75rem;"> <strong>Showcase your talent</strong></h1>
-    <p class="mt-3" style='text-align: center; font-size: 1.25rem; color: white; opacity:.9'> Audition from anywhere through our online audition process! Fill in your details to match with casting opportunities. Add pictures and videos to your portfolio to give your profile a personal touch </p>
-
-    <a class="nav-item" style=""><%= link_to "Get Started", new_user_registration_path, class: "btn btn-flat-orange mt-3" %></a>
-
-    <div class="col-6 fill">
-
-<%= image_tag 'Social-Media.webp', class: "mb-5" %>    </div></div>
-</div>
-  </div>
-</div>
-
-
-<div class="banner" style="background-color: #C4C2B7;">
-<div class="container">
-
-<div class="row" style="padding: ]24px;"><div class="col-6" style="position: relative; margin:0 auto; justify-content: center;">
-    <h1 style="font-size:2.75rem;"> <strong>Showcase your talent</strong></h1>
-    <p class="mt-3" style='text-align: center; font-size: 1.25rem; color: white; opacity:.9'> Audition from anywhere through our online audition process! Fill in your details to match with casting opportunities. Add pictures and videos to your portfolio to give your profile a personal touch </p>
-
-    <a class="nav-item" style=""><%= link_to "Get Started", new_user_registration_path, class: "btn btn-flat-orange mt-3" %></a>
-
-    <div class="col-6 fill">
-
-<%= image_tag 'Social-Media.webp', class: "mb-5" %>    </div></div>
-</div>
-
-</div>
-
-
-</div>
-
-
-<div class="card-post m-5" style="width:300px;">
-
-    <div>
-<%= cl_image_tag @user.photo.key, height: 200, width: 300, crop: :fill %>
-      <h2>title</h2>
-      <p>Short description here!</p>
-    </div>
-</div>
-
-
-
-
-
-
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to "#", class: "navbar-brand" do %>
-    <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
-  <% end %>
-
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <%= link_to "Home", "#", class: "nav-link" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to "Messages", "#", class: "nav-link" %>
-      </li>
-      <li class="nav-item dropdown">
-        <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <%= link_to "Action", "#", class: "dropdown-item" %>
-          <%= link_to "Another action", "#", class: "dropdown-item" %>
         </div>
-      </li>
-    </ul>
-  </div>
-</div>
-<br><br>
-<nav class="navbar navbar-default navbar-fixed-top navbar-lewagon">
-        <div class="navbar-header">
+      </div>
 
-            <div class="new-nav-logo" style="display: flex; justify-content: space-between; align-items: flex-end;">
+        <div class="banner" style=" background-color: black;" >
+    <div class="container" style="background-color: black;">
+      <div class="row" style="background-color: black; ">
+        <div class="col-6" style="position: relative; margin:0 auto; justify-content: center;">
+          <h1 style="font-size:3.0rem; color: white; opacity:0.7; text-align: center"> <strong>Need an agent?</strong></h1>
+          <br><br>
+          <p class="mt-3" style='text-align: center; font-size: 1.4rem; color: white; opacity:.7'> Many actors have agents that find and manage their auditions for them. Agents also assist in Negotiating their rates and contracts and making sure that the actors rights are protected. If you're looking for an agent, visit www.bla.com to start browsing. </p>
+
+        </div>
+        <div class="col-6">
+          <h1 style="color: white; opacity:0.7; font-size:3.0rem; text-align: center;"> Popular agencies</h1>
+          <div class="col-12">
+          <div class="study-links-new mt-5">
+
+              <div>
+              <%= link_to "http://thespians.co.za/",target: :_blank do %>
+              <div  style="width: 243px; height:84px;">
+                <%= image_tag "thespians.png" %>
+                <a href="https://www.afda.co.za/" target="blank" style="color: black;align-items: center;"><i style="color: black;"> Thespians </i></a>
+              </div>
+              <% end %>
 
 
-  <%= link_to pages_home_path do %>
-         <div class=" fill navbar-left logo" style="height: 125px; width:300px;">
-          <%= image_tag "LOGO4.png" %>
+              </div>
+
+              <div>
+
+              <%= link_to "http://www.contractors.org.za/", target: :_blank do %>
+              <div  style="width: 243px; height:84px;">
+                <%= image_tag "contractors.jpg" %>
+                <a href="http://www.artschool.co.za/ "target="blank" style="color: black"><i style="color: black;">Contractors </i></a>
+              </div>
+              <% end %>
+
+              </div>
+
+              <div>
+
+               <%= link_to "https://legends.co.za/",target: :_blank do %>
+              <div  style="width: 243px; height:84px;">
+                <%= image_tag "legends.png", class: "legends-pic" %>
+                <a href="https://www.afda.co.za/" target="blank" style="color: black;align-items: center;"><i style="color: black;"> Legends </i></a>
+              </div>
+              <% end %>
+
+              </div>
+
+              <div>
+
+              <%= link_to "https://talent-etc.co.za/ ", target: :_blank do %>
+              <div  style="width: 243px; height:84px;">
+                <%= image_tag "talent.png" %>
+                <a href="http://www.artschool.co.za/ "target="blank" style="color: black"><i style="color: black;">Talent Artist Agency </i></a>
+              </div>
+              <% end %>
+
+              </div>
+
+
           </div>
-          <% end %>
 
-<!--     <div class="navbar-left" style="float:left; color: #CCA459; font-weight: bold; font-size: 24px; margin-left: 20px;"><i class="brand brand-name navbar-left" style="color: #CCA459;">Casting With Ease</i>
-        </div> -->
 
-            </div>
-
+          </div>
+       </div>
+        </div>
+      </div>
     </div>
 
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+    <div class="banner" style="background-color:#C4C2B7;">
+      <div class="container">
+        <div class="row" style="padding: ]24px;">
+          <div class="col-12 col-lg-6 mt-5">
+            <h3 style="font-size:2.75rem; color: black; font-weight:500; padding-left: 50px;" > Test your industry Knowledge</h3>
+            <div class="mt-3 tests-grid" style="position: relative; margin:0 auto;">
+
+              <div class="weekly-quiz mt-3">
+
+                <div style="position: relative; margin:0 auto;">
+
+              <div class="quiz-image"> <%= image_tag "quiz.jpg" %> </div>
+
+              <div style="background-color:white; width: 300px; height:auto;border: solid 4px;">
+
+            <p style="font-size: 1.75rem; "> <%= link_to "Weekly Quiz", "#", class: "quiz"  %>  </p>
+              </div>
 
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+                </div>
+
+              </div>
 
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <% if user_signed_in?%>
-        <% if @user.email == "kayla@gmail.com" %>
-            <li class="nav-item">
-              <%= link_to "New Article", new_article_path , class: "nav-link" %>
-            </li>
-            <% end %>
-        <% if @user.photo.attached? %>
-            <li class="nav-item active">
-              <%= link_to "Home", pages_home_path, class: "nav-link" %>
-            </li>
-            <li class="nav-item active">
-              <%= link_to "Search Actors", pages_searching_path, class: "nav-link" %>
-            </li>
-            <li class="nav-item active">
-              <%= link_to "Production Companies", pages_searching_companies_path, class: "nav-link" %>
-            </li>
-            <% if @user.occupation == "Actor" %>
-            <li class="nav-item active">
-              <%= link_to "My Auditions", dashboards_show_path, class: "nav-link" %>
-            </li>
-            <% else %>
-            <li class="nav-item active">
-              <%= link_to "Create a Brief", new_brief_path, class: "nav-link" %>
-            </li>
-            <% end %>
-                    <li class="nav-item">
-              <%= link_to "My Profile", profile_path(current_user), class: "nav-link" %>
-            </li>
+              <div class="weekly-quiz mt-3" >
 
-          <li class="nav-item dropdown">
-            <%= cl_image_tag @user.photo.key, height: 40, width: 40, crop: :fill, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-              <%= link_to "Edit profile", edit_user_registration_path, class: "dropdown-item" %>
-              <%= link_to "My Dashboard", dashboards_show_path , class: "dropdown-item" %>
-              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+              <div class="quiz-image"> <%= image_tag "did-you.png" %> </div>
+
+              <div style="background-color:white; width: 300px; height:auto;border: solid 4px;">
+            <p style="font-size: 1.75rem; color:black;  "> <%= link_to " Learn something", "#", class: "quiz-2" %>  </p>
+              </div>
+
+              </div>
+
             </div>
-          </li>
-        <% else %>
-            <li class="nav-item active">
-              <%= link_to "Home", pages_home_path, class: "nav-link" %>
-            </li>
-            <li class="nav-item active">
-              <%= link_to "Search Actors", pages_searching_path, class: "nav-link" %>
-            </li>
-            <li class="nav-item active">
-              <%= link_to "Production Companies", pages_searching_companies_path, class: "nav-link" %>
-            </li>
-              <% if @user.occupation == "Actor" %>
-            <li class="nav-item active">
-              <%= link_to "Briefs & Auditions", dashboards_show_path, class: "nav-link" %>
-            </li>
-            <% else %>
-            <li class="nav-item active">
-              <%= link_to "Create a Brief", new_brief_path, class: "nav-link" %>
-            </li>
-            <% end %>
-                    <li class="nav-item">
-              <%= link_to "My Profile", profile_path(current_user), class: "nav-link" %>
-            </li>
-
-          <li class="nav-item dropdown">
-            <%= image_tag "default-avatar.jpeg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-              <%= link_to "Edit profile", edit_user_registration_path, class: "dropdown-item" %>
-              <%= link_to "My Dashboard", dashboards_show_path, class: "dropdown-item" %>
-              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+          </div>
+            <div class="col-12 col-lg-6 mt-5" style="position: relative; margin:0 auto; justify-content: center;">
+              <h1 style="font-size:3.0rem; text-align: center; padding-left: -100px; padding-top: 72px;"> <strong style="color: black;">Acting Tips</strong></h1>
+              <p class="mt-3" style='text-align: center; font-size: 1.4rem; color: black; opacity:.9; padding-left: -100px'> We recently did an interview with Daniel Jardine, and he shared some of his acting tips and insights with us. </p>
+              <div class="d-flex" style="justify-content: center; padding-left: -100px">
+                <a class="nav-item" style=""><%= link_to "Read more", new_user_registration_path, class: "btn btn-flat-orange mt-3" %></a>
+              </div>
             </div>
-          </li>
-          <% end %>
-
-
-      <% else %>
-        <li class="nav-item active">
-              <%= link_to "Home", pages_home_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item active">
-        <%= link_to "Search Actors", pages_searching_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item active">
-              <%= link_to "Production Companies", pages_searching_companies_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item"><%= link_to "Login", new_user_session_path, class: "nav-link" %></li>
-        </li>
-        <li class="nav-item"><%= link_to "Sign Up", new_user_registration_path, class: "nav-link" %></li>
-        </li>
-      <% end %>
-    </ul>
+        </div>
+      </div>
   </div>
+  <div class="banner" style=" background-color: black;" >
+    <div class="container" style="background-color: black;">
+      <div class="row" style="background-color: black; ">
+        <div class="col-8 col-lg-6" style="justify-content: center; align-items: center; padding-top: 40px;">
+
+          <div style="width: 75%; margin-left: 64px; position:relative; margin:0 auto;">
+
+          <h1 style="font-size:3.0rem; color: white; opacity:0.7; text-align: left"> <strong>Further your studies</strong></h1>
+          <p class="mt-3" style='text-align: left; font-size: 1.4rem; color: white; opacity:.7'> It's never too late to get an education. South Africa has a number of unique acting schools through which you can hone your skills. Find out more by clicking any of the links. For a more complete list of your options click <%= link_to "#" do %> <strong style="color:white; opacity:1; font-weight:bolder;"> here</strong> <% end %></p>
+          </div>
+          <div class="mt-5">
+          </div>
+        </div>
+
+        <div class="col-4 d-flex" style="justify-content:right; padding-top: 56px;">
+            <div style="position:relative; margin:0 auto;">
+
+          <%= image_tag "student.jpeg",  class: "studies-pic schools"%>
+            </div>
+        </div>
+<div class="col-12">
+
+          <div class="study-links-new-1 mt-5" style="position: relative; margin: 0 auto; padding-top: 56px;">
+
+              <div>
+
+              <%= link_to "https://www.afda.co.za/",target: :_blank do %>
+              <div  style="width: 243px; height:84px; text-align: center;">
+                <%= image_tag "afda.png" %>
+                <a href="https://www.afda.co.za/" target="blank" style="color: black;align-items: center;"><i style="color: white; font-size:1.25rem;"> AFDA </i></a>
+              </div>
+              <% end %>
+
+              </div>
+
+              <div>
+
+              <%= link_to "http://www.artschool.co.za/ ", target: :_blank do %>
+              <div  style="width: 243px; height:84px;text-align: center;">
+                <%= image_tag "nsa.jpg" %>
+                <a href="http://www.artschool.co.za/ "target="blank" style="color: white"><i style="color: white; font-size:1.25rem;">NSA </i></a>
+              </div>
+              <% end %>
+
+              </div>
+
+              <div>
+
+              <%= link_to "https://www.wits.ac.za/wsoa/theatre--performance/",target: :_blank do %>
+              <div  style="width: 243px; height:84px;text-align: center;">
+                <%= image_tag "wits.jpg" %>
+                <a href="https://www.wits.ac.za/wsoa/theatre--performance/" target="blank" style="color: white;align-items: center;"><i style="color: white; font-size:1.25rem;"> Wits University </i></a>
+              </div>
+              <% end %>
+
+              </div>
+
+              <div>
+
+              <%= link_to "https://www.uj.ac.za/faculties/humanities/school-of-communication/Pages/The-Department-of-Journalism,-Film---Television.aspx ", target: :_blank do %>
+              <div  style="width: 243px; height:84px;text-align: center;">
+                <%= image_tag "uj.jpg" %>
+                <a href="http://www.artschool.co.za/ "target="blank" style="color: white"><i style="color: white; font-size:1.25rem;">UJ </i></a>
+              </div>
+              <% end %>
+
+              </div>
+
+
+          </div>
+
 </div>
-</nav>
-
-
-
-
-<div class="banner" style="background-color:green;">
-
-
-<div class="container mt-5">
-
-  <div class="search-bar mt-5">
-
-
-  <h3 class="mb-4" style="text-align: center;">Search your location</h3>
-    <div class="row">
-
-
-
-<div class="col-4" style="position: relative; margin:0 auto;">
-
-
- <%= form_tag pages_searching_path method: :get do %>
-<div style=" display:flex; justify-content: space-between;">
- <p>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control standard",
-    placeholder: "Search Actors"
-  %>
- </p>
-<p> <%= submit_tag "Search", class: "btn btn-flat-orange-search" %> </p>
-
-
-</div>
-<% end %>
-<div class="fill">
-  <%= image_tag "map.jpeg" %>
-
-</div>
-
-
-
-
- </div>
-</div>
-
-  </div>
-<br><br><br>
-
-</div>
-
-
-</div>
-
-
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
-  <div class="container">
-    <h1>Le Wagon brings <strong>tech skills</strong> to <strong>creative people</strong>!</h1>
-    <p>Change your life and learn to code at one of our campuses around the world.</p>
-    <a class="btn btn-flat" href="#">Apply now</a>
-  </div>
-</div>
-
+        </div>
+      </div>
+    </div>
 
 
 
 
 
 <% if @articles != [] && @last != nil %>
-  <h1 class="my-5" style="text-align: center; color: black; font-size: 3.75rem;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);" > <strong>  Industry News </strong></h1>
+<div class="banner" style="background-color:white; opacity:0.7;">
 <div class="container">
-  <div class="col-12 col-md-6" style="position: relative; margin:0 auto;">
-    <div id="carouselExampleIndicators" style="width: 750px;" class="carousel slide custom-slider" data-ride="carousel">
-        <div class="carousel-inner" style="width: 750px;">
-          <div class="carousel-item active">
-            <div class="carousel-img-container d-flex justify-content-center">
-    <%= cl_image_tag @last.image.key, height: 500, width: 1000, crop: :scale, class: "d-block w-100" %>
+<div class="row" style="background:white;">
+  <h1 class="my-5" style="text-align: center; color: black; font-size: 3.75rem;font-weight:900; position: relative; margin: 0 auto; padding-left: 148px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2); padding-top: 100px; padding-bottom: 25px; padding-right: 56px;" > <strong>  Industry News </strong></h1>
+  <div class="col-12 col-md-12 col-lg-12 " style="position: relative;">
+    <div id="carouselExampleIndicators" class="carousel slide custom-slider" data-ride="carousel"style="width: 750px; position: relative; margin: 0 auto;">
+        <div class="carousel-inner"style="width: 750px;" style="position: relative; margin:0 auto;">
+          <div class="carousel-item active" style="position: relative; margin:0 auto;">
+            <h3 style="text-align: center; color: black; font-weight: 700; font-size:2.25rem; padding-bottom: 40px;">  <%= @last.title.capitalize %> </h3>
+            <div class="carousel-img-container d-flex justify-content-center" style="border:solid 4px;">
+    <%= cl_image_tag @last.image.key, height: 500, width: 1000, crop: :scale, class: "d-block w-100 lala" %>
             </div>
 
                 <div class="carousel-caption d-none d-md-block">
@@ -418,8 +229,10 @@
 
           </div>
               <% @articles_without_latest.each do |article| %>
-          <div class="carousel-item">
-            <div class="carousel-img-container d-flex justify-content-center">
+          <div class="carousel-item" style="position: relative; margin:0 auto;">
+                        <h3 style="text-align: center; color: black; font-size:2.25rem; font-weight: 700; padding-bottom: 40px;">  <%= article.title.capitalize %> </h3>
+
+            <div class="carousel-img-container d-flex justify-content-center" style="border:solid 4px;">
      <%= cl_image_tag article.image.key, height: 500, width: 1000, crop: :scale, class: "d-block w-100" %>
             </div>
 
@@ -433,7 +246,11 @@
 
           </div>
             <% end %>
+
         </div>
+
+        <br><br>
+
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
           <i class="fas fa-chevron-left"></i>
         </a>
@@ -442,314 +259,75 @@
         </a>
       </div>
   </div>
-</div>
+<div class="news-split mt-5 mb-5" style>
 
-
-
-
-
-<div class="row" style="background:black;"><div class="col-12" style="background-color: white;opacity: 0.7;">
-
-<div class="container mb-5" >
-
-<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active img-fluid">
-    <h5 class="mb-3"style=" font-size: 1.75rem;font-weight: 500; text-align: center; color:white"><%= @last.title.upcase %></h5>
-    <%= cl_image_tag @last.image.key, height: 500, width: 1000, crop: :scale %>
-    <div class="carousel-caption d-none d-md-block">
-    <div class="mt-5">
-    <p><%= link_to "Read More", article_path(@last), class: "btn btn-flat-orange"%></p>
-
-    </div>
-    </div>
-    </div>
-    <% @articles_without_latest.each do |article| %>
-
-    <div class="carousel-item img-fluid">
-    <h5 class='mb-3'style=" font-size: 1.75rem;text-align: center;color:white;"><%= article.title.upcase %></h5>
-    <div class="image-art">
-     <%= cl_image_tag article.image.key, height: 500, width: 1000, crop: :scale %>
-<!--   width: 200px;  width: 200px; -->
-
-
-
-    </div>
-    <div class="carousel-caption d-none d-md-block">
-    <div class="mt-5">
-    <p><%= link_to "Read More", article_path(article), class: "btn btn-flat-orange" %></p>
-
-    </div>
-    </div>
-    </div>
-    <% end %>
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-
-<% end %>
-
-
-
-</div>
-<div class="news-split mt-5" style>
-<h4 style="color: black;">  <span style="padding: 0 16px; font-size:2.0rem;"> Pictor Online    </span>  </h4>
-<p class="mb-3" style="text-align: center; color: black;">Latest</p>
+  <div class="container">
+    <h4 style="color: black;">  <span style="padding: 0 16px; font-size:2.25rem; font-weight:750; position:relative; margin:0 auto;"> Pictor Online    </span>  </h4>
+<p class="mb-3" style="text-align: center; color: black; font-size:1.75rem; font-weight:550; padding-bottom: 16px;">Latest</p>
 <div class="articles-grid">
-  <% @articles.each do |article| %>
 
-      <div style="border-bottom: solid 2px; border-color: #181B1E;">
-        <div>
-<%= cl_image_tag article.image.key, height: 200, width: 300, crop: :fill %>
+  <% @latest.each do |article| %>
+
+      <div class=".col-8  "style="border-bottom: solid 1px;">
+        <%= link_to article_path(article) do %>
+        <div style="padding-left: 120px; ">
+<%= cl_image_tag article.image.key, height: 200, width: 300, crop: :fill, class: "art-cover" %>
 
         </div>
-        <div style="padding:32px;">
+        <% end %>
+        <div class="pt-5 pb-3" style="padding-left: 120px;" >
 
-      <h2 style=" color:black; text-align: center; font-size:22px; font-weight:400;"><%= article.title %></h2>
-      <p class="mb-5 mt-3" style="font-size: 18px; color:black; opacity:0.8; text-align: center;"><%= article.description %> </p>
+      <h2 style=" color:black; text-align: left; font-size:22px; font-weight:700;"><%= article.title.capitalize %></h2>
+      <p class="mb-5 mt-3" style="font-size: 18px; color:black; opacity:0.7; text-align: left; font-weight:700;"><%= article.description.capitalize %> </p>
 
         </div>
     </div>
 <% end %>
 
 </div>
-</div>
+  </div>
 <div class="row" style="margin-top:60px;">
-  <div class="col-8" style="position:relative; margin:0 auto; align-items: center;">
-    <h3 style="position: relative; margin: 0 auto; font-weight:500; text-align: center; color: black;">What's happening in the film and television industry? Keep up to date by visiting the following websites</h3 style="position: relative; margin: 0 auto; ">
+  <div class="col-12 col-lg-8" style="position:relative; margin:0 auto; align-items: center;">
+    <h3 style="position: relative; margin: 0 auto; font-weight:700; text-align: center; color: black; font-size:2.5rem; padding-top: 85px;">What's happening in the film and television industry? Keep up to date with these websites</h3 style="position: relative; margin: 0 auto; ">
 
-<ul class="mt-3">
-  <li>
 
-    <a class="mt-3" href="https://filmcontact.com/" target="blank" style="text-align:center;"> <i style="color: black;text-align:center;">www.filmcontact.com</i></a>
-  </li>
-  <li>
-    <a class="mt-3" href="https://www.actorspaces.co.za/" target="blank" style="text-align:center;"> <i style="color: black;text-align:center;">www.actorspaces.co.za/</i></a>
-
-  </li>
-</ul>
-  </div>
-</div>
-</div>
-
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<div id="demo" class="carousel slide" data-ride="carousel">
-
-  <!-- Indicators -->
-  <ul class="carousel-indicators">
-    <li data-target="#demo" data-slide-to="0" class="active"></li>
-    <li data-target="#demo" data-slide-to="1"></li>
-    <li data-target="#demo" data-slide-to="2"></li>
-  </ul>
-
-  <!-- The slideshow -->
-  <div class="container carousel-inner no-padding">
-    <div class="carousel-item active">
-      <div class="col-xs-3 col-sm-3 col-md-3">
-            <%= cl_image_tag @last.image.key, height: 500, width: 1000, crop: :scale, class: "d-block w-100" %>
-
-<!--         <img src="https://image.shutterstock.com/z/stock-photo-sleeping-disorders-as-a-reason-for-insomnia-293777093.jpg">
- -->      </div>
-      <div class="col-xs-3 col-sm-3 col-md-3">
-        <img src="https://image.shutterstock.com/z/stock-photo-sleeping-disorders-as-a-reason-for-insomnia-293777093.jpg">
-      </div>
-      <div class="col-xs-3 col-sm-3 col-md-3">
-        <img src="https://image.shutterstock.com/z/stock-photo-sleeping-disorders-as-a-reason-for-insomnia-293777093.jpg">
-      </div>
-      <div class="col-xs-3 col-sm-3 col-md-3">
-        <img src="https://image.shutterstock.com/z/stock-photo-sleeping-disorders-as-a-reason-for-insomnia-293777093.jpg">
-      </div>
-    </div>
-    <div class="carousel-item">
-      <div class="col-xs-3 col-sm-3 col-md-3">
-        <img src="https://image.shutterstock.com/z/stock-photo-sleeping-disorders-as-a-reason-for-insomnia-293777093.jpg">
-      </div>
-      <div class="col-xs-3 col-sm-3 col-md-3">
-        <img src="https://image.shutterstock.com/z/stock-photo-sleeping-disorders-as-a-reason-for-insomnia-293777093.jpg">
-      </div>
-      <div class="col-xs-3 col-sm-3 col-md-3">
-        <img src="https://image.shutterstock.com/z/stock-photo-sleeping-disorders-as-a-reason-for-insomnia-293777093.jpg">
-      </div>
-      <div class="col-xs-3 col-sm-3 col-md-3">
-        <img src="https://image.shutterstock.com/z/stock-photo-sleeping-disorders-as-a-reason-for-insomnia-293777093.jpg">
-      </div>
-    </div>
-    <div class="carousel-item">
-      <div class="col-xs-3 col-sm-3 col-md-3">
-        <img src="https://image.shutterstock.com/z/stock-photo-sleeping-disorders-as-a-reason-for-insomnia-293777093.jpg">
-      </div>
-      <div class="col-xs-3 col-sm-3 col-md-3">
-        <img src="https://image.shutterstock.com/z/stock-photo-sleeping-disorders-as-a-reason-for-insomnia-293777093.jpg">
-      </div>
-      <div class="col-xs-3 col-sm-3 col-md-3">
-        <img src="https://image.shutterstock.com/z/stock-photo-sleeping-disorders-as-a-reason-for-insomnia-293777093.jpg">
-      </div>
-      <div class="col-xs-3 col-sm-3 col-md-3">
-        <img src="https://image.shutterstock.com/z/stock-photo-sleeping-disorders-as-a-reason-for-insomnia-293777093.jpg">
-      </div>
-    </div>
   </div>
 
-  <!-- Left and right controls -->
-  <a class="carousel-control-prev" href="#demo" data-slide="prev">
-    <span class="carousel-control-prev-icon"></span>
-  </a>
-  <a class="carousel-control-next" href="#demo" data-slide="next">
-    <span class="carousel-control-next-icon"></span>
-  </a>
+
+<div class="col-6" style="position:center; margin:0 auto; padding-top: 80px;">
+
+<div class="mt-3 tests-grid pb-5" style="position: relative; margin: 0 auto; color:black; text-align: center;">
+
+<div>
+<%= link_to "https://www.actorspaces.co.za/" , target: :_blank do%>
+  <div class=" quiz-image">
+
+    <%= image_tag "Actors-space.png.png" %>
+  </div>
+  <% end %>
+
+</div>
+
+<div class=""style="background-color:white; color:black; width:300px; height:150px;">
+<%= link_to "https://filmcontact.com/" , target: :_blank, class: "fc" do%>
+  <div class=" fc " style="align-items: center;">
+    <p style="color: white;"> FilmContact.com</p>
+  </div>
+  <% end %>
+
+</div>
+
+</div>
+
 </div>
 
 
-<br><br><br>
-
-
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-            <%= cl_image_tag @last.image.key, height: 500, width: 1000, crop: :scale, class: "d-block w-100" %>
-    </div>
-    <% @articles_without_latest.each do |article| %>
-    <div class="carousel-item">
-<%= cl_image_tag article.image.key, height: 500, width: 1000, crop: :scale, class: "d-block w-100"%>
-    </div>
+</div>
 <% end %>
-  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-<!--   <ol class="carousel-indicators">
-    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active">
-      <img src="https://pbs.twimg.com/profile_images/905183271046193153/q_P1KBUJ_400x400.jpg" class="img-fluid"/>
-    </li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="1">
-      <img src="https://pbs.twimg.com/profile_images/905183271046193153/q_P1KBUJ_400x400.jpg" class="img-fluid"/>
-    </li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="2">
-      <img src="https://pbs.twimg.com/profile_images/905183271046193153/q_P1KBUJ_400x400.jpg" class="img-fluid"/>
-    </li>
-  </ol> -->
-  <div class="container pt-4 pb-5">
-    <div class="row carousel-indicators">
-      <div class="col-md-4 item">
 
-<%= cl_image_tag @last.image.key, height: 500, width: 1000, crop: :scale, class: "d-block w-100 img-fluid", :data_target => "carouselExampleIndicators", :data_slide_to => 0 %>
-
-     </div>
-     <% @articles_without_latest.each do |article| %>
-      <div class="col-md-4 item">
-<%= cl_image_tag article.image.key, height: 500, width: 1000, crop: :scale, class: "d-block w-100 img-fluid", :data_target => "carouselExampleIndicators" %>
-      </div>
-      <% end %>
-    </div>
   </div>
-</div>
-</div>
-
-
-
-              <%= simple_form_for [@account_complaint] do |f| %>
-<div>
-
-<%= link_to registration_path(@user), class: "dropdown-item", data: { confirm: "Are you sure?" }, method: :delete do %>
-
-
-<div>
-<button type="button" class="dropdown-item" data-toggle="modal" data-target="#exampleModal">
-Cancel my account</button>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">why do you want to cancel your account?</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-
-
-                      <div class="form_inputs">
-                <div class="new-form-inputs">
-
-              <div class="form_inputs">
-                <div class="new-form-inputs">
-
-
-    <div class="ts d-flex" style="justify-content: space-between;">
-
-      <p style="color:#CCA459;"> I am changing careers</p>
-
-                 <%= f.check_box :career_changes, label: "Suspected Human trafficking" %>
-
-    </div>
-        <div class="ts d-flex" style="justify-content: space-between;">
-
-      <p style="color:#CCA459;"> I am not recieving as many opportunities as i would like</p>
-
-                 <%= f.check_box :not_recieving_briefs, label: "" %>
-
-    </div>
-
-        <div class="ts d-flex" style="justify-content: space-between;">
-
-      <p style="color:#CCA459;"> I just dont like it. </p>
-
-                 <%= f.check_box :dont_like_it, label: "" %>
-
-    </div>
-
-        <div class="ts d-flex" style="justify-content: space-between;">
-
-      <p style="color:#CCA459;"> I am unsatisfied with my experience</p>
-
-                 <%= f.check_box :unsatisfied, label: "" %>
-
-    </div>
-
-            <div class="ts d-flex" style="justify-content: space-between;">
-
-      <p style="color:#CCA459;"> I dont find the app to be useful. </p>
-
-                 <%= f.check_box :not_useful, label: "" %>
-
-    </div>
-                <%= f.input :user_id, :as => :hidden, :input_html => { :value => current_user.id } %>
-
-            </div>
-          </div>
-        </div>
-
-        <%= f.button :submit, class: "btn btn-flat-orange", value: "submit reasons" %>
-
-          </div>
-      </div>
-
-    </div>
-  </div>
-</div>
-
- <% end %>
-
-
 
 </div>
-
- <% end %>
 
 </div>
 
