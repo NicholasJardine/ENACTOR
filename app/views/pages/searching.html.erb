@@ -35,6 +35,10 @@
 <div class="cards">
  <% @users.each do |user| %>
       <%= render 'shared/user_card', user: user %>
+<!--
+      <% if @user.email == "kayla@gmail.com" %>
+      <%= link_to "Delete User", destroy_path(user), class: "btn-flat-orange mt-3", data: { confirm: "Are you sure?" }%>
+      <% end %> -->
   <% end %>
 </div>
 

@@ -68,7 +68,10 @@ Rails.application.routes.draw do
   delete "/delete_post", to: "posts#delete_post"
   patch "/deletepb", to: "private_invites#delete"
   patch "/report_brief", to: "briefs#report_brief"
+  delete "/destroy", to: "users#destroy"
+  delete "/destroy_user", to: "users/user_registrations#destroy_user"
 
+  # delete "/delete_user", to: "users/user_registrations#delete_user"
 
   devise_for :users, :controllers => { :registrations => 'users/user_registrations' }
 
@@ -77,6 +80,7 @@ Rails.application.routes.draw do
   resources :actors, only: [:show, :new, :create, :update, :delete]
   resources :production_companies, only: [:show, :new, :create, :update, :delete]
   resources :users, path: '/', param: :id, only: %i[show]
+
   resources :dashboards, only: [:show]
   resources :posts
 

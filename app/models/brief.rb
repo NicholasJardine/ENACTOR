@@ -2,7 +2,7 @@ class Brief < ApplicationRecord
   belongs_to :user
   has_many :auditions
   has_many :reasons
-  has_many :user_briefs
+  has_many :user_briefs, dependent: :destroy
   has_many :users, through: :user_briefs
 
   validates :name, :age_range, :ethnicty, :gender, presence: true
