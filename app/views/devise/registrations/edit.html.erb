@@ -63,7 +63,17 @@
       <%= f.input :ethnicty, collection:["Black", "White","Mixed", "Coloured South African", "Asian", "Indian", "Racially Ambiguos", "Khoi Khoi", "San" ], label: "Race/Ethnicity"%>
       <%= f.input :language, collection:langs, label: "Language "%>
       <%= f.input :province, collection:provinces, label: "The province you currently live in"%>
+ <h2>Personal Touches</h2>
+    <%= f.input :bio, label: "Bio"%>
+    <%= f.input :talents,collection:talents, label: "Extra talents"%>
+    <%= f.input :socialmedia, label: "Your social media handles and/or links"%>
+    <%= f.input :cv, as: :file, :resource_type => :raw, label: "Attach a PDF copy of your CV (optional)" %>
 
+    <h3 style="color:white;"> Agent Details </h3>
+    <%= f.input :agent_details, label: "If you have an agent, feel free to fill in their contact information here."%>
+  <div class="form-actions">
+    <%= f.button :submit, "Update", class: 'btn-flat-orange' %>
+  </div>
     <% else %>
      <h2>Company information</h2>
       <%= f.input :name, label: "Company Name" %>
@@ -73,25 +83,16 @@
       <%= f.input :photo, as: :file, label:"Upload your company logo here." %>
       <%= f.input :socialmedia, label: "Your social media handles and/or links"%>
       <%= f.input :website, label: "Fill in a link to your Website."%>
+      <%= f.input :tel, label: "Company phonenumber"%>
+      <%= f.input :company_email, label: "Company email address"%>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Update", class: 'btn-flat-orange' %>
+  </div>
     </div>
   </div>
   <% end %>
   <br><br><br>
-  <div class="row">
-    <div class="col-12">
- <h2>Personal Touches</h2>
-    <%= f.input :bio, label: "Bio"%>
-    <%= f.input :talents,collection:talents, label: "Extra talents"%>
-    <%= f.input :socialmedia, label: "Your social media handles and/or links"%>
-    <%= f.input :cv, as: :file, :resource_type => :raw, label: "Attach a PDF copy of your CV (optional)" %>
-
-    <h3 style="color:white;"> Agent Details </h3>
-    <%= f.input :agent_details, label: "If you have an agent, feel free to fill in their contact information here."%>
-    </div>
-  </div>
-  <div class="form-actions">
-    <%= f.button :submit, "Update", class: 'btn-flat-orange' %>
-  </div>
   </div>
     <% end %>
 </div>
