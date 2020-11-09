@@ -141,6 +141,26 @@ class PagesController < ApplicationController
     end
   end
 
+
+    def linear
+    @user = current_user
+    @last = Article.first
+    @articles = Article.all
+    @articles_without_latest = @articles.reject{|article| article == @last}
+    @users = User.all
+    @account_complaint = AccountComplaint.new
+        @latest = [@articles.last, @articles[-2], @articles[-3]]
+
+
+    if params[:query].present?
+      sql_query = " \
+        users.name @@ :query "
+      @users = User.where(sql_query, query: "%#{params[:query]}%").where(occupation: "Actor")
+    else
+      @users = User.where(occupation: "Actor")
+    end
+  end
+
 end
 
 

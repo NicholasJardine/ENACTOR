@@ -54,6 +54,7 @@ Rails.application.routes.draw do
   patch "/accept", to: "private_briefs#accept"
   patch "/decline", to: "private_briefs#decline"
 
+  get 'pages/linear'
 
   patch "/accept", to: "private_briefs#accept"
   patch "/decline", to: "private_briefs#decline"
