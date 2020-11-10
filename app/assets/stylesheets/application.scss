@@ -38,7 +38,7 @@
   background: black;
   display: flex;
   align-items: center;
-  height: 60px;
+  height: 90px;
   justify-content: space-around;
   padding: 0px 50px;
   // color: #f88a2b;
@@ -541,5 +541,12 @@ color:white;
 
 
 .lala{
+  width:100%;
+}
+
+
+.blender-1{
+  background-image: linear-gradient( black,#C4C2B7);
+  height:64px;
   width:100%;
 }
