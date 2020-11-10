@@ -10,7 +10,7 @@
  <%= form_tag pages_searching_path method: :get do %>
 <div style=" display:flex; justify-content: space-around;">
 
- <p>
+ <p style="">
 
   <%= text_field_tag :query,
     params[:query],
@@ -19,7 +19,7 @@
   %>
 
  </p>
-<p> <%= submit_tag "Search", class: "btn btn-flat-orange-search" %> </p>
+<p style="margin-left: 40px;"> <%= submit_tag "Search", class: "btn btn-flat-orange-search" %> </p>
 
 
 </div>

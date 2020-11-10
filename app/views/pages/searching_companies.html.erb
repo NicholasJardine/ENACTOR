@@ -1,5 +1,5 @@
 <div class="container mt-5">
-  <div class="search-bar mt-5">
+  <div class="search-bar mt-5" style="margin-left:-80px;">
   <h3 class="mb-4">SEARCH A COMPANY BY NAME IN THE FIELD BELOW</h3>
   <div class="row">
     <div class="col-4">
@@ -15,7 +15,7 @@
   %>
 
       </p>
-<p>
+<p style="margin-left: 40px;">
 
  <%= submit_tag "Search", class: "btn btn-flat-orange-search" %>
 </p>
@@ -28,7 +28,7 @@
 <br><br><br>
 
 
-<div class="cards">
+<div class="cards" style="margin-left:-144px;">
  <% @users.each do |user| %>
  <div>
       <%= render 'shared/user_card', user: user %>
