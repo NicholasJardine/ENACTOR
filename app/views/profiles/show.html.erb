@@ -1,4 +1,4 @@
-<div class="container-fluid m-5">
+<div class=" m-5">
 
     <% if @user.name == nil%>
     <div class="row"> <div class="col-6" style="background-color:black">
@@ -15,7 +15,7 @@
 
 
       <% if @user.occupation == "Actor" %>
-      <div class="row" style="background:black;"><div class="col-6" style=" border: solid 4px; padding-top:50px; border-color: white;">
+      <div class="row" style="background:black;"><div class="col-10 col-lg-6" style=" border: solid 4px; padding-top:50px; border-color: white; margin-left:40px;">
           <h3 class="mb-5" style="color:white; text-align: left; padding-left: 32px; padding-top: 56px;"><%= @user.name.upcase %></h3>
         <div class="pro-deets" style=" align-items: left; display: flex; justify-content: left; padding-left:32px;">
 
@@ -71,12 +71,12 @@
 
 
       </div>
-<div class="col-6" style="padding-top: 50px; padding-left: 64px;">
+<div class="col-10" style="padding-top: 50px; padding-left: 64px;">
 
 <h3 class="mb-5"style="color: white; padding-top: 56px; padding-bottom:32px; "> MY GALLERY:</h3>
 <% if @my_posts == [] %>
 <p style="color:white"> You haven't uploaded any pictures to your gallery. Click the button below to add one.</p>
-<%= link_to "NEW POST", new_post_path, class: "btn btn-flat-orange" %>
+<%= link_to "NEW POST", new_post_path, class: "btn btn-flat-orange mt-3" %>
 <% else %>
 
 <div class="posts">
